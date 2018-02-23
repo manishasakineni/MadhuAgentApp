@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="68" id="KGk-i7-Jjw" customClass="MyTransactionTableViewCell" customModule="PayZan" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="67.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hkr-mJ-3Ea">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upArrow" translatesAutoresizingMaskIntoConstraints="NO" id="9Jz-q2-ZPC">
+                                <rect key="frame" x="10" y="24" width="20" height="20"/>
+                                <color key="tintColor" red="0.44386413689999998" green="0.099101148550000004" blue="0.13356801870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="YMu-z6-sbk"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PayZan Cash Received" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujN-Dq-lRg">
+                                <rect key="frame" x="41" y="15" width="156" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.44386413689999998" green="0.099101148550000004" blue="0.13356801870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From: xxxxx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MwS-GR-8nA">
+                                <rect key="frame" x="43" y="39" width="164" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ 2.0000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nzv-bi-NGP">
+                                <rect key="frame" x="249" y="13" width="63" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.44386413689999998" green="0.099101148550000004" blue="0.13356801870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntQ-BM-TZG">
+                                <rect key="frame" x="221" y="39" width="91" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="91" id="HHg-2T-MKC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sri-lanka-rupee-currency-symbol_318-49440" translatesAutoresizingMaskIntoConstraints="NO" id="2i3-sy-WPL">
+                                <rect key="frame" x="221" y="17" width="16" height="16"/>
+                                <color key="tintColor" red="0.5568627451" green="0.12549019610000001" blue="0.1647058824" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="16" id="LBQ-H9-fHx"/>
+                                    <constraint firstAttribute="height" constant="16" id="o4e-Lo-Eg9"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9Jz-q2-ZPC" firstAttribute="top" secondItem="hkr-mJ-3Ea" secondAttribute="top" constant="24" id="0Z2-uh-Eiy"/>
+                            <constraint firstItem="MwS-GR-8nA" firstAttribute="baseline" secondItem="ntQ-BM-TZG" secondAttribute="baseline" id="1wp-7B-jMA"/>
+                            <constraint firstItem="Nzv-bi-NGP" firstAttribute="trailing" secondItem="hkr-mJ-3Ea" secondAttribute="trailingMargin" id="5Tb-KJ-65x"/>
+                            <constraint firstItem="9Jz-q2-ZPC" firstAttribute="leading" secondItem="hkr-mJ-3Ea" secondAttribute="leading" constant="10" id="CWU-o0-Kla"/>
+                            <constraint firstItem="ujN-Dq-lRg" firstAttribute="baseline" secondItem="Nzv-bi-NGP" secondAttribute="baseline" id="FcA-nc-7qO"/>
+                            <constraint firstAttribute="bottom" secondItem="MwS-GR-8nA" secondAttribute="bottom" constant="10" id="LeK-Sj-zKA"/>
+                            <constraint firstAttribute="trailing" secondItem="ntQ-BM-TZG" secondAttribute="trailing" constant="8" id="LmW-Ym-Kvy"/>
+                            <constraint firstItem="MwS-GR-8nA" firstAttribute="leading" secondItem="9Jz-q2-ZPC" secondAttribute="trailing" constant="13" id="MPi-dg-fhv"/>
+                            <constraint firstItem="Nzv-bi-NGP" firstAttribute="leading" secondItem="2i3-sy-WPL" secondAttribute="trailing" constant="12" id="SBb-zh-Py9"/>
+                            <constraint firstItem="9Jz-q2-ZPC" firstAttribute="centerY" secondItem="hkr-mJ-3Ea" secondAttribute="centerY" id="WAB-vO-sqZ"/>
+                            <constraint firstItem="MwS-GR-8nA" firstAttribute="top" secondItem="hkr-mJ-3Ea" secondAttribute="top" constant="39" id="Wv4-xz-EW5"/>
+                            <constraint firstItem="MwS-GR-8nA" firstAttribute="firstBaseline" secondItem="ntQ-BM-TZG" secondAttribute="firstBaseline" id="eFi-rV-376"/>
+                            <constraint firstItem="ntQ-BM-TZG" firstAttribute="leading" secondItem="MwS-GR-8nA" secondAttribute="trailing" constant="14" id="jO0-Ae-056"/>
+                            <constraint firstItem="2i3-sy-WPL" firstAttribute="centerY" secondItem="Nzv-bi-NGP" secondAttribute="centerY" id="mDl-KG-6kn"/>
+                            <constraint firstAttribute="bottom" secondItem="ujN-Dq-lRg" secondAttribute="bottom" constant="33" id="mfw-Hu-aga"/>
+                            <constraint firstItem="ujN-Dq-lRg" firstAttribute="leading" secondItem="9Jz-q2-ZPC" secondAttribute="trailing" constant="11" id="pEd-Dp-rmD"/>
+                            <constraint firstItem="ujN-Dq-lRg" firstAttribute="top" secondItem="hkr-mJ-3Ea" secondAttribute="top" constant="15" id="tna-Xs-rCn"/>
+                            <constraint firstItem="ujN-Dq-lRg" firstAttribute="firstBaseline" secondItem="Nzv-bi-NGP" secondAttribute="firstBaseline" constant="2" id="w5p-rz-2KH"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="hkr-mJ-3Ea" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="XQE-Ou-KEM"/>
+                    <constraint firstItem="hkr-mJ-3Ea" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="vUl-bL-aLy"/>
+                    <constraint firstItem="hkr-mJ-3Ea" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="zLm-gV-85f"/>
+                    <constraint firstAttribute="trailing" secondItem="hkr-mJ-3Ea" secondAttribute="trailing" id="zar-XS-LGb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="addMoneyLabel" destination="Nzv-bi-NGP" id="ggA-x3-DnM"/>
+                <outlet property="dateLabel" destination="ntQ-BM-TZG" id="JPK-RB-fN7"/>
+                <outlet property="fromLabel" destination="MwS-GR-8nA" id="Q9W-0R-nQV"/>
+                <outlet property="imageVw" destination="9Jz-q2-ZPC" id="VdP-8c-i5f"/>
+                <outlet property="titleLabel" destination="ujN-Dq-lRg" id="DNk-25-MkQ"/>
+            </connections>
+            <point key="canvasLocation" x="-52" y="47"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="sri-lanka-rupee-currency-symbol_318-49440" width="626" height="626"/>
+        <image name="upArrow" width="24" height="24"/>
+    </resources>
+</document>

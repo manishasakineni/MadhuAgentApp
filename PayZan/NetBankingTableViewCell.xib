@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NetBankingTableViewCell" id="KGk-i7-Jjw" customClass="NetBankingTableViewCell" customModule="PayZan" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="335"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="334.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hjK-19-T55">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="327"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Bank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="500-Uc-lXu">
+                                <rect key="frame" x="17" y="11" width="147" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="147" id="ecy-HU-UTE"/>
+                                    <constraint firstAttribute="height" constant="21" id="yGj-g4-SYa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.SelectBank"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Bank" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2CX-S7-wOH" customClass="AkiraTextField" customModule="TextFieldEffects">
+                                <rect key="frame" x="11" y="161" width="280" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="aj2-nr-Lbj"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="app.SelectBank"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderSize">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeBorderColor">
+                                        <color key="value" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="inactiveBorderColor">
+                                        <color key="value" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.81198445429999999" green="0.81198445429999999" blue="0.81198445429999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vr2-Ca-XcI">
+                                <rect key="frame" x="17" y="242" width="268" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="28S-hv-EUF"/>
+                                </constraints>
+                                <state key="normal" title="Pay Now" backgroundImage="buttonColor">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.PayNow"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7q-zv-jlO">
+                                <rect key="frame" x="259" y="183" width="25" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="dn2-lC-Wlk"/>
+                                    <constraint firstAttribute="height" constant="20" id="khT-Xt-g84"/>
+                                </constraints>
+                                <state key="normal" image="dropMenu"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgQ-fd-Uzt">
+                                <rect key="frame" x="30" y="59" width="49.5" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="6mJ-PX-DW9"/>
+                                </constraints>
+                                <state key="normal" image="hdfcImg"/>
+                                <connections>
+                                    <action selector="bank1Action:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="2X7-B4-agO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OoZ-Ip-8y3">
+                                <rect key="frame" x="121.5" y="59" width="50" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="UwE-rc-G9s"/>
+                                </constraints>
+                                <state key="normal" image="iciciImg"/>
+                                <connections>
+                                    <action selector="bank2Action:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="tHi-Zl-l3I"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cY-AD-x1Y">
+                                <rect key="frame" x="222.5" y="59" width="49.5" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="vFv-8b-NfJ"/>
+                                </constraints>
+                                <state key="normal" image="SBIImg"/>
+                                <connections>
+                                    <action selector="bank3Action:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="rVV-9R-HKZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7EC-2c-gdS">
+                                <rect key="frame" x="30" y="120" width="49.5" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="lco-6w-KaR"/>
+                                </constraints>
+                                <state key="normal" image="boiImg"/>
+                                <connections>
+                                    <action selector="bank4Action:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="7mG-VU-VDk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcn-Hh-zoy">
+                                <rect key="frame" x="121.5" y="120" width="50" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="A85-Us-7jY"/>
+                                </constraints>
+                                <state key="normal" image="BOBImg"/>
+                                <connections>
+                                    <action selector="bank5Action:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="OOv-5k-T5i"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPh-9e-bl4">
+                                <rect key="frame" x="222.5" y="120" width="49.5" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="98D-J5-SWD"/>
+                                </constraints>
+                                <state key="normal" image="BOHImg"/>
+                                <connections>
+                                    <action selector="bank6Action:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="AFU-Op-u1n"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="500-Uc-lXu" firstAttribute="leading" secondItem="hjK-19-T55" secondAttribute="leading" constant="17" id="05R-u3-iVx"/>
+                            <constraint firstItem="XPh-9e-bl4" firstAttribute="top" secondItem="8cY-AD-x1Y" secondAttribute="bottom" constant="26" id="1os-rg-87w"/>
+                            <constraint firstItem="vr2-Ca-XcI" firstAttribute="top" secondItem="2CX-S7-wOH" secondAttribute="bottom" constant="36" id="3f4-tD-LvZ"/>
+                            <constraint firstItem="8cY-AD-x1Y" firstAttribute="width" secondItem="hgQ-fd-Uzt" secondAttribute="width" id="6c9-jS-2fj"/>
+                            <constraint firstItem="7EC-2c-gdS" firstAttribute="height" secondItem="hgQ-fd-Uzt" secondAttribute="height" id="6dN-b8-c1Y"/>
+                            <constraint firstItem="2CX-S7-wOH" firstAttribute="top" secondItem="Xcn-Hh-zoy" secondAttribute="bottom" constant="6" id="7jP-pn-NsE"/>
+                            <constraint firstItem="hgQ-fd-Uzt" firstAttribute="leading" secondItem="hjK-19-T55" secondAttribute="leading" constant="30" id="7mK-V6-dMY"/>
+                            <constraint firstItem="7EC-2c-gdS" firstAttribute="top" secondItem="hgQ-fd-Uzt" secondAttribute="bottom" constant="26" id="9Ni-vK-SPo"/>
+                            <constraint firstItem="OoZ-Ip-8y3" firstAttribute="height" secondItem="hgQ-fd-Uzt" secondAttribute="height" id="9U8-Fu-0tI"/>
+                            <constraint firstItem="2CX-S7-wOH" firstAttribute="top" secondItem="7EC-2c-gdS" secondAttribute="bottom" constant="6" id="A6g-sc-YaS"/>
+                            <constraint firstItem="2CX-S7-wOH" firstAttribute="leading" secondItem="hjK-19-T55" secondAttribute="leading" constant="11" id="AZj-7V-n1s"/>
+                            <constraint firstItem="XPh-9e-bl4" firstAttribute="width" secondItem="hgQ-fd-Uzt" secondAttribute="width" id="B1r-rD-83X"/>
+                            <constraint firstItem="Xcn-Hh-zoy" firstAttribute="leading" secondItem="7EC-2c-gdS" secondAttribute="trailing" constant="42" id="BBA-qp-5mM"/>
+                            <constraint firstItem="h7q-zv-jlO" firstAttribute="leading" secondItem="2CX-S7-wOH" secondAttribute="trailing" constant="-32" id="BTu-pr-BCK"/>
+                            <constraint firstAttribute="bottom" secondItem="vr2-Ca-XcI" secondAttribute="bottom" constant="50" id="CqI-5S-X2S"/>
+                            <constraint firstItem="8cY-AD-x1Y" firstAttribute="top" secondItem="hjK-19-T55" secondAttribute="top" constant="59" id="DAC-Aw-q5p"/>
+                            <constraint firstItem="hgQ-fd-Uzt" firstAttribute="top" secondItem="500-Uc-lXu" secondAttribute="bottom" constant="27" id="EI7-1Z-0S5"/>
+                            <constraint firstItem="OoZ-Ip-8y3" firstAttribute="top" secondItem="hjK-19-T55" secondAttribute="top" constant="59" id="Ec3-Nl-EBL"/>
+                            <constraint firstAttribute="trailing" secondItem="vr2-Ca-XcI" secondAttribute="trailing" constant="35" id="G86-9c-rVw"/>
+                            <constraint firstItem="7EC-2c-gdS" firstAttribute="width" secondItem="hgQ-fd-Uzt" secondAttribute="width" id="GKJ-hl-nA6"/>
+                            <constraint firstItem="h7q-zv-jlO" firstAttribute="centerY" secondItem="2CX-S7-wOH" secondAttribute="centerY" constant="9.5" id="LCQ-N8-5iy"/>
+                            <constraint firstItem="Xcn-Hh-zoy" firstAttribute="width" secondItem="hgQ-fd-Uzt" secondAttribute="width" id="LJ7-nU-dAH"/>
+                            <constraint firstItem="8cY-AD-x1Y" firstAttribute="height" secondItem="hgQ-fd-Uzt" secondAttribute="height" id="Llh-Ob-pPq"/>
+                            <constraint firstItem="Xcn-Hh-zoy" firstAttribute="height" secondItem="hgQ-fd-Uzt" secondAttribute="height" id="Pp4-Sp-9C6"/>
+                            <constraint firstAttribute="trailing" secondItem="2CX-S7-wOH" secondAttribute="trailing" constant="29" id="S8o-TE-gA9"/>
+                            <constraint firstAttribute="trailing" secondItem="8cY-AD-x1Y" secondAttribute="trailing" constant="48" id="SWi-qE-byJ"/>
+                            <constraint firstItem="OoZ-Ip-8y3" firstAttribute="width" secondItem="hgQ-fd-Uzt" secondAttribute="width" id="Tgl-KL-Xf5"/>
+                            <constraint firstItem="500-Uc-lXu" firstAttribute="top" secondItem="hjK-19-T55" secondAttribute="top" constant="11" id="Vdf-Pc-HgR"/>
+                            <constraint firstItem="vr2-Ca-XcI" firstAttribute="leading" secondItem="hjK-19-T55" secondAttribute="leading" constant="17" id="ZYQ-oA-piM"/>
+                            <constraint firstItem="2CX-S7-wOH" firstAttribute="top" secondItem="XPh-9e-bl4" secondAttribute="bottom" constant="6" id="bd3-QH-uhw"/>
+                            <constraint firstAttribute="trailing" secondItem="XPh-9e-bl4" secondAttribute="trailing" constant="48" id="ddG-VQ-kbC"/>
+                            <constraint firstItem="2CX-S7-wOH" firstAttribute="centerX" secondItem="hjK-19-T55" secondAttribute="centerX" constant="-9" id="go3-WR-MHd"/>
+                            <constraint firstItem="8cY-AD-x1Y" firstAttribute="leading" secondItem="OoZ-Ip-8y3" secondAttribute="trailing" constant="51" id="iXs-Dq-gfG"/>
+                            <constraint firstItem="XPh-9e-bl4" firstAttribute="leading" secondItem="Xcn-Hh-zoy" secondAttribute="trailing" constant="51" id="k7c-h5-9sL"/>
+                            <constraint firstItem="OoZ-Ip-8y3" firstAttribute="leading" secondItem="hgQ-fd-Uzt" secondAttribute="trailing" constant="42" id="rsB-rD-hpd"/>
+                            <constraint firstItem="7EC-2c-gdS" firstAttribute="leading" secondItem="hjK-19-T55" secondAttribute="leading" constant="30" id="rsH-ot-djE"/>
+                            <constraint firstItem="vr2-Ca-XcI" firstAttribute="centerX" secondItem="hjK-19-T55" secondAttribute="centerX" constant="-9" id="slP-5S-IfX"/>
+                            <constraint firstItem="Xcn-Hh-zoy" firstAttribute="top" secondItem="OoZ-Ip-8y3" secondAttribute="bottom" constant="26" id="yvK-m1-Vis"/>
+                            <constraint firstItem="XPh-9e-bl4" firstAttribute="height" secondItem="hgQ-fd-Uzt" secondAttribute="height" id="zci-xD-syF"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="hjK-19-T55" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="21c-RC-xtA"/>
+                    <constraint firstAttribute="bottom" secondItem="hjK-19-T55" secondAttribute="bottom" constant="7.5" id="ZsD-A1-Izc"/>
+                    <constraint firstItem="hjK-19-T55" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="eJd-Ii-sKJ"/>
+                    <constraint firstAttribute="trailing" secondItem="hjK-19-T55" secondAttribute="trailing" id="sKe-UX-SL0"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="bank1OutLet" destination="hgQ-fd-Uzt" id="Icb-lg-Knc"/>
+                <outlet property="bank2OutLet" destination="OoZ-Ip-8y3" id="T37-Gr-fHy"/>
+                <outlet property="bank3OutLet" destination="8cY-AD-x1Y" id="KPC-wi-Cg0"/>
+                <outlet property="bank4OutLet" destination="7EC-2c-gdS" id="1lg-TE-kn3"/>
+                <outlet property="bank5OutLet" destination="Xcn-Hh-zoy" id="Icm-XQ-hIk"/>
+                <outlet property="bank6OutLet" destination="XPh-9e-bl4" id="8jL-ra-qtC"/>
+                <outlet property="netBankingDetailsView" destination="hjK-19-T55" id="c7z-UY-sae"/>
+                <outlet property="payBtnHeight" destination="28S-hv-EUF" id="KeV-n5-ASS"/>
+                <outlet property="payNowBtn" destination="vr2-Ca-XcI" id="hQT-k5-ZhE"/>
+                <outlet property="selectBankTextField" destination="2CX-S7-wOH" id="0EJ-Ck-sqR"/>
+                <outlet property="selectTextLabel" destination="500-Uc-lXu" id="nXq-uu-1mJ"/>
+                <outlet property="textfiledHeight" destination="aj2-nr-Lbj" id="Vtk-QT-v9A"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="53.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="BOBImg" width="431" height="117"/>
+        <image name="BOHImg" width="225" height="225"/>
+        <image name="SBIImg" width="288" height="175"/>
+        <image name="boiImg" width="759" height="422"/>
+        <image name="buttonColor" width="205" height="31"/>
+        <image name="dropMenu" width="71" height="48"/>
+        <image name="hdfcImg" width="259" height="194"/>
+        <image name="iciciImg" width="400" height="400"/>
+    </resources>
+</document>

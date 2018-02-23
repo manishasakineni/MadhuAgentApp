@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="QRTableViewCell" rowHeight="99" id="KGk-i7-Jjw" customClass="QRTableViewCell" customModule="PayZan" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzj-zJ-Th5">
+                        <rect key="frame" x="120" y="51" width="80" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="ilv-Td-SYU"/>
+                            <constraint firstAttribute="height" constant="35" id="jFz-kc-0Zz"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                        <state key="normal" title="Share" backgroundImage="buttonColor">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.Share"/>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gm5-2Z-qcT">
+                        <rect key="frame" x="120" y="12" width="80" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="hbu-am-Tig"/>
+                            <constraint firstAttribute="height" constant="35" id="ka5-vh-hz7"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                        <state key="normal" title="Scan QR" backgroundImage="buttonColor">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="tzj-zJ-Th5" firstAttribute="top" secondItem="Gm5-2Z-qcT" secondAttribute="bottom" constant="4" id="2e5-1x-a4Z"/>
+                    <constraint firstItem="Gm5-2Z-qcT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="9bd-Dx-zT0"/>
+                    <constraint firstItem="Gm5-2Z-qcT" firstAttribute="leading" secondItem="tzj-zJ-Th5" secondAttribute="leading" id="nM3-qD-0cn"/>
+                    <constraint firstItem="tzj-zJ-Th5" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="rj1-be-RH5"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="scanQRBtn" destination="Gm5-2Z-qcT" id="XHM-lI-h9j"/>
+                <outlet property="scanQrBtnHeight" destination="ka5-vh-hz7" id="ieb-m1-IfB"/>
+                <outlet property="scanQrWidth" destination="hbu-am-Tig" id="hwe-k8-lY8"/>
+                <outlet property="shareBtn" destination="tzj-zJ-Th5" id="WP4-e8-2Xh"/>
+                <outlet property="shareBtnHeight" destination="jFz-kc-0Zz" id="P4c-Mk-tOm"/>
+                <outlet property="shareWidth" destination="ilv-Td-SYU" id="q4B-3w-cRu"/>
+            </connections>
+            <point key="canvasLocation" x="23" y="73.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="buttonColor" width="205" height="31"/>
+    </resources>
+</document>

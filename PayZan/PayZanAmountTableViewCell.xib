@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PayZanAmountTableViewCell" rowHeight="94" id="KGk-i7-Jjw" customClass="PayZanAmountTableViewCell" customModule="PayZan" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="94"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="93.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total amount to be paid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rb0-ZH-ERE">
+                        <rect key="frame" x="12" y="10" width="127" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="3Pt-J4-jxS"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.Totalamounttobepaid"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9P-Cv-Fuj">
+                        <rect key="frame" x="398" y="10" width="0.0" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="tEc-vk-ALl"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJb-e2-zf1">
+                        <rect key="frame" x="12" y="32" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="X2U-js-l2H"/>
+                            <constraint firstAttribute="height" constant="25" id="paJ-En-rI7"/>
+                        </constraints>
+                        <state key="normal" image="unselectedBox"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use PayZan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFU-hH-q3h">
+                        <rect key="frame" x="45" y="34" width="66" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="YUS-s8-RMz"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.UsePayZan"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpy-Jw-P2T">
+                        <rect key="frame" x="391" y="34" width="0.0" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="KY9-FE-Nhp"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pq6-E6-O8p">
+                        <rect key="frame" x="31" y="59" width="95" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="jjx-7d-tDG"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.AvailableBalence"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Svk-44-3Zj">
+                        <rect key="frame" x="176" y="60" width="0.0" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="XCK-91-peE"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sri-lanka-rupee-currency-symbol_318-49440" translatesAutoresizingMaskIntoConstraints="NO" id="KIH-aA-3OD">
+                        <rect key="frame" x="364" y="13" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="sxK-zE-w98"/>
+                            <constraint firstAttribute="width" constant="15" id="zTD-bH-LIV"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sri-lanka-rupee-currency-symbol_318-49440" translatesAutoresizingMaskIntoConstraints="NO" id="oQX-z2-K3P">
+                        <rect key="frame" x="364" y="37" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="ZD2-Z1-tJZ"/>
+                            <constraint firstAttribute="width" constant="15" id="cGT-qI-pFS"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sri-lanka-rupee-currency-symbol_318-49440" translatesAutoresizingMaskIntoConstraints="NO" id="M2b-hA-Ndf">
+                        <rect key="frame" x="146" y="63" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="OLU-DL-OYB"/>
+                            <constraint firstAttribute="width" constant="15" id="TFR-Z0-ard"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Pq6-E6-O8p" firstAttribute="leading" secondItem="PFU-hH-q3h" secondAttribute="leading" constant="-14" id="1TP-ie-ezb"/>
+                    <constraint firstItem="KIH-aA-3OD" firstAttribute="centerY" secondItem="D9P-Cv-Fuj" secondAttribute="centerY" id="2I6-1Y-soK"/>
+                    <constraint firstItem="PJb-e2-zf1" firstAttribute="top" secondItem="rb0-ZH-ERE" secondAttribute="bottom" constant="1" id="7cN-K6-j4D"/>
+                    <constraint firstItem="D9P-Cv-Fuj" firstAttribute="centerY" secondItem="rb0-ZH-ERE" secondAttribute="centerY" id="AEt-GV-WbZ"/>
+                    <constraint firstItem="rb0-ZH-ERE" firstAttribute="leading" secondItem="PJb-e2-zf1" secondAttribute="leading" id="CUw-sD-d6S"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="D9P-Cv-Fuj" secondAttribute="trailing" constant="8" id="DUG-Gw-66V"/>
+                    <constraint firstItem="Svk-44-3Zj" firstAttribute="leading" secondItem="M2b-hA-Ndf" secondAttribute="trailing" constant="15" id="FvM-Uj-UvG"/>
+                    <constraint firstItem="kpy-Jw-P2T" firstAttribute="centerY" secondItem="PFU-hH-q3h" secondAttribute="centerY" id="Ha0-0j-qkL"/>
+                    <constraint firstItem="D9P-Cv-Fuj" firstAttribute="leading" secondItem="KIH-aA-3OD" secondAttribute="trailing" constant="19" id="Luh-Jp-Z6P"/>
+                    <constraint firstItem="kpy-Jw-P2T" firstAttribute="leading" secondItem="oQX-z2-K3P" secondAttribute="trailing" constant="12" id="Uuc-8I-efP"/>
+                    <constraint firstItem="PFU-hH-q3h" firstAttribute="centerY" secondItem="PJb-e2-zf1" secondAttribute="centerY" id="aSW-6q-iMq"/>
+                    <constraint firstItem="rb0-ZH-ERE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="4" id="f10-32-zGl"/>
+                    <constraint firstItem="D9P-Cv-Fuj" firstAttribute="leading" secondItem="kpy-Jw-P2T" secondAttribute="leading" constant="7" id="jkK-1w-Y1m"/>
+                    <constraint firstItem="Pq6-E6-O8p" firstAttribute="top" secondItem="PFU-hH-q3h" secondAttribute="bottom" constant="4" id="kRj-W9-k8G"/>
+                    <constraint firstItem="PFU-hH-q3h" firstAttribute="leading" secondItem="PJb-e2-zf1" secondAttribute="trailing" constant="8" id="lhX-kr-4kl"/>
+                    <constraint firstItem="oQX-z2-K3P" firstAttribute="centerY" secondItem="kpy-Jw-P2T" secondAttribute="centerY" id="se7-q1-m21"/>
+                    <constraint firstItem="Svk-44-3Zj" firstAttribute="leading" secondItem="Pq6-E6-O8p" secondAttribute="trailing" constant="50" id="uN2-ou-TX9"/>
+                    <constraint firstItem="Svk-44-3Zj" firstAttribute="centerY" secondItem="Pq6-E6-O8p" secondAttribute="centerY" constant="1" id="uem-7T-tXJ"/>
+                    <constraint firstItem="M2b-hA-Ndf" firstAttribute="centerY" secondItem="Svk-44-3Zj" secondAttribute="centerY" id="uxZ-0L-sdC"/>
+                    <constraint firstItem="rb0-ZH-ERE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="ySB-Ms-Xj5"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="availableBal" destination="Svk-44-3Zj" id="gLA-dh-iLQ"/>
+                <outlet property="availableBalTextLabel" destination="Pq6-E6-O8p" id="Dvo-h4-y2Q"/>
+                <outlet property="checkBoxBtn" destination="PJb-e2-zf1" id="cwq-ab-eah"/>
+                <outlet property="totalAmTextLabel" destination="rb0-ZH-ERE" id="qrc-Ct-pdS"/>
+                <outlet property="totalAmount" destination="D9P-Cv-Fuj" id="pSe-2E-cJj"/>
+                <outlet property="usePayZanAmount" destination="kpy-Jw-P2T" id="NMO-PB-n0W"/>
+                <outlet property="usePayzanTextLabel" destination="PFU-hH-q3h" id="6gv-RT-wHd"/>
+            </connections>
+            <point key="canvasLocation" x="26" y="77"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="sri-lanka-rupee-currency-symbol_318-49440" width="626" height="626"/>
+        <image name="unselectedBox" width="20" height="22"/>
+    </resources>
+</document>
