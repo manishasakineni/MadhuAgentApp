@@ -677,16 +677,51 @@ paysendLabelHeight.constant = 25
         
         if indexPath.row == 1 {
             
-            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
+            
+                if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
+                    
+                    height = 500
+                }
+                else {
+                    
+                    let bounds = UIScreen.main.bounds
+                    let sHeight = bounds.size.height
+                    
+                    switch sHeight {
+                    case 480.0:
+                        print("iPhone 3,4")
+                        
+                        height = 180
+                        
+                    case 568.0:
+                        print("iPhone 5")
+                        
+                        height = 200
+                        
+                    case 667.0:
+                        print("iPhone 6")
+                        
+                        height = 230
+                        
+                    case 736.0:
+                        print("iPhone 6+")
+                        
+                        height = 250
+                        
+                        
+                    case 1024.0:
+                        print("iPadAir")
+                        
+                        
+                    default:
+                        print("not an iPhone")
+                        
+                        
+                    }
+                    
+                }
                 
-                height = 500
             }
-            else {
-                
-                height = 250
-                
-            }
-        }
         else
             
             
