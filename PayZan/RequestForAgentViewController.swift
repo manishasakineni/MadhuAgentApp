@@ -148,22 +148,7 @@ let headerTitle = "PERSONAL INFORMATION"
         
         if let newRegCell : EditTableViewCell = textField.superview?.superview as? EditTableViewCell {
         
-//        if textField == newRegCell.agentRequestField {
-//            
-//            
-//            if (newRegCell.agentRequestField.text != nil)  {
-//                
-//                newRegCell.titleLabel.isHidden = false
-//                
-//            }
-//                
-//            else{
-//                
-//                newRegCell.titleLabel.isHidden = true
-//                
-//                
-//            }
-//        }
+
         }
         
         if textField.tag == 0{
@@ -321,16 +306,9 @@ let headerTitle = "PERSONAL INFORMATION"
             return true
         }
         
-//        if textField.tag == 5{
-//            if string.characters.count > 0 {
-//                let allowedCharacters = CharacterSet.decimalDigits
-//                
-//                let unwantedStr = string.trimmingCharacters(in: allowedCharacters)
-//                return unwantedStr.characters.count == 0
-//            }
-//            
-//            return true
-//        }
+
+        
+        
         return true
     }
     
@@ -342,13 +320,7 @@ let headerTitle = "PERSONAL INFORMATION"
         if let newRegCell : EditTableViewCell = textField.superview?.superview as? EditTableViewCell {
             
             
-//            if newRegCell.agentRequestField.text == nil {
-//                
-//                newRegCell.titleLabel.isHidden = true
-//                newRegCell.titleLabel.isHidden = false
-//                
-//                
-//            }
+
         }
         return true
     }
@@ -364,17 +336,7 @@ let headerTitle = "PERSONAL INFORMATION"
         if let newRegCell : EditTableViewCell = textField.superview?.superview as? EditTableViewCell {
             
 
-//            if (newRegCell.agentRequestField.text != nil)  {
-//                
-//                newRegCell.titleLabel.isHidden = true
-//            }
-//                
-//            else{
-//                
-//                newRegCell.titleLabel.isHidden = false
-//                
-//            }
-//            
+            
             if textField.tag == 0{
                 
                 
@@ -634,7 +596,6 @@ let headerTitle = "PERSONAL INFORMATION"
                 selectedDistrictStr = ""
                 selectedMandalStr = ""
                 selectedVillageStr = ""
-//                pinCode = ""
 
                 if(row < (provinceIDArray?.count)!){
                     if let value = provinceIDArray?[row].Id{
@@ -652,10 +613,8 @@ let headerTitle = "PERSONAL INFORMATION"
                 
                 selectedDistrictStr = pickerData[row]
                 activeTextField.text = selectedDistrictStr
-//                selectedDistrictStr = ""
                 selectedMandalStr = ""
                 selectedVillageStr = ""
-//                pinCode = ""
 
                 if(row < (districtIDArray?.count)!){
                     if let value = districtIDArray?[row].Id{
@@ -674,10 +633,7 @@ let headerTitle = "PERSONAL INFORMATION"
                 
                 selectedMandalStr = pickerData[row]
                 activeTextField.text = selectedMandalStr
-//                selectedDistrictStr = ""
-//                selectedMandalStr = ""
                 selectedVillageStr = ""
-//                pinCode = ""
 
                 if(row < (mandalIDArray?.count)!){
                     if let value = mandalIDArray?[row].Id{
@@ -805,7 +761,6 @@ let headerTitle = "PERSONAL INFORMATION"
         
         if indexPath.section == 0 {
         
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "AddAgentRequestTableViewCell") as! AddAgentRequestTableViewCell
             
             let cell = Bundle.main.loadNibNamed("EditTableViewCell", owner: self, options: nil)?.first as! EditTableViewCell
             
@@ -822,7 +777,6 @@ let headerTitle = "PERSONAL INFORMATION"
                 cell.profileField.font = UIFont.systemFont(ofSize: 20)
                 cell.profileField.placeholderFont = UIFont.systemFont(ofSize: 20)
                 cell.profileField.titleFont = UIFont.systemFont(ofSize: 20)
-//                cell.profileField.errorLabel.font = UIFont.systemFont(ofSize: 14)
             }
             else {
                 
@@ -1169,12 +1123,7 @@ let headerTitle = "PERSONAL INFORMATION"
                                 
                                 self.titleArray.append(element.Description!)
                                 
-//                                let idd = element.Id!
-//                                
-//                                let titleId:String = String(idd)
-                                
-//                                self.titletypeIdAry.append(titleId)
-                                //                                self.provinceIDArray.append(element.Id!)
+
                                 
                             }
                             
@@ -1234,7 +1183,6 @@ let headerTitle = "PERSONAL INFORMATION"
                                 print("index:\(index)")
                                 
                                 self.provinceListArr.append(element.Name!)
-//                                self.provinceIDArray.append(element.Id!)
                                 
                             }
                             
@@ -1536,11 +1484,6 @@ let headerTitle = "PERSONAL INFORMATION"
                                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                                 appDelegate.window?.rootViewController = viewController
                                 
-//                                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//                                
-//                                let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-//                                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//                                appDelegate.window?.rootViewController = viewController
                                 
                        
                         }

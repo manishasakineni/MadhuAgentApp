@@ -46,7 +46,6 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
     var toolBar = UIToolbar()
     var pickerData : Array<String> = Array()
     
-//    var listArr = ["Saved Cards","Order History","Change Password","About Us","Support","Terms Of Service","Choose Language"]
     
     var listArr = [String]()
     
@@ -221,10 +220,8 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
         let defaults = UserDefaults.standard
         
         
-//        DispatchQueue.main.async {
         
-//            let defaults = UserDefaults.standard
-            
+        
             if let picUrl = defaults.string(forKey: profilePicUrl){
                 
                 let newString = picUrl.replacingOccurrences(of: "\\", with: "//", options: .backwards, range: nil)
@@ -462,10 +459,7 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
         
         
     }
-//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//        
-//        return 20.0
-//    }
+
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
@@ -598,10 +592,6 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
             cell.editProfileBtn.addTarget(self, action: #selector(self.btnAction), for: .touchUpInside)
             
             cell.editBtn.addTarget(self, action: #selector(self.editAction), for: .touchUpInside)
-            
-         //   cell.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-         //   cell.layer.borderWidth = 0.5
-         //   cell.layer.borderColor = UIColor.lightGray.cgColor
             
             
             cell.userNameLabel.text = userNamee
@@ -741,7 +731,6 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
                             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                             
                             let viewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginNav") as! UINavigationController
-                            //                    let navigationController = UINavigationController(rootViewController: viewController)
                             let appDelegate = UIApplication.shared.delegate as! AppDelegate
                             appDelegate.window?.rootViewController = viewController
                         }
@@ -784,7 +773,6 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
                             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                             
                             let viewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginNav") as! UINavigationController
-                            //                    let navigationController = UINavigationController(rootViewController: viewController)
                             let appDelegate = UIApplication.shared.delegate as! AppDelegate
                             appDelegate.window?.rootViewController = viewController
                         }
@@ -825,7 +813,6 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
                             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                             
                             let viewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginNav") as! UINavigationController
-                            //                    let navigationController = UINavigationController(rootViewController: viewController)
                             let appDelegate = UIApplication.shared.delegate as! AppDelegate
                             appDelegate.window?.rootViewController = viewController
                         }
@@ -997,21 +984,10 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
         
         addMoneyViewController.add = String(self.addMoney)
         
-        //  addMoneyViewController.indexValue = 0
-        //  addMoneyViewController.isHiddenSendView = false
-        //  addMoneyViewController.isHiddenTransactionView = true
-        //   addMoneyViewController.isHiddenWithdrawView = true
+  
         
         self.navigationController?.pushViewController(addMoneyViewController, animated: true)
         
-//        let addMoneyViewController = self.storyboard?.instantiateViewController(withIdentifier: "AddMoneyWalletViewController") as! AddMoneyWalletViewController
-//        
-//        addMoneyViewController.indexValue = 1
-//        addMoneyViewController.isHiddenWithdrawView = false
-//        addMoneyViewController.isHiddenSendView = true
-//        addMoneyViewController.isHiddenTransactionView = true
-//    
-//        self.navigationController?.pushViewController(addMoneyViewController, animated: true)
         
     }
     
@@ -1125,8 +1101,6 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
             {
                 tabStrings[1].title = "app.Login".localize()
                 
-//                UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
-//                UserDefaults.standard.synchronize()
                 
                         if UserDefaults.standard.object(forKey: accessToken) != nil {
                 
@@ -1192,7 +1166,6 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
             }
             
            
-//            profileTVC.setContentOffset(CGPoint.zero, animated: true)
             
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             

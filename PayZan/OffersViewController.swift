@@ -80,17 +80,8 @@ class OffersViewController: UIViewController,UITabBarControllerDelegate,UITabBar
             self.nameOfItem(indexNumber: 3, countText: "app.Merchant".localize())
         }
         
-//        self.createPageMenu()
         
-//        self.tabBarController?.tabBar.isHidden = true
     }
-    
-//    override func viewWillDisappear(_ animated: Bool) {
-//        self.tabBarController?.tabBar.isHidden = false
-//    }
-    
-    
-    
     
     //MARK:- headerImgHeight For iphone and ipad
     
@@ -101,30 +92,21 @@ class OffersViewController: UIViewController,UITabBarControllerDelegate,UITabBar
         allOffersVC = AllOffersViewController(nibName: "AllOffersViewController", bundle: nil)
         allOffersVC?.title = "app.AllOffers".localize()
         allOffersVC?.delegate  = self
-        //   allOffersVC?.getLabelForPendingOrders()
-        
-        
-        
-        
-        
         rechargesVC = RechargesViewController(nibName: "RechargesViewController",
                                               bundle: nil)
         rechargesVC?.title = "app.Recharges".localize()
         rechargesVC?.delegate  = self
-        //   rechargesVC?.getLabelForShippedOrders()
         
         
         detAndBillsVC = DetAndBillsViewController(nibName: "DetAndBillsViewController",
                                                   bundle: nil)
         detAndBillsVC?.title = "app.DTH/Bills".localize()
         detAndBillsVC?.delegate  = self
-        //     detAndBillsVC?.getLabelForAllOrders()
         
         mearchantVC = MearchantViewController(nibName: "MearchantViewController",
                                               bundle: nil)
         mearchantVC?.title = "app.Merchant".localize()
         mearchantVC?.delegate  = self
-        //     mearchantVC?.getLabelForAllOrders()
         
         controllersArray.append(allOffersVC!)
         controllersArray.append(rechargesVC!)
@@ -177,10 +159,6 @@ class OffersViewController: UIViewController,UITabBarControllerDelegate,UITabBar
         
          menuItem?.titleLabel?.text = countText
         
-//        menuItem?.subtitleLabel?.text = "  " + countText + "  "
-//        menuItem?.subtitleLabel?.textAlignment = .left
-//        menuItem?.subtitleLabel?.sizeToFit()
-//        menuItem?.subtitleLabel?.center = CGPoint(x: (menuItem?.bounds.midX)!, y: (menuItem?.bounds.midY)! + 8)
         
     }
     

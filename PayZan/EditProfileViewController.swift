@@ -74,7 +74,7 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
     var fileLocationImg:String = ""
     var fileNameImg:String = ""
     var profileUrl:String = ""
-    
+    var base64String = String()
     
     var titleTypeID    : Int    = 0
     
@@ -98,7 +98,8 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
     
     var titletypeIdAry: [ProfileTitleResultVo]?
     
-    
+    var alertTag = Int()
+
     
     var selectedProvinceStr = ""
     var selectedDistrictStr = ""
@@ -110,6 +111,7 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
     var districtID     : Int    = 0
     var mandalID       : Int    = 0
     var villageID       : Int    = 0
+    
 
 
     var dateStr = String()
@@ -219,32 +221,8 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
         
         activeTextField = textField
         
-//        if  TVC1.firstNameTF.text != nil{
-//            
-//            TVC1.FNLbl.isHidden = false
-//        }
-
         
-//        if let newRegCell : EditTableViewCell = textField.superview?.superview as? EditTableViewCell {
-//            
-//            if textField == newRegCell.profileField {
-//                
-//                
-//                if (newRegCell.profileField.text != nil)  {
-//                    
-//                    newRegCell.profileField.isHidden = false
-////                    newRegCell.detailsLbl.textColor = UIColor(red: 128.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
-//                    
-//                }
-//                    
-//                else{
-//                    
-////                    newRegCell.detailsLbl.isHidden = true
-//                    
-//                    
-//                }
-//            }
-//        }
+        
         if textField.tag == 0{
             
             textField.clearButtonMode = .never
@@ -328,8 +306,6 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
             
             activeTextField.text = dateofBirth
             
-//            textField.clearButtonMode = .never
-//            textField.keyboardType = .default
             
         }
             
@@ -444,16 +420,10 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
         
         }
         
-//        if textField.tag == 5{
-//            if string.characters.count > 0 {
-//                let allowedCharacters = CharacterSet.decimalDigits
-//                
-//                let unwantedStr = string.trimmingCharacters(in: allowedCharacters)
-//                return unwantedStr.characters.count == 0
-//            }
-//            
-//            return true
-//        }
+
+        
+        
+        
         return true
     }
     
@@ -467,13 +437,7 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
             
             newRegCell.profileField.selectedTitleColor = #colorLiteral(red: 0.5568627451, green: 0.1254901961, blue: 0.1647058824, alpha: 1)
             
-//            if newRegCell.detailsTF.text == nil {
-//                
-//                newRegCell.detailsLbl.isHidden = true
-//                newRegCell.detailsLbl.isHidden = false
-//                
-//                
-//            }
+
         }
         return true
     }
@@ -490,18 +454,6 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
             
              newRegCell.profileField.selectedTitleColor = #colorLiteral(red: 0.5568627451, green: 0.1254901961, blue: 0.1647058824, alpha: 1)
             
-//            if (newRegCell.detailsTF.text != nil)  {
-//                
-//                newRegCell.detailsLbl.isHidden = false
-//                
-//                newRegCell.detailsLbl.textColor = UIColor.lightGray
-//            }
-            
-            //            else{
-            //
-            //             //   newRegCell.addNewAddressLabel.isHidden = false
-            //
-            //            }
             
             if textField.tag == 0{
                 
@@ -560,7 +512,6 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
                 
                 mobileNo = textField.text!
                 
-//                activeTextField.text = selectedProvinceStr
                 
             }
                 
@@ -568,14 +519,12 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
                 
                 email = textField.text!
                 
-//                activeTextField.text = selectedDistrictStr
                 
             }
                 
                 
             else if textField.tag == 9 {
                 
-//                dateofBirth = textField.text!
                 
                 activeTextField.text = dateofBirth
                 
@@ -806,15 +755,9 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
                     }
                 }
                 
-//                if postalCodeAry.count > 0{
-//                    
-//                    if let value = String(postalCodeAry[0]){
-//                        
-//                        pinCode = value
-//                        
-//                    }
-//                  
-//                }
+                
+                
+                
                 self.editTableView.reloadData()
             }
         }
@@ -1076,10 +1019,7 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
             
             if indexPath.row == 0{
                 
-//                cell.firstNameTF.text = firstName
-//                cell.lastNameTF.text = lastName
-//                cell.firstNameTF.placeholder = "app.FirstName".localize()
-//                cell.lastNameTF.placeholder = "app.LastName".localize()
+                
                 cell.editButton.addTarget(self, action: #selector(self.editBtnClicked), for: .touchDown)
                 
                 cell.profileImag.layer.cornerRadius = cell.profileImag.frame.size.height/2;
@@ -1109,7 +1049,6 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
             
         else
         {
-//            let cell = Bundle.main.loadNibNamed("TableViewCell2", owner: self, options: nil)?.first as! TableViewCell2
             
             let cell = Bundle.main.loadNibNamed("EditTableViewCell", owner: self, options: nil)?.first as! EditTableViewCell
             
@@ -1127,25 +1066,14 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
                 cell.profileField.font = UIFont.systemFont(ofSize: 20)
                 cell.profileField.placeholderFont = UIFont.systemFont(ofSize: 20)
                 cell.profileField.titleFont = UIFont.systemFont(ofSize: 20)
-                //                cell.profileField.errorLabel.font = UIFont.systemFont(ofSize: 14)
             }
             else {
                 
                 
             }
             
-//            cell.profileField.layer.borderWidth = 0.5
-//            cell.profileField.layer.borderColor = UIColor.lightGray.cgColor
-//            cell.profileField.layer.cornerRadius = 3
-//            cell.profileField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
-//            delegate?.textChanged(text: cell.profileField?.text)
-            
             if indexPath.row == 0{
                 
-                
-//                cell.profileField.text = selectedtitleTypeStr
-//                cell.detailsLbl?.text = "app.ProfileTitle".localize()
-//                cell.profileField.placeholder = "app.ProfileTitle".localize()
                 
                 cell.profileField.placeholder = "app.ProfileTitle".localize()
                 cell.profileField.selectedTitle = "app.ProfileTitle".localize()
@@ -1157,10 +1085,6 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
             }
             if indexPath.row == 1{
                 
-                
-//                cell.detailsTF.text = firstName
-//                cell.detailsLbl?.text = "app.FirstName".localize()
-//                cell.detailsTF.placeholder = "app.FirstName".localize()
                 
 
                 cell.profileField.placeholder = "app.FirstName".localize()
@@ -1174,10 +1098,6 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
             }
             if indexPath.row == 2{
                 
-                
-//                cell.detailsTF.text = middleName
-//                cell.detailsLbl?.text = "app.MiddleName".localize()
-//                cell.detailsTF.placeholder = "app.MiddleName".localize()
                 
 
                 cell.profileField.placeholder = "app.MiddleName".localize()
@@ -1193,9 +1113,6 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
             if indexPath.row == 3{
                 
                 
-//                cell.detailsTF.text = lastName
-//                cell.detailsLbl?.text = "app.LastName".localize()
-//                cell.detailsTF.placeholder = "app.LastName".localize()
                 
 
                 cell.profileField.placeholder = "app.LastName".localize()
@@ -1208,19 +1125,10 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
                 
             }
             
-//            else if indexPath.row == 4{
-//                
-//                 cell.detailsTF.text = name
-//                 cell.detailsLbl?.text = "app.UserName".localize()
-//                 cell.detailsTF.placeholder = "app.UserName".localize()
-//            
-//            }
                 
             else if indexPath.row == 4{
                 
-//                cell.detailsTF.text = address1
-//                cell.detailsLbl?.text = "app.Address1".localize()
-//                cell.detailsTF.placeholder = "app.Address1".localize()
+
                 
                 cell.profileField.placeholder = "app.Address1".localize()
                 cell.profileField.selectedTitle = "app.Address1".localize()
@@ -1235,9 +1143,7 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
             }
             else if indexPath.row == 5{
                 
-//                cell.detailsTF.text = address2
-//                cell.detailsLbl?.text = "app.Address2".localize()
-//                cell.detailsTF.placeholder = "app.Address2".localize()
+
                 
                 cell.profileField.placeholder = "app.Address2".localize()
                 cell.profileField.selectedTitle = "app.Address2".localize()
@@ -1252,10 +1158,6 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
             }
             else if indexPath.row == 6{
                 
-//                cell.detailsTF.text = landmark
-//                cell.detailsLbl?.text = "app.Landmark".localize()
-//                cell.detailsTF.placeholder = "app.Landmark".localize()
-                
                 cell.profileField.placeholder = "app.Landmark".localize()
                 cell.profileField.selectedTitle = "app.Landmark".localize()
                 cell.profileField.title = "app.Landmark".localize()
@@ -1268,9 +1170,6 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
             }
             else if indexPath.row == 7{
                 
-//                cell.detailsTF.text = mobileNo
-//                cell.detailsLbl?.text = "app.MobileNo".localize()
-//                cell.detailsTF.placeholder = "app.MobileNo".localize()
                 
                 cell.profileField.placeholder = "app.MobileNo".localize()
                 cell.profileField.selectedTitle = "app.MobileNo".localize()
@@ -1285,9 +1184,6 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
             }
             else if indexPath.row == 8{
                 
-//            cell.detailsTF.text = email
-//            cell.detailsLbl?.text = "app.Email".localize()
-//            cell.detailsTF.placeholder = "app.Email".localize()
                 
                 cell.profileField.placeholder = "app.Email".localize()
                 cell.profileField.selectedTitle = "app.Email".localize()
@@ -1300,22 +1196,6 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
             }
             else if indexPath.row == 9{
                 
-//            cell.detailsLbl?.text = "app.DateOfBirth".localize()
-//            cell.detailsTF.placeholder = "app.DateOfBirth".localize()
-                
-//            datePicker.datePickerMode = .date
-//            let toolBar = UIToolbar()
-//            toolBar.sizeToFit()
-//                
-//            let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
-//                
-//            toolBar.setItems([doneButton], animated: true)
-//                
-//            cell.detailsTF.inputAccessoryView = toolBar
-//                                
-//            cell.detailsTF.inputView = datePicker
-                
-//            cell.detailsTF.text! = dateofBirth
                 
                 cell.profileField.placeholder = "app.DateOfBirth".localize()
                 cell.profileField.selectedTitle = "app.DateOfBirth".localize()
@@ -1329,9 +1209,7 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
             }
             else if indexPath.row == 10{
                 
-//                cell.detailsTF.text = selectedProvinceStr
-//                cell.detailsLbl?.text = "app.SelectProvince".localize()
-//                cell.detailsTF.placeholder = "app.SelectProvince".localize()
+
                 
                 cell.profileField.placeholder = "app.SelectProvince".localize()
                 cell.profileField.selectedTitle = "app.SelectProvince".localize()
@@ -1345,9 +1223,6 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
             }
             else if indexPath.row == 11{
                 
-//                cell.detailsTF.text = selectedDistrictStr
-//                cell.detailsLbl?.text = "app.SelectDistricts".localize()
-//                cell.detailsTF.placeholder = "app.SelectDistricts".localize()
                 
                 cell.profileField.placeholder = "app.SelectDistricts".localize()
                 cell.profileField.selectedTitle = "app.SelectDistricts".localize()
@@ -1361,9 +1236,6 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
             }
             else if indexPath.row == 12{
                 
-//                cell.detailsTF.text = selectedMandalStr
-//                cell.detailsLbl?.text = "app.SelectMandal".localize()
-//                cell.detailsTF.placeholder = "app.SelectMandal".localize()
                 
                 cell.profileField.placeholder = "app.SelectMandal".localize()
                 cell.profileField.selectedTitle = "app.SelectMandal".localize()
@@ -1376,9 +1248,6 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
                 
             else if indexPath.row == 13{
                 
-//                cell.detailsTF.text = selectedVillageStr
-//                cell.detailsLbl?.text = "app.SelectVillage".localize()
-//                cell.detailsTF.placeholder = "app.SelectVillage".localize()
                 
                 cell.profileField.placeholder = "app.SelectVillage".localize()
                 cell.profileField.selectedTitle = "app.SelectVillage".localize()
@@ -1391,9 +1260,7 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
             }
             else if indexPath.row == 14{
                 
-//                cell.detailsTF.text = pinCode
-//                cell.detailsLbl?.text = "app.PinCode".localize()
-//                cell.detailsTF.placeholder = "app.PinCode".localize()
+
                 
                 cell.profileField.placeholder = "app.PinCode".localize()
                 cell.profileField.selectedTitle = "app.PinCode".localize()
@@ -1408,7 +1275,6 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
                 
                 let cell = Bundle.main.loadNibNamed("GenderTableViewCell", owner: self, options: nil)?.first as! GenderTableViewCell
                 
-//                 let cell1 = Bundle.main.loadNibNamed("EditTableViewCell", owner: self, options: nil)?.first as! EditTableViewCell
                 
                 cell.selectionStyle = .none
                 cell.saveBtn.tag = indexPath.row
@@ -1417,7 +1283,6 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
                 
                 if maleBtnID == 21 {
                     
-//                     cell.maleUnCheckBtn.image = (male == true) ? UIImage(named:"checked_83366") : UIImage(named:"icons8-Unchecked Circle-50")
                     
                     cell.femaleUnCheck.image = UIImage(named:"checked_83366")
                     
@@ -1426,7 +1291,6 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
                 }
                 else {
                     
-//                    cell.femaleUnCheck.image = (female == true) ? UIImage(named:"checked_83366") : UIImage(named:"icons8-Unchecked Circle-50")
                     
                    
                     
@@ -1487,7 +1351,6 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
         alert.addAction(cameraAction)
         alert.addAction(gallaryAction)
         alert.addAction(cancelAction)
-        // Present the controller
         
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.phone) {
             
@@ -1501,9 +1364,7 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
             
             popup.present(from: CGRect(x:self.view.frame.size.width/2, y:self.view.frame.size.height/4, width:0, height:0), in: self.view, permittedArrowDirections: UIPopoverArrowDirection.any, animated: true)
             
-            // CGRect(x: 0, y: 0, width: 100, height: 100)
         }
-//        self.present(alert, animated: true, completion: nil)
         
 
     }
@@ -1580,7 +1441,6 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
             if self.validateAllFields()
             {
                 
-//                getEditProfileList()
                 
                updateProfileAPIService()
             }
@@ -1598,7 +1458,6 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
     
     func openCamera() {
         picker.allowsEditing = true
-        //      picker.sourceType = .PhotoLibrary
         picker.sourceType = .camera
         present(picker, animated: true, completion: nil)
         
@@ -1610,7 +1469,6 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
     func openGallary() {
         picker.allowsEditing = true
         picker.sourceType = .photoLibrary
-        //      picker.sourceType = .Camera
         present(picker, animated: true, completion: nil)
         
     }
@@ -1630,10 +1488,12 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
         
         selectedImagesArray.append(newImage!)
         
+        fileLocationImg = "null"
+        fileNameImg = "null"
+        
         editTableView.reloadData()
         
         dismiss(animated: true, completion: nil)
-//        image = info[UIImagePickerControllerOriginalImage] as? UIImage
         
     }
     
@@ -1642,13 +1502,10 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
     
     func image(_ image: UIImage!, didFinishSavingWithError error: NSError!, contextInfo: AnyObject!) {
         if (error != nil) {
-            // print("image")
             
-            // Something wrong happened.
         } else {
             
-            //  print("not image")
-            // Everything is alright.
+           
         }
     }
     
@@ -1664,7 +1521,6 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
         
         isImageSave = true
         
-        //let pngImageData = UIImagePNGRepresentation(image)
         let jpgImageData = UIImageJPEGRepresentation(image, 1.0)   // if you want to save as JPEG
         let result = (try? jpgImageData!.write(to: URL(fileURLWithPath: path), options: [.atomic])) != nil
         
@@ -1678,13 +1534,11 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
     func donePressed(){
         
         let dateFormatter = DateFormatter()
-//        dateFormatter.dateStyle = .long
-//        dateFormatter.timeStyle = .none
+
         dateFormatter.dateFormat = "MMM dd, yyyy"
         dateofBirth = dateFormatter.string(from: datePicker.date)
         
         self.view.endEditing(true)
-//        editTableView.reloadData()
     }
     
     //MARK:- hideLabels
@@ -1734,10 +1588,6 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
         
         print(maleBtnID)
         
-//        male = true
-//        female = false
-        
-//        let indexPath = IndexPath(item: 5, section: 1)
         
         editTableView.reloadRows(at: [indexPath], with: .fade)
         
@@ -1782,10 +1632,7 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
         
         print(maleBtnID)
         
-//        male = false
-//        female = true
-        
-//        let indexPath = IndexPath(item: 5, section: 1)
+
         
         editTableView.reloadRows(at: [indexPath], with: .fade)
         
@@ -1845,12 +1692,7 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
                                 
                                 self.titleArray.append(element.Description!)
                                 
-//                                let idd = element.Id!
-//                                
-//                                let titleId:String = String(idd)
-                                
-                               //                                self.titletypeIdAry.append(titleId)
-                                //                                self.provinceIDArray.append(element.Id!)
+
                                 
                             }
                             
@@ -2277,9 +2119,12 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
                                      let url = URL(string:newString)
                                         
                                      let data = try? Data(contentsOf: url!)
+                                    
+                                    if data != nil {
                                         
-                                        
-                                     self.newImage = UIImage(data: data!)!
+                                        self.newImage = UIImage(data: data!)
+                                    }
+                                    
                                     
                                 }
                                 
@@ -2361,47 +2206,59 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
         
         if (title.length <= 0){
             
+            alertTag = 0
+            
             errorMessage=GlobalSupportingClass.blankTitleErrorMessage() as String as String as NSString?
             
         }
         else if (fName.length <= 0){
+            
+            alertTag = 1
             
             errorMessage=GlobalSupportingClass.blankFnameErrorMessage() as String as String as NSString?
             
         }
         else if (fName.length <= 2){
             
+            alertTag = 1
+            
             errorMessage=GlobalSupportingClass.firstNamebitweenMessage() as String as String as NSString?
             
         }
         
-//        else if !((fName.length > 3) && (fName.length < 40)){
-//            
-//            errorMessage=GlobalSupportingClass.firstNamebitweenMessage() as String as String as NSString?
-//            
-//        }
+
         
        else if (lName.length <= 0){
+            
+            alertTag = 3
             
             errorMessage=GlobalSupportingClass.blankLnameErrorMessage() as String as String as NSString?
             
         }
        else if (uName.length <= 0){
             
+            alertTag = 2
+            
             errorMessage=GlobalSupportingClass.blankNameErrorMessage() as String as String as NSString?
             
         }
        else if (address11.length <= 0){
+            
+            alertTag = 4
             
             errorMessage=GlobalSupportingClass.blankAddress1ErrorMessage() as String as String as NSString?
             
         }
         else if (address22.length <= 0){
             
+            alertTag = 5
+            
             errorMessage=GlobalSupportingClass.blankAddress2ErrorMessage() as String as String as NSString?
             
         }
         else if (landmarkk.length <= 0){
+            
+            alertTag = 6
             
             errorMessage=GlobalSupportingClass.blankLandmarkErrorMessage() as String as String as NSString?
             
@@ -2409,10 +2266,14 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
             
         else if (mobile.length <= 0){
             
+            alertTag = 7
+            
             errorMessage=GlobalSupportingClass.blankPhoneNumberErrorMessage() as String as String as NSString?
             
         }
         else if (mobile.length <= 9) {
+            
+            alertTag = 7
             
             errorMessage=GlobalSupportingClass.invalidPhoneNumberErrorMessage() as String as String as NSString?
         }
@@ -2420,40 +2281,56 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
             
          else if (mobile.length > 12) {
             
-            
+            alertTag = 7
             errorMessage=GlobalSupportingClass.invalidPhoneNumberErrorMessage() as String as String as NSString?
         }
         else if (emailId.length<=0) {
+            
+            alertTag = 8
+            
             errorMessage=GlobalSupportingClass.blankEmailIDErrorMessage() as String as String as NSString?
         }
        else  if (emailId.length<=4) {
+            alertTag = 8
+            
             errorMessage=GlobalSupportingClass.miniCharEmailIDErrorMessage() as String as String as NSString?
         }
        else  if(!GlobalSupportingClass.isValidEmail(emailId as NSString))
         {
+            alertTag = 8
             errorMessage=GlobalSupportingClass.invalidEmaildIDFormatErrorMessage() as String as String as NSString?
         }
         else if (dob.length <= 0){
+            
+            alertTag = 9
             
             errorMessage=GlobalSupportingClass.blankDOBirthErrorMessage() as String as String as NSString?
             
         }
         else if (province.length <= 0){
             
+            alertTag = 10
+            
             errorMessage=GlobalSupportingClass.blankProvinceErrorMessage() as String as String as NSString?
             
         }
         else if (district.length <= 0){
+            
+            alertTag = 11
             
             errorMessage=GlobalSupportingClass.blankDistrictErrorMessage() as String as String as NSString?
             
         }
         else if (mandal.length <= 0){
             
+            alertTag = 12
+            
             errorMessage=GlobalSupportingClass.blankMandalErrorMessage() as String as String as NSString?
             
         }
        else  if (village.length <= 0){
+            
+            alertTag = 13
             
             errorMessage=GlobalSupportingClass.blankVillageErrorMessage() as String as String as NSString?
             
@@ -2463,8 +2340,12 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
         
         if let errorMsg = errorMessage{
             
-            self.showAlertViewWithTitle("app.Alert".localize(), message: errorMsg as String, buttonTitle: "app.Retry".localize())
-            return false;
+            
+            self.alertWithTitle(title: "app.Alert".localize(), message: errorMsg as String, ViewController: self, toFocus: activeTextField)
+            
+        
+            return false
+            
         }
         return true
     }
@@ -2485,13 +2366,6 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
         
         let formatter = DateFormatter()
         
-        //formatter.dateStyle = .long
-        //formatter.timeStyle = .none
-        
-        // formatter.dateFormat = "yyyy-MM-dd"
-        // convert your string to date
-        
-//        self.dateofBirth = self.dob
         
         
         formatter.dateFormat = "MMM dd, yyyy"
@@ -2500,19 +2374,25 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
         
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         
-//        if yourDate != nil {
         
             let dateB = formatter.string(from: yourDate!)
             
             let dob:String = dateB
 //        }
         
-        let imageData = UIImagePNGRepresentation(newImage!)
+        if newImage != nil {
+            
+            let imageData = UIImagePNGRepresentation(newImage!)
+            
+            base64String = imageData!.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
+            
+        }
         
         
-        let base64String = imageData!.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
-        
-        
+        if maleBtnID == 0 {
+            
+            maleBtnID = 20
+        }
         let null = NSNull()
         
         let dictParams = [
@@ -2536,6 +2416,8 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
             "IsActive": true,
             "ImageString": base64String,
             "FileExtension": ".png",
+            "FileName": fileNameImg,
+            "FileLocation": fileLocationImg,
             "CreatedBy": userIdd,
             "ModifiedBy": userIdd,
             "Created": "2018-01-06T10:58:32.800Z",
@@ -2558,7 +2440,6 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
                     
                     let respVO:ProfileUpdateVo = Mapper().map(JSONObject: result)!
                     
-//                    print("responseString = \(respVO)")
                     
                     let statusCode = respVO.IsSuccess
                     
@@ -2655,4 +2536,26 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
         
         return nil
     }
+    
+    
+    func alertWithTitle(title: String!, message: String, ViewController: UIViewController, toFocus:UITextField) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "app.Ok".localize(), style: UIAlertActionStyle.cancel,handler: {_ in
+            
+            let indexPath : IndexPath = IndexPath(row: self.alertTag, section: 1)
+            
+            self.editTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.top, animated: false)
+            if let itemNumberCell = self.editTableView.cellForRow(at: indexPath) as? EditTableViewCell {
+                
+                itemNumberCell.profileField.becomeFirstResponder()
+            }
+            
+            
+        });
+        alert.addAction(action)
+        ViewController.present(alert, animated: true, completion:nil)
+    }
+
+    
+    
 }

@@ -88,26 +88,11 @@ class LandlineViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         //MARK:- TextField Colors
 
         stdNumField.delegate = self
-//        stdNumField.layer.borderWidth = 0.5
-//        stdNumField.layer.borderColor = UIColor.lightGray.cgColor
-//        stdNumField.layer.cornerRadius = 3
-//        stdNumField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
-//        
-//        operatorField.layer.borderWidth = 0.5
-//        operatorField.layer.borderColor = UIColor.lightGray.cgColor
-//        operatorField.layer.cornerRadius = 3
-//        operatorField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
+        
+
         
         amountField.delegate = self
-//        amountField.layer.borderWidth = 0.5
-//        amountField.layer.borderColor = UIColor.lightGray.cgColor
-//        amountField.layer.cornerRadius = 3
-//        amountField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
-//        
-//        circleField.layer.borderWidth = 0.5
-//        circleField.layer.borderColor = UIColor.lightGray.cgColor
-//        circleField.layer.cornerRadius = 3
-//        circleField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
+
         
         operatorField.delegate = self
         circleField.delegate = self
@@ -187,6 +172,12 @@ class LandlineViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
             
             backLabel.font = UIFont.systemFont(ofSize: 12)
             
+            stdNumField.errorLabel.font = UIFont.systemFont(ofSize: 10)
+            operatorField.errorLabel.font = UIFont.systemFont(ofSize: 10)
+            circleField.errorLabel.font = UIFont.systemFont(ofSize: 10)
+            amountField.errorLabel.font = UIFont.systemFont(ofSize: 10)
+
+            
         }
 
         // Do any additional setup after loading the view.
@@ -225,22 +216,13 @@ class LandlineViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         
         let amButton = UIButton(type: .roundedRect)
         amButton.setTitle("app.BrowsePlans".localize(), for: .normal)
-//        amButton.imageEdgeInsets = UIEdgeInsetsMake(0, -16, 0, 0)
         amButton.frame = CGRect(x: CGFloat(0), y: CGFloat(5), width: CGFloat(80), height: CGFloat(30))
-//        amButton.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         amButton.setTitleColor(#colorLiteral(red: 0.5568627451, green: 0.1254901961, blue: 0.1647058824, alpha: 1), for: .normal)
         amButton.addTarget(self, action: #selector(self.browseBtnAction), for: .touchUpInside)
-//        amButton.titleLabel?.font = UIFont(name: "Helvetica", size:10)
         amButton.titleLabel?.font = amButton.titleLabel?.font.withSize(10)
         amountField.rightView = amButton
         amountField.rightViewMode = .always
         
-//        circleField.rightViewMode = UITextFieldViewMode.always
-//        
-//        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-//        let image = UIImage(named: "Eye")
-//        imageView.image = image
-//        circleField.rightView = imageView
         
         
         operatorField.placeholder = "app.SelectOperator".localize()
@@ -284,23 +266,15 @@ class LandlineViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         
         textField.textColor = .black
         textField.errorLabel.textColor = .red
-        //        textField.layer.cornerRadius = 10
-        //        textField.borderSize.formSquareRoot()
-//        textField.rightView?.isHidden = true
-        //        textField.activeBackgroundColor = lightGreyColor
-        //        textField.inActiveBackgroundColor = lightGreyColor
+        
+        
+        
         textField.errorBackGroundColor = UIColor.lightGray.withAlphaComponent(0.1)
-        //        textField.borderStyle = .roundedRect
         textField.placeholderColor = UIColor.lightGray
         textField.lineColor = UIColor.white
         textField.selectedTitleColor = #colorLiteral(red: 0.5568627451, green: 0.1254901961, blue: 0.1647058824, alpha: 1)
         
-        // Set custom fonts for the title, placeholder and textfield labels
-        //        textField.titleLabel.font = UIFont.systemFont(ofSize: 12)
-        //        textField.placeholderFont = UIFont.systemFont(ofSize: 18)
-        //        textField.font = UIFont.systemFont(ofSize: 18)
-        //        textField.isImmediateValidation = true
-    }
+           }
     
     //MARK:- UIPickerView
 
@@ -311,18 +285,11 @@ class LandlineViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         self.myPickerView.delegate = self
         self.myPickerView.dataSource = self
         self.myPickerView.backgroundColor = UIColor.white
-//        if operatorList.isEmpty {
-//            
-//            self.myPickerView.isHidden = true
-//            
-//            operatorField.text = "No Operators"
-//            operatorField.textColor = UIColor.red
-//            operatorField.isUserInteractionEnabled = false
-//            
-//        }else {
-//            operatorField.isUserInteractionEnabled = true
+        
+        
+        
+        
             textField.inputView = self.myPickerView
-//        }
         
         //MARK:- ToolBar
         let toolBar = UIToolbar()
@@ -367,7 +334,6 @@ class LandlineViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         }
         
         
-        //        let newString = NSString(string: textField.text!).replacingCharacters(in: range, with: string)
         
         if(textField==self.amountField&&range.location==0)
         {
@@ -396,26 +362,6 @@ class LandlineViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
             }
             
         }
-        
-//        if textField == amountField{
-//            
-//            if string.characters.count > 0 {
-//                
-//                let currentCharacterCount = textField.text?.characters.count ?? 0
-//                if (range.length + range.location > currentCharacterCount){
-//                    return false
-//                }
-//                let newLength = currentCharacterCount + string.characters.count - range.length
-//                
-//                let allowedCharacters = CharacterSet.decimalDigits
-//                
-//                let unwantedStr = string.trimmingCharacters(in: allowedCharacters)
-//                
-//                return newLength <= 6 && unwantedStr.characters.count == 0
-//                
-//            }
-//            
-//        }
         
         return true
     }
@@ -462,7 +408,6 @@ class LandlineViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
             pickerList.removeAll()
             operatorField.tag = 4
             
-            //             myPickerView.reloadAllComponents()
         }
         
     }
@@ -667,11 +612,9 @@ class LandlineViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
             return false
         }
         
-//        if let errorMsg = errorMessage{
-//            
-//            self.showAlertViewWithTitle("app.Alert".localize(), message: errorMsg as String, buttonTitle: "app.Retry".localize())
-//            return false;
-//        }
+
+        
+        
         return true
     }
  

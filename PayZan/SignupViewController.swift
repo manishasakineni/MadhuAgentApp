@@ -17,6 +17,45 @@ import IQKeyboardManagerSwift
 class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarControllerDelegate,UITabBarDelegate {
     
     //MARK:- OutLets
+    
+    
+    @IBOutlet weak var onSignUpOutLet: UILabel!
+    
+    @IBOutlet weak var onSignUpWidth: NSLayoutConstraint!
+    
+    @IBOutlet weak var termasAndConditionsOutLet: UIButton!
+    
+    @IBOutlet weak var termsAndConditionsWidth: NSLayoutConstraint!
+    
+    
+    @IBOutlet weak var andOutLet: UILabel!
+    
+    @IBOutlet weak var andWidth: NSLayoutConstraint!
+    
+    @IBOutlet weak var privacypoliyOutLet: UIButton!
+    
+    
+    @IBOutlet weak var privacypolicyWidth: NSLayoutConstraint!
+    
+    
+    
+    @IBOutlet weak var uiViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var loginOutLet: UIButton!
+    
+    @IBOutlet weak var alreadyhaveAccountOutLet: UILabel!
+    
+    @IBOutlet weak var orOutLet: UILabel!
+    
+    @IBOutlet weak var alrdyHaveAcntWidth: NSLayoutConstraint!
+    
+ 
+    
+    
+    
+    
+    
+    
 
     @IBOutlet weak var mobileNumField: AMPFloatingTextField!
     
@@ -97,33 +136,13 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
 
         //MARK:- TextField Colors
 
-//        mobileNumField.layer.borderWidth = 0.5
-//        mobileNumField.layer.borderColor = UIColor.lightGray.cgColor
-//        mobileNumField.layer.cornerRadius = 3
-//        mobileNumField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
-//        
-//        paswdField.layer.borderWidth = 0.5
-//        paswdField.layer.borderColor = UIColor.lightGray.cgColor
-//        paswdField.layer.cornerRadius = 3
-//        paswdField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
-//        
-//        emailField.layer.borderWidth = 0.5
-//        emailField.layer.borderColor = UIColor.lightGray.cgColor
-//        emailField.layer.cornerRadius = 3
-//        emailField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
-//        
-//        confirmPasswordField.layer.borderWidth = 0.5
-//        confirmPasswordField.layer.borderColor = UIColor.lightGray.cgColor
-//        confirmPasswordField.layer.cornerRadius = 3
-//        confirmPasswordField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
+
         
         PwButton.setImage(UIImage(named: "eye2"), for: .normal)
         PwButton.imageEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0)
-//        PwButton.frame = CGRect(x: CGFloat(paswdField.frame.size.width - 15), y: CGFloat(5), width: CGFloat(17), height: CGFloat(17))
         PwButton.frame = CGRect(x: 30, y: 0, width: PwButton.frame.size.width - 50, height: 20)
         PwButton.tintColor = #colorLiteral(red: 0.5568627451, green: 0.1254901961, blue: 0.1647058824, alpha: 1)
         PwButton.addTarget(self, action: #selector(self.currentPwBtnAction), for: .touchUpInside)
-//        PwButton.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         paswdField.rightView = PwButton
         paswdField.rightViewMode = .always
         
@@ -132,7 +151,6 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
         confirmPwButton.frame = CGRect(x: 30, y: 0, width: confirmPwButton.frame.size.width - 50, height: 20)
         confirmPwButton.tintColor = #colorLiteral(red: 0.5568627451, green: 0.1254901961, blue: 0.1647058824, alpha: 1)
         confirmPwButton.addTarget(self, action: #selector(self.confirmPwBtnAction), for: .touchUpInside)
-//        confirmPwButton.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         confirmPasswordField.rightView = confirmPwButton
         confirmPasswordField.rightViewMode = .always
         
@@ -172,7 +190,6 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
             
             mobileFieldHeight.constant = 90
             
-//            mobileNumField.updateBorder()
             emailFiledHeight.constant = 90
             passwordFieldHeight.constant = 90
             confirmFieldHeight.constant = 90
@@ -186,6 +203,19 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
             
             facebookBtnHeight.constant = 40
             googleBtnHeight.constant = 40
+            
+            
+            alrdyHaveAcntWidth.constant = 200
+            
+            
+            uiViewHeight.constant = 70
+
+            termsAndConditionsWidth.constant = 150
+            privacypolicyWidth.constant = 130
+            andWidth.constant = 35
+            onSignUpWidth.constant = 200
+            
+
             
             mobileNumField.font = UIFont.systemFont(ofSize: 20)
             mobileNumField.placeholderFont = UIFont.systemFont(ofSize: 20)
@@ -207,6 +237,22 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
             confirmPasswordField.titleFont = UIFont.systemFont(ofSize: 20)
             confirmPasswordField.errorLabel.font = UIFont.systemFont(ofSize: 14)
             
+            
+            alreadyhaveAccountOutLet.font = UIFont.systemFont(ofSize: 15)
+            orOutLet.font = UIFont.systemFont(ofSize: 15)
+            
+            loginOutLet.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+            facebookBtn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+            googleBtn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+            
+            termasAndConditionsOutLet.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+            privacypoliyOutLet.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+            andOutLet.font = UIFont.systemFont(ofSize: 15)
+            onSignUpOutLet.font = UIFont.systemFont(ofSize: 15)
+            
+            
+
+            
             backLabel.font = UIFont.systemFont(ofSize: 16)
         }
         else {
@@ -214,6 +260,13 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
             headerImgHeight.constant = 79
             
             backLabel.font = UIFont.systemFont(ofSize: 12)
+            
+            mobileNumField.errorLabel.font = UIFont.systemFont(ofSize: 10)
+            emailField.errorLabel.font = UIFont.systemFont(ofSize: 10)
+            paswdField.errorLabel.font = UIFont.systemFont(ofSize: 10)
+            confirmPasswordField.errorLabel.font = UIFont.systemFont(ofSize: 10)
+
+
             
         }
         // Do any additional setup after loading the view.
@@ -312,22 +365,13 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
         
         textField.textColor = .black
         textField.errorLabel.textColor = .red
-        //        textField.layer.cornerRadius = 10
-        //        textField.borderSize.formSquareRoot()
         textField.rightView?.isHidden = true
-        //        textField.activeBackgroundColor = lightGreyColor
-        //        textField.inActiveBackgroundColor = lightGreyColor
         textField.errorBackGroundColor = UIColor.lightGray.withAlphaComponent(0.1)
-        //        textField.borderStyle = .roundedRect
         textField.placeholderColor = UIColor.lightGray
         textField.lineColor = UIColor.white
         textField.selectedTitleColor = #colorLiteral(red: 0.5568627451, green: 0.1254901961, blue: 0.1647058824, alpha: 1)
         
-        // Set custom fonts for the title, placeholder and textfield labels
-        //        textField.titleLabel.font = UIFont.systemFont(ofSize: 12)
-        //        textField.placeholderFont = UIFont.systemFont(ofSize: 18)
-        //        textField.font = UIFont.systemFont(ofSize: 18)
-        //        textField.isImmediateValidation = true
+        
     }
 
     
@@ -341,13 +385,11 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
 
     func textFieldDidEndEditing(_ textField: UITextField) {
         
-//        self.view.layoutIfNeeded()
     }
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        //        self.view.endEditing(true)
         return true
     }
     
@@ -413,11 +455,7 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
         }
         else
         {
-            
-//            let nsString:NSString? = textField.text as NSString?
-//            let updatedString = nsString?.replacingCharacters(in:range, with:string)
-//            
-//            textField.text = updatedString
+    
             return true
         }
     }
@@ -442,7 +480,6 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
         let dictParams = ["MobileNumber":mNumber,"Password":pword,"ConfirmPassword":pword,"Email":email,"RoleIds":null] as NSDictionary
         
         print("dic params \(dictParams)")
-        //CleverTap.sharedInstance()?.onUserLogin(dictParams as! [AnyHashable : Any])
         let dictHeaders = ["":"","":""] as NSDictionary
         
         serviceController.requestPOSTURL(strURL: strUrl as NSString, postParams: dictParams, postHeaders: dictHeaders, successHandler:{(result) in
@@ -461,7 +498,6 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
                     if statusCode == true
                     {
                         
-//                        let endUserMsg = respVO.EndUserMessage
                         
                         let alertController = UIAlertController(title: "app.Alert".localize(), message: "app.userregistersuccessfully".localize(), preferredStyle: UIAlertControllerStyle.alert)
                         
@@ -470,7 +506,6 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
                             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                             
                             let viewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginNav") as! UINavigationController
-                            //                    let navigationController = UINavigationController(rootViewController: viewController)
                             let appDelegate = UIApplication.shared.delegate as! AppDelegate
                             appDelegate.window?.rootViewController = viewController
                         }
@@ -683,11 +718,8 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
             
             return false
         
-        
-//        if let errorMsg = errorMessage{
-//            
-//            self.showAlertViewWithTitle("app.Alert".localize(), message: errorMsg as String, buttonTitle: "app.Retry".localize())
-//            return false;
+
+            
         }
         
         

@@ -126,9 +126,7 @@ class RechargeDetailViewController: BaseViewController,UIPickerViewDelegate, UIP
     
     override func viewDidAppear(_ animated: Bool) {
         
-        //        headerView.isHidden = false
         
-//        self.tabBarController?.tabBar.isHidden = true
         
         super.viewDidAppear(true)
     }
@@ -212,8 +210,6 @@ class RechargeDetailViewController: BaseViewController,UIPickerViewDelegate, UIP
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        /// 1. replacementString is NOT empty means we are entering text or pasting text: perform the logic
-        /// 2. replacementString is empty means we are deleting text: return true
         
         
         
@@ -358,10 +354,8 @@ class RechargeDetailViewController: BaseViewController,UIPickerViewDelegate, UIP
         
         switch segmentControl.selectedSegmentIndex {
         case 0:
-           // postPaidView.isHidden = true
             prepaidView.isHidden = false
         case 1:
-          //  postPaidView.isHidden = false
             prepaidView.isHidden = false
         default:
             break;

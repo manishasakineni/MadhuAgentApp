@@ -55,7 +55,6 @@ class MyTransactionViewController: BaseViewController,UITableViewDelegate,UITabl
         
         noRecordsLabel.isHidden = true
         
-//        self.delegate?.nameOfItem(indexNumber: 2, countText: "app.MyTransactions".localize())
 
         self.array = ["app.All".localize(),"app.Paid".localize(),"app.Received".localize(),"app.Added".localize()]
         
@@ -121,7 +120,6 @@ class MyTransactionViewController: BaseViewController,UITableViewDelegate,UITabl
             myTranResultList.removeAll()
             myTransactionTableView.reloadData()
             
-            //            myTransactionGetService(string: strUrl1)
         }
         
         
@@ -129,7 +127,6 @@ class MyTransactionViewController: BaseViewController,UITableViewDelegate,UITabl
         
         registerTableViewCells()
         
-//        TransactionList()
 
         
         // Do any additional setup after loading the view.
@@ -293,8 +290,6 @@ class MyTransactionViewController: BaseViewController,UITableViewDelegate,UITabl
                 
                 
                 button.tag = Int(event)
-                // button.backgroundColor = UIColor.white
-                //   button.setTitle("\(i)", for: .normal)
                 button.setTitle(array[event], for: .normal)
                 button.addTarget(self, action: #selector(btnTouch), for: UIControlEvents.touchUpInside)
                 button.frame = CGRect(x: xOffset, y: CGFloat(buttonPadding), width: 150, height: 40)
@@ -309,10 +304,6 @@ class MyTransactionViewController: BaseViewController,UITableViewDelegate,UITabl
                 }
                 
                 
-                //
-                //            button.setTitleColor(UIColor(red: 128.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
-                //                , for: .normal)
-                
                 button.layer.borderWidth = 1
                 button.layer.cornerRadius = 6
                 button.layer.borderColor = UIColor(red: 128.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
@@ -326,8 +317,6 @@ class MyTransactionViewController: BaseViewController,UITableViewDelegate,UITabl
             else {
                 
                 button.tag = Int(event)
-                // button.backgroundColor = UIColor.white
-                //   button.setTitle("\(i)", for: .normal)
                 button.setTitle(array[event], for: .normal)
                 button.addTarget(self, action: #selector(btnTouch), for: UIControlEvents.touchUpInside)
                 button.frame = CGRect(x: xOffset, y: CGFloat(buttonPadding), width: 70, height: 30)
@@ -341,10 +330,7 @@ class MyTransactionViewController: BaseViewController,UITableViewDelegate,UITabl
                     button.setTitleColor(UIColor.white, for: .normal)
                 }
                 
-                
-                //
-                //            button.setTitleColor(UIColor(red: 128.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
-                //                , for: .normal)
+               
                 
                 button.layer.borderWidth = 1
                 button.layer.cornerRadius = 6
@@ -372,7 +358,6 @@ class MyTransactionViewController: BaseViewController,UITableViewDelegate,UITabl
         
         scView.contentSize = CGSize(width: xOffset, height: scView.frame.height)
         
-//        self.beSrcollView.contentSize = CGSize(width: self.view.frame.size.width, height: 1000) // height change according
     }
     
     private func registerTableViewCells() {
@@ -415,7 +400,6 @@ class MyTransactionViewController: BaseViewController,UITableViewDelegate,UITabl
         
         if !myTranResultList.isEmpty {
             
-//        self.myTransactionTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.top, animated: false)
    
             
         let listResult:MyTranListResultVo = myTranResultList[indexPath.row]
@@ -426,7 +410,6 @@ class MyTransactionViewController: BaseViewController,UITableViewDelegate,UITabl
         
         cell.addMoneyLabel.text = amount
             
-//        let tranId:String = String(describing: listResult.ReasonTypeId!)
             
         let refId = String(describing: listResult.TransactionId!)
             
@@ -442,36 +425,6 @@ class MyTransactionViewController: BaseViewController,UITableViewDelegate,UITabl
         
       
         
-//        print("dateStr:\(String(describing: dateStr))")
-//        
-//        let currentStr:String = String(dateStr!.characters.prefix(10))
-//        
-//        print("currentStr:\(String(describing: currentStr))")
-        
-        
-        //        2017-10-30T04:37:57.006+00:00
-        
-        // "4:44 PM on June 23, 2016\n"
-        //        0001-01-01T00:00:00+00:00
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = currentStr
-//        //        formatter.dateFormat = "h:mm a 'on' \(currentStr)"
-//        formatter.amSymbol = "AM"
-//        formatter.pmSymbol = "PM"
-        
-//        let myString = formatter.string(from: Date())
-        // convert your string to date
-//        let yourDate = formatter.date(from: myString)
-        //then again set the date format whhich type of output you need
-        //        formatter.dateFormat = "h:mm:ss a 'on' MMM dd,yyyy"
-//        formatter.dateFormat = "MMM dd,yyyy"
-        // again convert your date to string
-//        let myStringafd = formatter.string(from: yourDate!)
-        
-//        print(myStringafd)
-        
-//        cell.dateLabel.text = currentStr
-            
          
             
         
@@ -524,7 +477,6 @@ class MyTransactionViewController: BaseViewController,UITableViewDelegate,UITabl
                 
                 print("strUrl: \(stringUrl)")
                 
-                //            let url : NSURL = NSURL(string: strUrl1)!
                 
                 serviceController.requestGETURL(strURL:stringUrl, success:{(result) in
                     DispatchQueue.main.async()
@@ -658,75 +610,6 @@ class MyTransactionViewController: BaseViewController,UITableViewDelegate,UITabl
         self.myTransactionTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.top, animated: false)
         
         
-//        for i in 0..<buttonArray.count{
-//            let button = buttonArray[i]
-//            if button.tag == sender.tag {
-//                
-//                
-//                
-//                button.backgroundColor = UIColor(red: 128.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
-//                    button.setTitleColor(UIColor.white, for: .normal)
-//            }else{
-//            button.backgroundColor = UIColor.white
-//button.setTitleColor(UIColor(red: 128.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
-//, for: .normal)
-//            }
-//        }
-        
-//        sender.backgroundColor = UIColor.blue
-//        if sender.tag == 0 {
-//            
-//                myTransactionGetService(string: strUrl1)
-//                
-//                sender.backgroundColor = UIColor(red: 128.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
-//                sender.setTitleColor(UIColor.white, for: .normal)
-//                
-//                print("Clicked0")
-//          
-//            
-//        }else if(sender.tag == 1){
-//            
-//
-//            let paidId = "33"
-//            
-//            myTransactionGetService(string: paidId)
-//        
-//            
-//            sender.backgroundColor = UIColor(red: 128.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
-//            sender.setTitleColor(UIColor.white, for: .normal)
-//            
-//            print("Clicked1")
-//            
-//
-//        }else if(sender.tag == 2){
-//            
-//            
-//
-//            let receivedId = "37"
-//            
-//            myTransactionGetService(string: receivedId)
-//            
-//            
-//            sender.backgroundColor = UIColor(red: 128.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
-//            sender.setTitleColor(UIColor.white, for: .normal)
-//            
-//            print("Clicked2")
-//            
-//        }else if(sender.tag == 3){
-//            
-//
-//            let addedId = "32"
-//            
-//            myTransactionGetService(string: addedId)
-//            
-//            
-//            
-//            sender.backgroundColor = UIColor(red: 128.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
-//            sender.setTitleColor(UIColor.white, for: .normal)
-//            
-//            print("Clicked3")
-//            
-//        }
         
     }
 

@@ -228,7 +228,6 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
                 let imageView = UIImageView(image: UIImage(named: image)!)
                 imageView.contentMode = .scaleAspectFit
                 imageView.frame.size.width = self.bounds.size.width
-                //                        imageView.center = self.scrollView.center
                 imageView.frame.size.height = 120
                 imageView.frame.origin.x = CGFloat(index) * self.bounds.size.width
                 scrollView.addSubview(imageView)

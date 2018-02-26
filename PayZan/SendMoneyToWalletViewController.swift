@@ -65,20 +65,6 @@ class SendMoneyToWalletViewController: BaseViewController,UITextFieldDelegate,CN
         
         placeHolderCode()
         
-//        mobileNumField.layer.borderWidth = 0.5
-//        mobileNumField.layer.borderColor = UIColor.lightGray.cgColor
-//        mobileNumField.layer.cornerRadius = 3
-//        mobileNumField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
-//        
-//        sendAmountField.layer.borderWidth = 0.5
-//        sendAmountField.layer.borderColor = UIColor.lightGray.cgColor
-//        sendAmountField.layer.cornerRadius = 3
-//        sendAmountField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
-//
-//        commentTextfield.layer.borderWidth = 0.5
-//        commentTextfield.layer.borderColor = UIColor.lightGray.cgColor
-//        commentTextfield.layer.cornerRadius = 3
-//        commentTextfield.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
         
         
@@ -145,6 +131,10 @@ class SendMoneyToWalletViewController: BaseViewController,UITextFieldDelegate,CN
         }
          else {
             
+            mobileNumField.errorLabel.font = UIFont.systemFont(ofSize: 10)
+            sendAmountField.errorLabel.font = UIFont.systemFont(ofSize: 10)
+            
+            commentTextfield.errorLabel.font = UIFont.systemFont(ofSize: 10)
             
         }
         
@@ -201,19 +191,13 @@ class SendMoneyToWalletViewController: BaseViewController,UITextFieldDelegate,CN
             print("defaults savedString: \(mobi)")
         }
         
-      //  mobileNumField.text = ""
-//        sendAmountField.text = ""
-//        commentTextfield.text = ""
-        
-//        IQKeyboardManager.sharedManager().enable = false
+      
         
         if let delegate = self.sendDelegate {
             delegate.sendString(stringValue: "app.SendMoneytowallet".localize())
             
         }
         
-//        self.sendAmountField.text = ""
-//        self.commentTextfield.text = ""
 
         
     }
@@ -222,7 +206,6 @@ class SendMoneyToWalletViewController: BaseViewController,UITextFieldDelegate,CN
         
         super.viewWillDisappear(animated)
         
-//        IQKeyboardManager.sharedManager().enable = false
     }
     
     func placeHolderCode(){
@@ -260,23 +243,14 @@ class SendMoneyToWalletViewController: BaseViewController,UITextFieldDelegate,CN
         
         textField.textColor = .black
         textField.errorLabel.textColor = .red
-        //        textField.layer.cornerRadius = 10
-        //        textField.borderSize.formSquareRoot()
         textField.rightView?.isHidden = true
-        //        textField.activeBackgroundColor = lightGreyColor
-        //        textField.inActiveBackgroundColor = lightGreyColor
         textField.errorBackGroundColor = UIColor.lightGray.withAlphaComponent(0.1)
-        //        textField.borderStyle = .roundedRect
         textField.placeholderColor = UIColor.lightGray
         textField.lineColor = UIColor.white
         textField.selectedTitleColor = #colorLiteral(red: 0.5568627451, green: 0.1254901961, blue: 0.1647058824, alpha: 1)
         
-        // Set custom fonts for the title, placeholder and textfield labels
         textField.titleLabel.font = UIFont.systemFont(ofSize: 12)
         textField.placeholderFont = UIFont.systemFont(ofSize: 12)
-        //        textField.errorLabel.font = UIFont.systemFont(ofSize: 8)
-        //        textField.font = UIFont.systemFont(ofSize: 18)
-        //        textField.isImmediateValidation = true
     }
 
     func validateAllFields() -> Bool
@@ -367,15 +341,7 @@ class SendMoneyToWalletViewController: BaseViewController,UITextFieldDelegate,CN
             
         }
         
-//        let countdots = (sendAmountField.text?.components(separatedBy: ".").count)! - 1
-//        
-//        if countdots > 0 && string == "."
-//        {
-//            return false
-//        }
 
-        /// 1. replacementString is NOT empty means we are entering text or pasting text: perform the logic
-        /// 2. replacementString is empty means we are deleting text: return true
         
           let newString = (textField.text! as NSString).replacingCharacters(in: range, with: string)
         
@@ -519,10 +485,8 @@ class SendMoneyToWalletViewController: BaseViewController,UITextFieldDelegate,CN
                             
                             if let walletAmount = defaults.string(forKey: "walletAmount") {
                                 
-                              //  self.refView.walletBalLabel.text = walletAmount
                                 
-//                                 let reOrderPopOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WalletViewController") as! WalletViewController
-//                                                              
+
                                 if let delegate = self.copyDelegate {
                                     
                                     delegate.stringToBeCopied(stringValue: walletAmount)
@@ -530,7 +494,6 @@ class SendMoneyToWalletViewController: BaseViewController,UITextFieldDelegate,CN
                                 }
 
                                 
-                           //     self.walletBalLabel.text = walletAmount
                                 
                                 print("defaults savedString: \(walletAmount)")
                             }
@@ -547,8 +510,6 @@ class SendMoneyToWalletViewController: BaseViewController,UITextFieldDelegate,CN
                             self.mobileNumField.resignFirstResponder()
                             self.commentTextfield.resignFirstResponder()
                             
-                            //                        let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-                            //                        self.navigationController?.pushViewController(homeViewController, animated: true)
                             
                             
                             self.appDelegate.window?.makeToast(successMsg!, duration:kToastDuration, position:CSToastPositionCenter)
@@ -687,7 +648,6 @@ class SendMoneyToWalletViewController: BaseViewController,UITextFieldDelegate,CN
                         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                         
                         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginNav") as! UINavigationController
-                        //                    let navigationController = UINavigationController(rootViewController: viewController)
                         let appDelegate = UIApplication.shared.delegate as! AppDelegate
                         appDelegate.window?.rootViewController = viewController
                     }
@@ -753,36 +713,5 @@ class SendMoneyToWalletViewController: BaseViewController,UITextFieldDelegate,CN
         
     }
     
-//    @available(iOS 9.0, *)
-//    func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]) {
-//        contacts.forEach { contact in
-//            for number in contact.phoneNumbers {
-//                let phoneNumber = number.value
-//                print("number is = \(phoneNumber)")
-//                
-//                let phoneNo = phoneNumber.stringValue
-//                
-//                let formattedString = phoneNo.replacingOccurrences(of: " ", with: "")
-//                
-//                let removeunderscore = formattedString.replacingOccurrences(of: "-", with: "")
-//                let removebraces = removeunderscore.replacingOccurrences(of: "(", with: "")
-//                
-//                let finalNo = removebraces.replacingOccurrences(of: ")", with: "")
-//                
-//                let last10 = finalNo.substring(from:finalNo.index(finalNo.endIndex, offsetBy: -10))
-//                
-//                mobileNumField.text = last10
-//                
-//                
-//            }
-//            
-//            let cnContacts = [CNContact]()
-//            
-//            for contact in cnContacts {
-//                let fullName = CNContactFormatter.string(from: contact, style: .fullName) ?? "No Name"
-//                print("\(fullName): \(contact.phoneNumbers.description)")
-//            }
-//        }
-//    }
 
 }

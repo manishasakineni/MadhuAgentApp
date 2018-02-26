@@ -221,7 +221,6 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
         
         borderColors()
         
-//        myTransactionGetService(string: strUrl1)
         
         //MARK:- headerImgHeight For iphone and ipad
 
@@ -283,7 +282,6 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
             myTranResultList.removeAll()
             myTransactionTableView.reloadData()
             
-//            myTransactionGetService(string: strUrl1)
         }
         
         if let walletBal = defaults.string(forKey: walletAmountt) {
@@ -360,10 +358,6 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
             
             for  borderview in mySegmentControl.subviews {
                 
-//                let upperBorder: CALayer = CALayer()
-//                upperBorder.backgroundColor = UIColor.init(red: 113/255.0, green: 25/255.0, blue: 34/255.0, alpha: 1.0).cgColor
-//                upperBorder.frame = CGRect(x:0, y:borderview.frame.size.height-1, width:view.frame.size.width, height:1.0)
-//                borderview.layer .addSublayer(upperBorder);
                 
                 let upperBorder: CALayer = CALayer()
                 upperBorder.backgroundColor = UIColor.init(red: 113/255.0, green: 25/255.0, blue: 34/255.0, alpha: 1.0).cgColor
@@ -386,10 +380,9 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
             
             for  borderview in mySegmentControl.subviews {
                 
-//                let upperBorder: CALayer = CALayer()
-//                upperBorder.backgroundColor = UIColor.init(red: 113/255.0, green: 25/255.0, blue: 34/255.0, alpha: 1.0).cgColor
-//                upperBorder.frame = CGRect(x:10, y:borderview.frame.size.height-1, width:borderview.frame.size.width-40, height:1.0)
-//                borderview.layer .addSublayer(upperBorder);
+                
+                
+                
                 
                 let upperBorder: CALayer = CALayer()
                 upperBorder.backgroundColor = UIColor.init(red: 113/255.0, green: 25/255.0, blue: 34/255.0, alpha: 1.0).cgColor
@@ -414,10 +407,7 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
             
             for  borderview in mySegmentControl.subviews {
                 
-//                let upperBorder: CALayer = CALayer()
-//                upperBorder.backgroundColor = UIColor.init(red: 113/255.0, green: 25/255.0, blue: 34/255.0, alpha: 1.0).cgColor
-//                upperBorder.frame = CGRect(x:15, y:borderview.frame.size.height-1, width:borderview.frame.size.width-35, height:1.0)
-//                borderview.layer .addSublayer(upperBorder);
+                
                 let upperBorder: CALayer = CALayer()
                 upperBorder.backgroundColor = UIColor.init(red: 113/255.0, green: 25/255.0, blue: 34/255.0, alpha: 1.0).cgColor
                 upperBorder.frame = CGRect(x:0, y:borderview.frame.size.height-1, width:view.frame.size.width, height:1.0)
@@ -440,10 +430,7 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
             
             for  borderview in mySegmentControl.subviews {
                 
-//                let upperBorder: CALayer = CALayer()
-//                upperBorder.backgroundColor = UIColor.init(red: 113/255.0, green: 25/255.0, blue: 34/255.0, alpha: 1.0).cgColor
-//                upperBorder.frame = CGRect(x:20, y:borderview.frame.size.height-1, width:borderview.frame.size.width-25, height:1.0)
-//                borderview.layer .addSublayer(upperBorder);
+                
                 let upperBorder: CALayer = CALayer()
                 upperBorder.backgroundColor = UIColor.init(red: 113/255.0, green: 25/255.0, blue: 34/255.0, alpha: 1.0).cgColor
                 upperBorder.frame = CGRect(x:0, y:borderview.frame.size.height-1, width:view.frame.size.width, height:1.0)
@@ -472,10 +459,7 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
                 upperBorder.frame = CGRect(x:0, y:borderview.frame.size.height-1, width:view.frame.size.width, height:1.0)
                 borderview.layer.addSublayer(upperBorder);
                 
-//                let upperBorder: CALayer = CALayer()
-//                upperBorder.backgroundColor = UIColor.init(red: 113/255.0, green: 25/255.0, blue: 34/255.0, alpha: 1.0).cgColor
-//                upperBorder.frame = CGRect(x:65, y:borderview.frame.size.height-1, width:borderview.frame.size.width-10, height:1.0)
-//                borderview.layer.addSublayer(upperBorder);
+
                 
             }
             
@@ -483,11 +467,8 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
         default:
             print("not an iPhone")
             
-//            mySegmentControl.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-//            mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:11.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)], for:UIControlState.normal)
-//            
-//            mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:11.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)], for:UIControlState.selected)
-            
+       
+        
         }
         
         
@@ -532,23 +513,16 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
         print("currentStr:\(String(describing: currentStr))")
         
         
-//        2017-10-30T04:37:57.006+00:00
         
-        // "4:44 PM on June 23, 2016\n"
-//        0001-01-01T00:00:00+00:00
+        
         let formatter = DateFormatter()
         formatter.dateFormat = currentStr
-//        formatter.dateFormat = "h:mm a 'on' \(currentStr)"
         formatter.amSymbol = "AM"
         formatter.pmSymbol = "PM"
         
         let myString = formatter.string(from: Date())
-        // convert your string to date
         let yourDate = formatter.date(from: myString)
-        //then again set the date format whhich type of output you need
-//        formatter.dateFormat = "h:mm:ss a 'on' MMM dd,yyyy"
         formatter.dateFormat = "MMM dd,yyyy"
-        // again convert your date to string
         let myStringafd = formatter.string(from: yourDate!)
         
         print(myStringafd)
@@ -580,7 +554,6 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
             
             print("strUrl: \(stringUrl)")
             
-//            let url : NSURL = NSURL(string: strUrl1)!
             
             serviceController.requestGETURL(strURL:stringUrl, success:{(result) in
                 DispatchQueue.main.async()
@@ -723,8 +696,6 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
                         self.tCountInt = 0
                         
                         
-//                        let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-//                        self.navigationController?.pushViewController(homeViewController, animated: true)
                         
                         self.appDelegate.window?.makeToast(successMsg!, duration:kToastDuration, position:CSToastPositionCenter)
 
@@ -811,7 +782,6 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
                         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                         
                         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginNav") as! UINavigationController
-                        //                    let navigationController = UINavigationController(rootViewController: viewController)
                         let appDelegate = UIApplication.shared.delegate as! AppDelegate
                         appDelegate.window?.rootViewController = viewController
                     }
@@ -918,8 +888,6 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
                         
                         self.sendAmountField.text! = ""
                         self.mobileNumField.text! = ""
-//                        let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-//                        self.navigationController?.pushViewController(homeViewController, animated: true)
                         
                         
                         self.appDelegate.window?.makeToast(successMsg!, duration:kToastDuration, position:CSToastPositionCenter)
@@ -1009,7 +977,6 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
                     let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                     
                     let viewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginNav") as! UINavigationController
-                    //                    let navigationController = UINavigationController(rootViewController: viewController)
                     let appDelegate = UIApplication.shared.delegate as! AppDelegate
                     appDelegate.window?.rootViewController = viewController
                 }

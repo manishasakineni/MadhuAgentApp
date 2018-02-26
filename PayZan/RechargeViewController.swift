@@ -151,7 +151,6 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
        
         
         addressBookBtn.isHidden = true
-//        browsePlanBtn.isHidden = true
         
         placeHolderCode()
         
@@ -160,7 +159,6 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         mbutton.imageEdgeInsets = UIEdgeInsetsMake(0, -16, 0, 0)
         mbutton.frame = CGRect(x: CGFloat(mobileField.frame.size.width - 25), y: CGFloat(5), width: CGFloat(20), height: CGFloat(25))
         mbutton.addTarget(self, action: #selector(self.mobileFieldBtnAction), for: .touchUpInside)
-//        mbutton.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         mobileField.rightView = mbutton
         mobileField.rightViewMode = .always
         
@@ -170,7 +168,6 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         planButton.frame = CGRect(x: CGFloat(0), y: CGFloat(5), width: CGFloat(80), height: CGFloat(30))
         planButton.setTitleColor(#colorLiteral(red: 0.5568627451, green: 0.1254901961, blue: 0.1647058824, alpha: 1), for: .normal)
         planButton.addTarget(self, action: #selector(self.browseBtnAction), for: .touchUpInside)
-//        planButton.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         planButton.titleLabel?.font = planButton.titleLabel?.font.withSize(10)
         planField.rightView = planButton
         planField.rightViewMode = .always
@@ -187,11 +184,6 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         //MARK:- TextField Colors
         
         
-//        mobileField.layer.borderWidth = 0.5
-//        mobileField.layer.borderColor = UIColor.lightGray.cgColor
-//        mobileField.layer.cornerRadius = 3
-//        mobileField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
-        
         mobileField.keyboardType = .phonePad
         mobileField.maxLengthTextField = 13
         planField.maxLengthTextField = 7
@@ -201,21 +193,6 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         mobileField.setLeftPaddingPoints(4)
         networkField.setLeftPaddingPoints(4)
         
-//        networkField.layer.borderWidth = 0.5
-//        networkField.layer.borderColor = UIColor.lightGray.cgColor
-//        networkField.layer.cornerRadius = 3
-//        networkField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
-//        
-//        planField.layer.borderWidth = 0.5
-//        planField.layer.borderColor = UIColor.lightGray.cgColor
-//        planField.layer.cornerRadius = 3
-//        planField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
-        
-        
-        
-        
-   //     backArrowOutLet.textContainerInset = UIEdgeInsetsMake(10, 0, 10, 0);
-
         
         networkField.tag = 1
         planField.tag = 2
@@ -236,13 +213,11 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
             segmentHeight.constant = 50
             payBtnHeight.constant = 60
             contactsBtnHeight.constant = 60
-//            contactsBtnWidth.priority = 100
             contactsBtnWidth.constant = 60
             
             headerViewHeight.constant = 50
             browseHeight.constant = 30
             browseWidth.constant = 50
-//            browsePlanBtn.titleLabel?.font = UIFont.systemFont(ofSize: 20)
             
             mobileField.font = UIFont.systemFont(ofSize: 20)
             mobileField.placeholderFont = UIFont.systemFont(ofSize: 20)
@@ -281,12 +256,10 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
             
             backLabel.font = UIFont.systemFont(ofSize: 11)
             
-//            mobileHeight.constant = 65
-//            networkHeight.constant = 65
-//            amountHeight.constant = 65
-//            segmentHeight.constant = 40
-//            payBtnHeight.constant = 40
+         planField.errorLabel.font = UIFont.systemFont(ofSize: 10)
+            mobileField.errorLabel.font = UIFont.systemFont(ofSize: 10)
             
+            networkField.errorLabel.font = UIFont.systemFont(ofSize: 10)
         }
         
         
@@ -362,23 +335,14 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         textField.errorLabel.textColor = .red
         textField.updateBorder()
         
-        //        textField.layer.cornerRadius = 10
-        //        textField.borderSize.formSquareRoot()
         textField.rightView?.isHidden = true
-        //        textField.activeBackgroundColor = lightGreyColor
-        //        textField.inActiveBackgroundColor = lightGreyColor
         textField.errorBackGroundColor = UIColor.lightGray.withAlphaComponent(0.1)
-        //        textField.borderStyle = .roundedRect
         textField.placeholderColor = UIColor.lightGray
         textField.lineColor = UIColor.white
         textField.selectedTitleColor = #colorLiteral(red: 0.5568627451, green: 0.1254901961, blue: 0.1647058824, alpha: 1)
         
-        // Set custom fonts for the title, placeholder and textfield labels
                 textField.titleLabel.font = UIFont.systemFont(ofSize: 12)
                 textField.placeholderFont = UIFont.systemFont(ofSize: 12)
-//        textField.errorLabel.font = UIFont.systemFont(ofSize: 8)
-//        textField.font = UIFont.systemFont(ofSize: 18)
-        //        textField.isImmediateValidation = true
     }
     
     func validateAllFields() -> Bool
@@ -453,11 +417,7 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
             
             
             
-            //             consumerNumberTextField.errorMessage = errorMsg as String
             
-            //            validateOperatorTextFieldWithText(selectoperator: errorMsg as String)
-            
-            //            self.showAlertViewWithTitle("app.Alert".localize(), message: errorMsg as String, buttonTitle: "app.Retry".localize())
             return false;
         }
         return true
@@ -478,18 +438,8 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         self.myPickerView.delegate = self
         self.myPickerView.dataSource = self
         self.myPickerView.backgroundColor = UIColor.white
-//        if operatorList.isEmpty {
-//            
-//            self.myPickerView.isHidden = true
-//            
-//            networkField.text = "No Operators"
-//            networkField.textColor = UIColor.red
-//            networkField.isUserInteractionEnabled = false
-//            
-//        }else {
             
             textField.inputView = self.myPickerView
-//        }
         
         //MARK:- ToolBar
         let toolBar = UIToolbar()
@@ -568,32 +518,13 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
             pickerList.removeAll()
             networkField.tag = 3
             
-            //             myPickerView.reloadAllComponents()
         }
-        
-//        else if textField == planField {
-//            
-//            pickerSample.removeAll()
-//            
-//            pickerSample = pickerData1
-//            
-//            planField.tag = 2
-//            
-//            self.pickUp(planField)
-//            
-//            myPickerView.reloadAllComponents()
-//            myPickerView.selectRow(0, inComponent: 0, animated: false)
-//        }
         
         
         
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        /// 1. replacementString is NOT empty means we are entering text or pasting text: perform the logic
-        /// 2. replacementString is empty means we are deleting text: return true
-        
-//        let newString = NSString(string: textField.text!).replacingCharacters(in: range, with: string)
         
         planField.errorLabel.textColor = .red
         
@@ -638,25 +569,6 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
             
         }
         
-//        if textField == planField{
-//            
-//            if string.characters.count > 0 {
-//                
-//                let currentCharacterCount = textField.text?.characters.count ?? 0
-//                if (range.length + range.location > currentCharacterCount){
-//                    return false
-//                }
-//                let newLength = currentCharacterCount + string.characters.count - range.length
-//                
-//                let allowedCharacters = CharacterSet.decimalDigits
-//                
-//                let unwantedStr = string.trimmingCharacters(in: allowedCharacters)
-//                
-//                return unwantedStr.characters.count == 0
-//                
-//            }
-//            
-//        }
         
         return true
     }
@@ -668,27 +580,18 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
-//        if (selectedTextField == 1){
         
             return pickerList.count
             
-//        }
-//        else{
-//            
-//            return pickerSample.count
-//        }
+
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-//        if (selectedTextField == 1){
         
             return "\(pickerList[row])"
             
-//        }
-//        else{
-//
-//            return "\(pickerSample[row])"
-//        }
+        
+        
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
@@ -698,10 +601,6 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
             
         }
         
-//         if(selectedTextField == 2){
-//            
-//            self.planField.text = pickerSample[row]
-//        }
         
     }
     //MARK:- getPrepaidList
@@ -809,42 +708,6 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
     //MARK:- validateAllFields
     
     
-//    func validateAllFields() -> Bool
-//    {
-//        mobileField.text=mobileField.text!.trimmingCharacters(in: CharacterSet.whitespaces)
-//        networkField.text=networkField.text!.trimmingCharacters(in: CharacterSet.whitespaces)
-//        planField.text=planField.text!.trimmingCharacters(in: CharacterSet.whitespaces)
-//        
-//        
-//        let mnumb:NSString = mobileField.text! as NSString
-//        let nField:NSString = networkField.text! as NSString
-//        let amountField:NSString = planField.text! as NSString
-//        
-//        
-//        var errorMessage:NSString?
-//        
-//        if (mnumb.length<=0) {
-//            errorMessage=GlobalSupportingClass.blankPhoneNumberErrorMessage() as String as String as NSString?
-//        }
-//        else if (mnumb.length<=9) {
-//            errorMessage=GlobalSupportingClass.invalidPhoneNumberErrorMessage() as String as String as NSString?
-//        }
-//          
-//        else if (nField.length<=0) {
-//            errorMessage=GlobalSupportingClass.blankNetworkErrorMessage() as String as String as NSString?
-//        }
-//        else if (amountField.length<=0) {
-//            errorMessage=GlobalSupportingClass.blankAmountErrorMessage() as String as String as NSString?
-//        }
-//        
-//        
-//        if let errorMsg = errorMessage{
-//            
-//            self.showAlertViewWithTitle("app.Alert".localize(), message: errorMsg as String, buttonTitle: "app.Retry".localize())
-//            return false;
-//        }
-//        return true
-//    }
     
     //MARK:- Button Actions
     
@@ -862,8 +725,6 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
                     
             self.navigationController?.pushViewController(rechargedViewController, animated: true)
                 
-//                let rechargeViewController = self.storyboard?.instantiateViewController(withIdentifier: "RechargeDetailViewController") as! RechargeDetailViewController
-//                self.navigationController?.pushViewController(rechargeViewController, animated: true)
                     
                 }
             }
@@ -882,10 +743,8 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         
         switch segmentControl.selectedSegmentIndex {
         case 0:
-          //  postPaidView.isHidden = true
             prepaidView.isHidden = false
         case 1:
-           // postPaidView.isHidden = false
             prepaidView.isHidden = false
         default:
             break;
@@ -1003,184 +862,6 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         
         
     }
-    
-//    @available(iOS 9.0, *)
-//    func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]) {
-//        
-//        if contacts.count != 1 {
-//            
-//            return
-//            
-//        } else {
-//            
-//            //Dismiss the picker VC
-//            picker.dismiss(animated: true, completion: nil)
-//            
-//            let contact: CNContact = contacts[0]
-//            
-//            //See if the contact has multiple phone numbers
-//            if contact.phoneNumbers.count > 1 {
-//                
-//                //If so we need the user to select which phone number we want them to use
-//                let multiplePhoneNumbersAlert = UIAlertController(title: "Which one?", message: "This contact has multiple phone numbers, which one did you want use?", preferredStyle: UIAlertControllerStyle.alert)
-//                
-//                //Loop through all the phone numbers that we got back
-//                for number in contact.phoneNumbers {
-//                    
-//                    //Each object in the phone numbers array has a value property that is a CNPhoneNumber object, Make sure we can get that
-//                    let actualNumber = number.value as CNPhoneNumber
-//                    
-//                    //Get the label for the phone number
-//                    var phoneNumberLabel = number.label
-//                    
-//                    //Strip off all the extra crap that comes through in that label
-//                    phoneNumberLabel = phoneNumberLabel?.replacingOccurrences(of: "_", with: "")
-//                    phoneNumberLabel = phoneNumberLabel?.replacingOccurrences(of: "$", with: "")
-//                    phoneNumberLabel = phoneNumberLabel?.replacingOccurrences(of: "!", with: "")
-//                    phoneNumberLabel = phoneNumberLabel?.replacingOccurrences(of: "<", with: "")
-//                    phoneNumberLabel = phoneNumberLabel?.replacingOccurrences(of: ">", with: "")
-//                    
-//                    //Create a title for the action for the UIAlertVC that we display to the user to pick phone numbers
-//                    let actionTitle = phoneNumberLabel! + " - " + actualNumber.stringValue
-//                    
-//                    //Create the alert action
-//                    let numberAction = UIAlertAction(title: actionTitle, style: UIAlertActionStyle.default, handler: { (theAction) -> Void in
-//                        
-//                        //See if we can get A frist name
-//                        if contact.givenName == "" {
-//                            
-//                            //If Not check for a last name
-//                            if contact.familyName == "" {
-//                                //If no last name set name to Unknown Name
-//                                self.nameToSave = "Unknown Name"
-//                            }else{
-//                                self.nameToSave = contact.familyName
-//                            }
-//                            
-//                        } else {
-//                            
-//                            self.nameToSave = contact.givenName
-//                            
-//                        }
-//                        
-//                        // See if we can get image data
-//                        if let imageData = contact.imageData {
-//                            //If so create the image
-//                            self.userImage = UIImage(data: imageData)!
-//                        }
-//                        
-//                        //Do what you need to do with your new contact information here!
-//                        //Get the string value of the phone number like this:
-//                        self.mobileField.text = actualNumber.stringValue
-//                        
-//                    })
-//                    
-//                    //Add the action to the AlertController
-//                    multiplePhoneNumbersAlert.addAction(numberAction)
-//                    
-//                }
-//                
-//                //Add a cancel action
-//                let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { (theAction) -> Void in
-//                    //Cancel action completion
-//                })
-//                
-//                //Add the cancel action
-//                multiplePhoneNumbersAlert.addAction(cancelAction)
-//                
-//                //Present the ALert controller
-//                self.present(multiplePhoneNumbersAlert, animated: true, completion: nil)
-//                
-//            } else {
-//                
-//                //Make sure we have at least one phone number
-//                if contact.phoneNumbers.count > 0 {
-//                    
-//                    //If so get the CNPhoneNumber object from the first item in the array of phone numbers
-//                    let actualNumber = (contact.phoneNumbers.first?.value)! as CNPhoneNumber
-//                    
-//                    //Get the label of the phone number
-//                    var phoneNumberLabel = contact.phoneNumbers.first!.label
-//                    
-//                    //Strip out the stuff you don't need
-//                    phoneNumberLabel = phoneNumberLabel?.replacingOccurrences(of: "_", with: "")
-//                    phoneNumberLabel = phoneNumberLabel?.replacingOccurrences(of: "$", with: "")
-//                    phoneNumberLabel = phoneNumberLabel?.replacingOccurrences(of: "!", with: "")
-//                    phoneNumberLabel = phoneNumberLabel?.replacingOccurrences(of: "<", with: "")
-//                    phoneNumberLabel = phoneNumberLabel?.replacingOccurrences(of: ">", with: "")
-//                    
-//                    //Create an empty string for the contacts name
-//                    self.nameToSave = ""
-//                    //See if we can get A frist name
-//                    if contact.givenName == "" {
-//                        //If Not check for a last name
-//                        if contact.familyName == "" {
-//                            //If no last name set name to Unknown Name
-//                            self.nameToSave = "Unknown Name"
-//                        }else{
-//                            self.nameToSave = contact.familyName
-//                        }
-//                    } else {
-//                        nameToSave = contact.givenName
-//                    }
-//                    
-//                    // See if we can get image data
-//                    if let imageData = contact.imageData {
-//                        //If so create the image
-//                        self.userImage = UIImage(data: imageData)
-//                    }
-//                    
-//                    //Do what you need to do with your new contact information here!
-//                    //Get the string value of the phone number like this:
-//                    mobileField.text = actualNumber.stringValue
-//                    
-//                } else {
-//                    
-//                    //If there are no phone numbers associated with the contact I call a custom funciton I wrote that lets me display an alert Controller to the user
-//                    let alert = UIAlertController(title: "Missing info", message: "You have no phone numbers associated with this contact", preferredStyle: UIAlertControllerStyle.alert)
-//                    let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-//                    alert.addAction(cancelAction)
-//                    present(alert, animated: true, completion: nil)
-//                    
-//                }
-//            }
-//        }
-//        
-////        contacts.forEach { contact in
-////            for number in contact.phoneNumbers {
-////                let phoneNumber = number.value
-////                print("number is = \(phoneNumber)")
-////                
-////                let phoneNo = phoneNumber.stringValue
-////                
-////                let formattedString = phoneNo.replacingOccurrences(of: " ", with: "")
-////                
-////                let removeunderscore = formattedString.replacingOccurrences(of: "-", with: "")
-////                let removebraces = removeunderscore.replacingOccurrences(of: "(", with: "")
-////                
-////                let finalNo = removebraces.replacingOccurrences(of: ")", with: "")
-////                
-////                let last10 = finalNo.substring(from:finalNo.index(finalNo.endIndex, offsetBy: -10))
-////                
-////                mobileField.text = phoneNo
-////                
-////                
-////            }
-//        
-//            if #available(iOS 9.0, *) {
-//                
-//                let cnContacts = [CNContact]()
-//                for contact in cnContacts {
-//                    let fullName = CNContactFormatter.string(from: contact, style: .fullName) ?? "No Name"
-//                    print("\(fullName): \(contact.phoneNumbers.description)")
-//                }
-//            } else {
-//                // Fallback on earlier versions
-//            }
-//            
-//            
-//        }
-//    }
     
 
 

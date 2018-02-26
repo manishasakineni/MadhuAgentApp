@@ -225,6 +225,7 @@
 		AF0DEAC9203E97F10009B146 /* SecondTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF0DEAC7203E97F10009B146 /* SecondTableViewCell.xib */; };
 		AF0DEACC203E980A0009B146 /* FirsrHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0DEACA203E980A0009B146 /* FirsrHomeTableViewCell.swift */; };
 		AF0DEACD203E980A0009B146 /* FirsrHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF0DEACB203E980A0009B146 /* FirsrHomeTableViewCell.xib */; };
+		AF116CE42043D3EA006101C0 /* ChooseLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF116CE32043D3EA006101C0 /* ChooseLanguageViewController.swift */; };
 		AF20689A1FF600B900574F9A /* AddaddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2068981FF600B900574F9A /* AddaddressViewController.swift */; };
 		AF20689B1FF600B900574F9A /* AddNewAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2068991FF600B900574F9A /* AddNewAddressViewController.swift */; };
 		AF2068A01FF600EF00574F9A /* AddaddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF20689C1FF600EF00574F9A /* AddaddressTableViewCell.swift */; };
@@ -498,6 +499,7 @@
 		AF0DEAC7203E97F10009B146 /* SecondTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondTableViewCell.xib; sourceTree = "<group>"; };
 		AF0DEACA203E980A0009B146 /* FirsrHomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirsrHomeTableViewCell.swift; sourceTree = "<group>"; };
 		AF0DEACB203E980A0009B146 /* FirsrHomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirsrHomeTableViewCell.xib; sourceTree = "<group>"; };
+		AF116CE32043D3EA006101C0 /* ChooseLanguageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseLanguageViewController.swift; sourceTree = "<group>"; };
 		AF2068981FF600B900574F9A /* AddaddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddaddressViewController.swift; sourceTree = "<group>"; };
 		AF2068991FF600B900574F9A /* AddNewAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewAddressViewController.swift; sourceTree = "<group>"; };
 		AF20689C1FF600EF00574F9A /* AddaddressTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddaddressTableViewCell.swift; sourceTree = "<group>"; };
@@ -998,6 +1000,7 @@
 			children = (
 				35E64C8F1F84DF5200E2CA65 /* AppDelegate.swift */,
 				35E64C931F84DF5200E2CA65 /* Main.storyboard */,
+				AF116CE32043D3EA006101C0 /* ChooseLanguageViewController.swift */,
 				3D8AA36C1FDECC7E001784D2 /* Localizable.strings */,
 				35CB9D101F8B7CE800BF1073 /* Utilities */,
 				3569C1DE1F8767F000152B80 /* Sidemenu */,
@@ -1449,6 +1452,7 @@
 				3554C3191F8F457B0092EAC7 /* RechargeDetailViewController.swift in Sources */,
 				AF579E731FD6A8A700A4E6E4 /* AddCardsViewController.swift in Sources */,
 				AF579E871FD6B50700A4E6E4 /* changePasswordViewController.swift in Sources */,
+				AF116CE42043D3EA006101C0 /* ChooseLanguageViewController.swift in Sources */,
 				35344D9E1F8610C700E35C5C /* ISO8601DateTransform.swift in Sources */,
 				350CCD151F88A516003495B6 /* HomeTableViewCell.swift in Sources */,
 				3554C32D1F8F5DCD0092EAC7 /* ProfileTableViewCell.swift in Sources */,

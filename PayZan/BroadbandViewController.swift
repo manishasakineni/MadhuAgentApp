@@ -71,21 +71,7 @@ class BroadbandViewController: BaseViewController,UITextFieldDelegate,UIPickerVi
 
         placeHolderCode()
         
-//        selectOperatorTextField.layer.borderWidth = 0.5
-//        selectOperatorTextField.layer.borderColor = UIColor.lightGray.cgColor
-//        selectOperatorTextField.layer.cornerRadius = 3
-//        selectOperatorTextField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
-//        
-//        serviceNumberTextFileld.layer.borderWidth = 0.5
-//        serviceNumberTextFileld.layer.borderColor = UIColor.lightGray.cgColor
-//        serviceNumberTextFileld.layer.cornerRadius = 3
-//        serviceNumberTextFileld.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
-//        
-//        amountTextField.layer.borderWidth = 0.5
-//        amountTextField.layer.borderColor = UIColor.lightGray.cgColor
-//        amountTextField.layer.cornerRadius = 3
-//        amountTextField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
-//        
+        
         selectOperatorTextField.delegate = self
         serviceNumberTextFileld.delegate = self
         amountTextField.delegate = self
@@ -159,6 +145,12 @@ class BroadbandViewController: BaseViewController,UITextFieldDelegate,UIPickerVi
             
             backLabel.font = UIFont.systemFont(ofSize: 12)
             
+            selectOperatorTextField.errorLabel.font = UIFont.systemFont(ofSize: 10)
+            serviceNumberTextFileld.errorLabel.font = UIFont.systemFont(ofSize: 10)
+            amountTextField.errorLabel.font = UIFont.systemFont(ofSize: 10)
+            
+
+            
         }
 
 
@@ -178,22 +170,11 @@ class BroadbandViewController: BaseViewController,UITextFieldDelegate,UIPickerVi
     
     func placeHolderCode(){
         
-        //        selectBoardTextField.borderSize.formSquareRoot()
-        //        selectBoardTextField.rightView?.isHidden = true
-        
-        //        selectBoardTextField.rightViewMode = UITextFieldViewMode(rawValue: 10)!
-        //
-        //        if #available(iOS 9.0, *) {
-        //            selectBoardTextField.rightAnchor.accessibilityActivate()
-        //        } else {
-        //            // Fallback on earlier versions
-        //        }
         
         selectOperatorTextField.placeholder = "app.SelectOperator".localize()
         selectOperatorTextField.selectedTitle = "app.SelectOperator".localize()
         selectOperatorTextField.title = "app.SelectOperator".localize()
         
-        //        waterView.addSubview(selectBoardTextField)
         applySkyscannerTheme(textField: selectOperatorTextField)
         
         serviceNumberTextFileld.placeholder = "app.ServiceNumber".localize()
@@ -201,7 +182,6 @@ class BroadbandViewController: BaseViewController,UITextFieldDelegate,UIPickerVi
         serviceNumberTextFileld.selectedTitle = "app.ServiceNumber".localize()
         serviceNumberTextFileld.title = "app.ServiceNumber".localize()
         
-        //                waterView.addSubview(consumerNumberTextField)
         applySkyscannerTheme(textField: serviceNumberTextFileld)
         
         
@@ -214,10 +194,8 @@ class BroadbandViewController: BaseViewController,UITextFieldDelegate,UIPickerVi
         amountTextField.keyboardType = .numberPad
         
         
-        //        amountTextField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
         
-        //        waterView.addSubview(amountTextField)
         applySkyscannerTheme(textField: amountTextField)
     }
     
@@ -227,22 +205,14 @@ class BroadbandViewController: BaseViewController,UITextFieldDelegate,UIPickerVi
         
         textField.textColor = .black
         textField.errorLabel.textColor = .red
-        //        textField.layer.cornerRadius = 10
         textField.borderSize.formSquareRoot()
         textField.rightView?.isHidden = true
-        //        textField.activeBackgroundColor = lightGreyColor
-        //        textField.inActiveBackgroundColor = lightGreyColor
         textField.errorBackGroundColor = UIColor.lightGray.withAlphaComponent(0.1)
-        //        textField.borderStyle = .roundedRect
         textField.placeholderColor = UIColor.lightGray
         textField.lineColor = UIColor.white
         textField.selectedTitleColor = #colorLiteral(red: 0.5568627451, green: 0.1254901961, blue: 0.1647058824, alpha: 1)
         
-        // Set custom fonts for the title, placeholder and textfield labels
-        //        textField.titleLabel.font = UIFont.systemFont(ofSize: 12)
-        //        textField.placeholderFont = UIFont.systemFont(ofSize: 18)
-        //        textField.font = UIFont.systemFont(ofSize: 18)
-        //        textField.isImmediateValidation = true
+    
     }
     
     //MARK:- UIPickerView
@@ -254,18 +224,7 @@ class BroadbandViewController: BaseViewController,UITextFieldDelegate,UIPickerVi
         self.myPickerView.delegate = self
         self.myPickerView.dataSource = self
         self.myPickerView.backgroundColor = UIColor.white
-//        if operatorList.isEmpty {
-//            
-//            self.myPickerView.isHidden = true
-//            
-//            selectOperatorTextField.text = "No Operators"
-//            selectOperatorTextField.textColor = UIColor.red
-//            selectOperatorTextField.isUserInteractionEnabled = false
-//            
-//        }else {
-//            selectOperatorTextField.isUserInteractionEnabled = true
             textField.inputView = self.myPickerView
-//        }
         
         //MARK:- ToolBar
         let toolBar = UIToolbar()

@@ -280,7 +280,6 @@ class SavedCardsViewController: BaseViewController,UITableViewDataSource,UITable
         
          cell.payNowBtn.setTitle("app.AddCard".localize(), for: .normal)
         
-//        cell.payNowBtn.titleLabel?.text = "app.AddCard".localize()
         
         cell.lblRight = UILabel(frame: CGRect(x: cell.cardNumberTextField.frame.size.width - 60,y: 0,width: 60,height: cell.cardNumberTextField.frame.size.height))
         cell.lblRight.textAlignment = .center
@@ -289,70 +288,9 @@ class SavedCardsViewController: BaseViewController,UITableViewDataSource,UITable
         cell.cardNumberTextField.rightView = cell.lblRight
         cell.cardNumberTextField.rightViewMode = .always
         
-//        cell.monthTextField = activeTextField as! AkiraTextField
-//        cell.yearTextField = activeTextField as! AkiraTextField
         cell.monthTextField.text = selectedMonthStr
         cell.yearTextField.text = selectedYearStr
         
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "SavedTableViewCell", for: indexPath) as! SavedTableViewCell
-//
-//
-//        cell.cardNumberTextField.validationType = .creditCard
-//        cell.cardNumberTextField.format = "xxxx xxxx xxxx xxxx"
-//        cell.cardNumberTextField.maxLengthTextField = 20
-//        cell.cardNumberTextField.jumpOrder = 1
-//        
-//        cell.cardNumberTextField.placeholder = "app.CardNumber".localize()
-////        cell.cardNumberTextField.selectedTitle = "app.CardNumber".localize()
-////        cell.cardNumberTextField.title = "app.CardNumber".localize()
-////        cell.cardNumberTextField.setLeftPaddingPoints(4)
-//        
-//        cell.cardHoldersTextField.placeholder = "app.CardHolder'sname".localize()
-////        cell.cardHoldersTextField.selectedTitle = "app.CardHolder'sname".localize()
-////        cell.cardHoldersTextField.title = "app.CardHolder'sname".localize()
-//        cell.cardHoldersTextField.maxLengthTextField = 40
-////        cell.cardHoldersTextField.setLeftPaddingPoints(4)
-//        
-//        cell.cardLabelTextField.placeholder = "app.CardLabel(optional)".localize()
-////        cell.cardLabelTextField.selectedTitle = "app.CardLabel(optional)".localize()
-////        cell.cardLabelTextField.title = "app.CardLabel(optional)".localize()
-//        cell.cardLabelTextField.maxLengthTextField = 40
-////        cell.cardLabelTextField.setLeftPaddingPoints(4)
-//        
-//        cell.addCardBtn.tag = indexPath.row
-//        
-//        cell.cvvTF.maxLengthTextField = 3
-//        cell.cvvTF.keyboardType = .numberPad
-//
-//        
-//        cell.addCardBtn.addTarget(self, action: #selector(addCardBtnClicked), for: .touchUpInside)
-//        
-//        
-//        print(cell.cardNumberTextField.allowedCharacters) //most built in validation types set allowedCharacters for you
-//        
-//        cell.cardNumberTextField.delegate = self
-//        cell.monthTextField.delegate = self
-//        cell.yearTextField.delegate = self
-//        cell.cardHoldersTextField.delegate = self
-//        cell.cardLabelTextField.delegate = self
-//
-//        cell.monthTextField.tag = 1
-//        cell.yearTextField.tag = 2
-//        
-//        cell.lblRight = UILabel(frame: CGRect(x: cell.cardNumberTextField.frame.size.width - 60,y: 0,width: 60,height: cell.cardNumberTextField.frame.size.height))
-//        cell.lblRight.textAlignment = .center
-//        cell.lblRight.font = UIFont.systemFont(ofSize: 10)
-//        cell.lblRight.textColor = UIColor.lightGray
-//        cell.cardNumberTextField.rightView = cell.lblRight
-//        cell.cardNumberTextField.rightViewMode = .always
-//        
-//        
-////        cell.monthTextField = activeTextField
-////        cell.yearTextField = activeTextField
-//        cell.monthTextField.text = selectedMonthStr
-//        cell.yearTextField.text = selectedYearStr
-//        
-//        cell.cardHoldersTextField.text = cardHolderName
         
         
         return cell
@@ -385,7 +323,6 @@ class SavedCardsViewController: BaseViewController,UITableViewDataSource,UITable
             let yearField:NSString = selectedYearStr as NSString
             let cvvField:NSString = cardCell.cvvTF.text! as NSString
 
-//            let cardLaelField:NSString = cardCell.cardLabelTextField.text! as NSString
             
             var errorMessage:NSString?
             
@@ -423,66 +360,6 @@ class SavedCardsViewController: BaseViewController,UITableViewDataSource,UITable
         }
         
     }
-    
-//    func validateAllFields() -> Bool
-//    {
-//        operatorField.text=operatorField.text!.trimmingCharacters(in: CharacterSet.whitespaces)
-//        stdNumField.text=stdNumField.text!.trimmingCharacters(in: CharacterSet.whitespaces)
-//        circleField.text=circleField.text!.trimmingCharacters(in: CharacterSet.whitespaces)
-//        amountField.text = amountField.text!.trimmingCharacters(in: CharacterSet.whitespaces)
-//        
-//        
-//        let operatField:NSString = operatorField.text! as NSString
-//        let stdField:NSString = stdNumField.text! as NSString
-//        let cirField:NSString = circleField.text! as NSString
-//        let amField:NSString = amountField.text! as NSString
-//        
-//        
-//        var errorMessage:NSString?
-//        
-//        if (operatField.length<=0) {
-//            errorMessage=GlobalSupportingClass.blankOperatorErrorMessage() as String as String as NSString?
-//        }
-//        else if (stdField.length<=0) {
-//            errorMessage=GlobalSupportingClass.blankStdNumberErrorMessage() as String as String as NSString?
-//        }
-//            
-//        else if (cirField.length<=0) {
-//            errorMessage=GlobalSupportingClass.blankCircleErrorMessage() as String as String as NSString?
-//        }
-//        else if (amField.length<=0) {
-//            errorMessage=GlobalSupportingClass.blankAmountErrorMessage() as String as String as NSString?
-//        }
-//        
-//        if let errorMsg = errorMessage{
-//            
-//            if (operatField.length<=0) {
-//                
-//                operatorField.errorMessage = errorMsg as String
-//            }
-//            else if (stdField.length<=0) {
-//                
-//                stdNumField.errorMessage = errorMsg as String
-//            }
-//            else if (cirField.length<=0) {
-//                
-//                circleField.errorMessage = errorMsg as String
-//            }
-//            else if (amField.length<=0) {
-//                
-//                amountField.errorMessage = errorMsg as String
-//            }
-//            
-//            return false
-//        }
-//        
-//        //        if let errorMsg = errorMessage{
-//        //
-//        //            self.showAlertViewWithTitle("app.Alert".localize(), message: errorMsg as String, buttonTitle: "app.Retry".localize())
-//        //            return false;
-//        //        }
-//        return true
-//    }
 
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

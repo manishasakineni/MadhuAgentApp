@@ -39,18 +39,6 @@ class TabsViewController: UITabBarController,UITabBarControllerDelegate {
         }
         
         
-//        if !(walletId?.isEmpty)! && !(userId?.isEmpty)! {
-//            
-//            
-//            
-//        }
-//        else {
-//            
-//            
-//            let vController = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-//            self.present(vController, animated: true, completion: nil)
-//
-//        }
         
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
             

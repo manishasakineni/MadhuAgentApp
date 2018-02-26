@@ -30,6 +30,7 @@ class AddNewAddressViewController: BaseViewController,UITableViewDelegate, UITab
     var activeTextField = UITextField()
     var pickerData : Array<String> = Array()
     
+    var alertTag = Int()
 
     var section1TitleArray = ["Name","AddressLine1","AddressLine2","LandMark","Mobile Number","Select Province","Select District","Select Mandal","Select Village","Select Pin Code"]
     
@@ -56,7 +57,8 @@ class AddNewAddressViewController: BaseViewController,UITableViewDelegate, UITab
     var mandalsAry = Array<String>()
     var villagesAry = Array<String>()
     
-    
+ //   var alertTag = Int()
+
     
     var selectedProvinceStr = ""
     var selectedDistrictStr = ""
@@ -161,23 +163,6 @@ class AddNewAddressViewController: BaseViewController,UITableViewDelegate, UITab
         
         if let newRegCell : EditTableViewCell = textField.superview?.superview as? EditTableViewCell {
             
-//            if textField == newRegCell.addNewAddressTF {
-//                
-//                
-//                if (newRegCell.addNewAddressTF.text != nil)  {
-//                    
-//                    newRegCell.addNewAddressLabel.isHidden = false
-//                    newRegCell.addNewAddressLabel.textColor = UIColor(red: 128.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
-//                    
-//                }
-//                    
-//                else{
-//                    
-//                    newRegCell.addNewAddressLabel.isHidden = true
-//                    
-//                    
-//                }
-//            }
         }
         if textField.tag == 0{
             
@@ -306,20 +291,6 @@ class AddNewAddressViewController: BaseViewController,UITableViewDelegate, UITab
         
         if textField.tag == 0{
             
-//            do {
-//                let regex = try NSRegularExpression(pattern: ".*[^A-Za-z ].*", options: [])
-//                if regex.firstMatch(in: textField.text!, options: [], range: NSMakeRange(0, (textField.text?.characters.count)!)) != nil {
-//                    
-//                    self.showAlertViewWithTitle("app.Alert".localize(), message: "Must not contain Number in Name", buttonTitle: "app.Retry".localize())
-////                    self.showAlert(message: "Must not contain Number in Name")
-//                    
-//                } else {
-//                    
-//                }
-//            }
-//            catch {
-//                
-//            }
             if string.characters.count > 0 {
                 let allowedCharacters = CharacterSet.letters
                 
@@ -358,13 +329,7 @@ class AddNewAddressViewController: BaseViewController,UITableViewDelegate, UITab
         if let newRegCell : EditTableViewCell = textField.superview?.superview as? EditTableViewCell {
             
             
-//            if newRegCell.addNewAddressTF.text == nil {
-//                
-//                newRegCell.addNewAddressLabel.isHidden = true
-//                newRegCell.addNewAddressLabel.isHidden = false
-//                
-//                
-//            }
+
         }
         return true
     }
@@ -379,19 +344,6 @@ class AddNewAddressViewController: BaseViewController,UITableViewDelegate, UITab
         
         if let _ : EditTableViewCell = textField.superview?.superview as? EditTableViewCell {
             
-//            
-//            if (newRegCell.addNewAddressTF.text != nil)  {
-//                
-//                newRegCell.addNewAddressLabel.isHidden = false
-//                
-//                newRegCell.addNewAddressLabel.textColor = UIColor.lightGray
-//            }
-            
-//            else{
-//                
-//             //   newRegCell.addNewAddressLabel.isHidden = false
-//                
-//            }
             
             if textField.tag == 0{
                 
@@ -693,21 +645,6 @@ class AddNewAddressViewController: BaseViewController,UITableViewDelegate, UITab
                         pinCode = postPin
                     }
                 }
-//                villagesAry.removeAll()
-//                 getVillageList()
-//                
-//                pinCode = ""
-                
-//                if postalCodeAry.count > 0{
-//                    
-//                    if let value = String(postalCodeAry[0]){
-//                        
-//                        pinCode = value
-//                        
-//                    }
-//                    
-//                    
-//                }
                 
             }
         }
@@ -749,18 +686,6 @@ class AddNewAddressViewController: BaseViewController,UITableViewDelegate, UITab
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         
         
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "AddNewAddressTableViewCell", for: indexPath) as! AddNewAddressTableViewCell
-        
-//        let addList:AddressUpdateResultVo = (addressResultListArr?)!
-        
-//        cell.addNewAddressLabel.isHidden = false
-        
-//        cell.addNewAddressLabel.text = section1TitleArray[indexPath.row]
-//        
-//        cell.selectionStyle = .none
-//        cell.addNewAddressTF.delegate = self
-//        
-//        cell.addNewAddressTF.tag = indexPath.row
         
         let cell = Bundle.main.loadNibNamed("EditTableViewCell", owner: self, options: nil)?.first as! EditTableViewCell
         
@@ -776,7 +701,6 @@ class AddNewAddressViewController: BaseViewController,UITableViewDelegate, UITab
             cell.profileField.font = UIFont.systemFont(ofSize: 20)
             cell.profileField.placeholderFont = UIFont.systemFont(ofSize: 20)
             cell.profileField.titleFont = UIFont.systemFont(ofSize: 20)
-            //                cell.profileField.errorLabel.font = UIFont.systemFont(ofSize: 14)
         }
         else {
             
@@ -793,10 +717,6 @@ class AddNewAddressViewController: BaseViewController,UITableViewDelegate, UITab
             
             cell.profileField.selectedTitleColor = #colorLiteral(red: 0.5568627451, green: 0.1254901961, blue: 0.1647058824, alpha: 1)
             
-//            cell.addNewAddressLabel?.text = "app.Name".localize()
-//            cell.addNewAddressTF.placeholder = "app.Name".localize()
-//            cell.addNewAddressTF.text = name
-            
             
         }
         else if indexPath.row == 1{
@@ -808,9 +728,6 @@ class AddNewAddressViewController: BaseViewController,UITableViewDelegate, UITab
             cell.profileField.maxLengthTextField = 40
             cell.profileField.selectedTitleColor = #colorLiteral(red: 0.5568627451, green: 0.1254901961, blue: 0.1647058824, alpha: 1)
             
-//            cell.addNewAddressLabel?.text = "app.Address1".localize()
-//            cell.addNewAddressTF.placeholder = "app.Address1".localize()
-//            cell.addNewAddressTF.text = address1
             
         }
         else if indexPath.row == 2{
@@ -822,9 +739,6 @@ class AddNewAddressViewController: BaseViewController,UITableViewDelegate, UITab
             cell.profileField.maxLengthTextField = 40
             cell.profileField.selectedTitleColor = #colorLiteral(red: 0.5568627451, green: 0.1254901961, blue: 0.1647058824, alpha: 1)
             
-//            cell.addNewAddressLabel?.text = "app.Address2".localize()
-//            cell.addNewAddressTF.placeholder = "app.Address2".localize()
-//            cell.addNewAddressTF.text = address2
             
         }
         else if indexPath.row == 3{
@@ -837,9 +751,7 @@ class AddNewAddressViewController: BaseViewController,UITableViewDelegate, UITab
             cell.profileField.selectedTitleColor = #colorLiteral(red: 0.5568627451, green: 0.1254901961, blue: 0.1647058824, alpha: 1)
 
             
-//            cell.addNewAddressLabel?.text = "app.Landmark".localize()
-//            cell.addNewAddressTF.placeholder = "app.Landmark".localize()
-//            cell.addNewAddressTF.text = landmark
+
             
         }
         else if indexPath.row == 4{
@@ -853,9 +765,6 @@ class AddNewAddressViewController: BaseViewController,UITableViewDelegate, UITab
             cell.profileField.selectedTitleColor = #colorLiteral(red: 0.5568627451, green: 0.1254901961, blue: 0.1647058824, alpha: 1)
 
             
-//            cell.addNewAddressLabel?.text = "app.MobileNo".localize()
-//            cell.addNewAddressTF.placeholder = "app.MobileNo".localize()
-//            cell.addNewAddressTF.text = mobileNo
             
         }
         else if indexPath.row == 5{
@@ -866,9 +775,6 @@ class AddNewAddressViewController: BaseViewController,UITableViewDelegate, UITab
             cell.profileField.text = selectedProvinceStr
             cell.profileField.selectedTitleColor = #colorLiteral(red: 0.5568627451, green: 0.1254901961, blue: 0.1647058824, alpha: 1)
             
-//            cell.addNewAddressLabel?.text = "app.SelectProvince".localize()
-//            cell.addNewAddressTF.placeholder = "app.SelectProvince".localize()
-//            cell.addNewAddressTF.text = selectedProvinceStr
             
         }
         else if indexPath.row == 6{
@@ -880,9 +786,6 @@ class AddNewAddressViewController: BaseViewController,UITableViewDelegate, UITab
             cell.profileField.selectedTitleColor = #colorLiteral(red: 0.5568627451, green: 0.1254901961, blue: 0.1647058824, alpha: 1)
 
             
-//            cell.addNewAddressLabel?.text = "app.SelectDistricts".localize()
-//            cell.addNewAddressTF.placeholder = "app.SelectDistricts".localize()
-//            cell.addNewAddressTF.text = selectedDistrictStr
             
         }
         else if indexPath.row == 7{
@@ -894,9 +797,6 @@ class AddNewAddressViewController: BaseViewController,UITableViewDelegate, UITab
             cell.profileField.selectedTitleColor = #colorLiteral(red: 0.5568627451, green: 0.1254901961, blue: 0.1647058824, alpha: 1)
 
             
-//            cell.addNewAddressLabel?.text = "app.SelectMandal".localize()
-//            cell.addNewAddressTF.placeholder = "app.SelectMandal".localize()
-//            cell.addNewAddressTF.text = selectedMandalStr
             
         }
         else if indexPath.row == 8{
@@ -908,9 +808,6 @@ class AddNewAddressViewController: BaseViewController,UITableViewDelegate, UITab
             cell.profileField.selectedTitleColor = #colorLiteral(red: 0.5568627451, green: 0.1254901961, blue: 0.1647058824, alpha: 1)
 
             
-//            cell.addNewAddressLabel?.text = "app.SelectVillage".localize()
-//            cell.addNewAddressTF.placeholder = "app.SelectVillage".localize()
-//            cell.addNewAddressTF.text = selectedVillageStr
             
         }
         else if indexPath.row == 9{
@@ -924,9 +821,7 @@ class AddNewAddressViewController: BaseViewController,UITableViewDelegate, UITab
             cell.profileField.isEnabled = false
 
             
-//            cell.addNewAddressLabel?.text = "app.PinCode".localize()
-//            cell.addNewAddressTF.placeholder = "app.PinCode".localize()
-//            cell.addNewAddressTF.text = pinCode
+
             
         }
         
@@ -1139,17 +1034,6 @@ class AddNewAddressViewController: BaseViewController,UITableViewDelegate, UITab
                             let villageObj = respVO.ListResult
                             
                             
-//                            if (villageObj.count > 0){
-//                                
-//                                self.villageIDArray = villagesAPIModelArray
-//                                
-//                                for village in villagesAPIModelArray{
-//                                    
-//                                    self.villagesAry.append(village.name)
-//                                    self.postalCodeAry.append(village.postCode)
-//                                    
-//                                }
-//                            }
                             
                             self.postalCodeAry.removeAll()
                             self.villageIDArray?.removeAll()
@@ -1407,13 +1291,6 @@ class AddNewAddressViewController: BaseViewController,UITableViewDelegate, UITab
                         
                         self.navigationController?.popViewController(animated: true)
                         
-//                        let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-//                        self.navigationController?.pushViewController(homeViewController, animated: true)
-//                        
-//                        
-//                        self.appDelegate.window?.makeToast(successMsg!, duration:kToastDuration, position:CSToastPositionCenter)
-//                        
-//                        return
                         
                     }
                     else {
@@ -1586,61 +1463,83 @@ class AddNewAddressViewController: BaseViewController,UITableViewDelegate, UITab
         
          if (fName.length <= 0){
             
+            alertTag = 0
+
+            
             errorMessage=GlobalSupportingClass.blankNameErrorMessage() as String as String as NSString?
             
         }
         else if (fName.length <= 2){
+            alertTag = 0
+
             
             errorMessage=GlobalSupportingClass.firstNamebitweenMessage() as String as String as NSString?
             
         }
         else if (address11.length <= 0){
             
+            alertTag = 1
+            
             errorMessage=GlobalSupportingClass.blankAddress1ErrorMessage() as String as String as NSString?
             
         }
         else if (address22.length <= 0){
+            
+            alertTag = 2
             
             errorMessage=GlobalSupportingClass.blankAddress2ErrorMessage() as String as String as NSString?
             
         }
         else if (landmarkk.length <= 0){
             
+            alertTag = 3
+
             errorMessage=GlobalSupportingClass.blankLandmarkErrorMessage() as String as String as NSString?
             
         }
             
         else if (mobile.length <= 0){
+            alertTag = 4
+
             
             errorMessage=GlobalSupportingClass.blankPhoneNumberErrorMessage() as String as String as NSString?
             
         }
         else if (mobile.length <= 9) {
             
-            
+            alertTag = 4
+
             errorMessage=GlobalSupportingClass.invalidPhoneNumberErrorMessage() as String as String as NSString?
         }
         else if (mobileNo == "0000000000") {
+            
+            alertTag = 4
+
             errorMessage=GlobalSupportingClass.valiedPhoneNumberErrorMessage() as String as String as NSString?
             
          }
         else if (province.length <= 0){
             
+            alertTag = 5
+            
             errorMessage=GlobalSupportingClass.blankProvinceErrorMessage() as String as String as NSString?
             
         }
         else if (district.length <= 0){
+            alertTag = 6
             
             errorMessage=GlobalSupportingClass.blankDistrictErrorMessage() as String as String as NSString?
             
         }
         else if (mandal.length <= 0){
             
+            alertTag = 7
+
             errorMessage=GlobalSupportingClass.blankMandalErrorMessage() as String as String as NSString?
             
         }
         else if (village.length <= 0){
-            
+            alertTag = 8
             errorMessage=GlobalSupportingClass.blankVillageErrorMessage() as String as String as NSString?
             
         }
@@ -1649,8 +1548,11 @@ class AddNewAddressViewController: BaseViewController,UITableViewDelegate, UITab
         
         if let errorMsg = errorMessage{
             
-            self.showAlertViewWithTitle("app.Alert".localize(), message: errorMsg as String, buttonTitle: "app.Retry".localize())
-            return false;
+            self.alertWithTitle(title: "app.Alert".localize(), message: errorMsg as String, ViewController: self, toFocus: activeTextField)
+            
+            
+            return false
+            
         }
         return true
     }
@@ -1696,5 +1598,25 @@ class AddNewAddressViewController: BaseViewController,UITableViewDelegate, UITab
  
         
     }
+    
+    
+    func alertWithTitle(title: String!, message: String, ViewController: UIViewController, toFocus:UITextField) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "app.Ok".localize(), style: UIAlertActionStyle.cancel,handler: {_ in
+            
+            let indexPath : IndexPath = IndexPath(row: self.alertTag, section: 0)
+            
+            self.addNewAddressTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.top, animated: false)
+            if let itemNumberCell = self.addNewAddressTableView.cellForRow(at: indexPath) as? EditTableViewCell {
+                
+                itemNumberCell.profileField.becomeFirstResponder()
+            }
+            
+            
+        });
+        alert.addAction(action)
+        ViewController.present(alert, animated: true, completion:nil)
+    }
+
 
 }

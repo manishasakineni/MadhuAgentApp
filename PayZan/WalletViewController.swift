@@ -137,6 +137,8 @@ class WalletViewController: UIViewController ,CAPSPageMenuDelegate,walletSubtitl
             
             walletBalLabel.font = UIFont.systemFont(ofSize: 14)
             
+            
+            
         }
 
         
@@ -151,7 +153,6 @@ class WalletViewController: UIViewController ,CAPSPageMenuDelegate,walletSubtitl
         
          self.tabBarController?.tabBar.isHidden = false
         
-        // IQKeyboardManager.sharedManager().enable = false
         
         if(pageMenu != nil){
             self.nameOfItem(indexNumber: 0, countText: "app.SendMoneytowallet".localize())
@@ -167,7 +168,6 @@ class WalletViewController: UIViewController ,CAPSPageMenuDelegate,walletSubtitl
             
             walletBalLabel.text = String(describing: wAmount!)
             
-//            walletBalLabel.text = walletBal
             
             print("defaults savedString: \(String(describing: walletBalLabel.text))")
         }
@@ -182,18 +182,10 @@ class WalletViewController: UIViewController ,CAPSPageMenuDelegate,walletSubtitl
             
             walletBalLabel.text = String(describing: wAmount!)
             
-//            walletBalLabel.text = walletAmount
             
             print("defaults savedString: \(walletAmount)")
         }
         
-        
-//        controllersArray.removeAll()
-//        strr.removeAll()
-        
-//        strr = "app.SendMoneytowallet".localize()
-        
-//        self.createPageMenu()
         
         
         
@@ -204,7 +196,6 @@ class WalletViewController: UIViewController ,CAPSPageMenuDelegate,walletSubtitl
         
         super.viewWillDisappear(animated)
         
-        //IQKeyboardManager.sharedManager().enable = true
     }
     
     func sendString(stringValue :String){
@@ -230,7 +221,6 @@ class WalletViewController: UIViewController ,CAPSPageMenuDelegate,walletSubtitl
         controllersArray.append(allOffersVC!)
         
 
-        //   allOffersVC?.getLabelForPendingOrders()
         
         
             rechargesVC = AddMoneyToWalletViewController(nibName: "AddMoneyToWalletViewController",
@@ -242,16 +232,13 @@ class WalletViewController: UIViewController ,CAPSPageMenuDelegate,walletSubtitl
         
         controllersArray.append(rechargesVC!)
         
-        //   rechargesVC?.getLabelForShippedOrders()
         
         
         detAndBillsVC = MyTransactionViewController(nibName: "MyTransactionViewController",
                                                   bundle: nil)
-//        detAndBillsVC?.title = nil
         detAndBillsVC?.title = "app.MyTransactions".localize()
         detAndBillsVC?.copyDelegate  = self
         detAndBillsVC?.delegate  = self
-        //     detAndBillsVC?.getLabelForAllOrders()
         
         
         
@@ -361,7 +348,6 @@ class WalletViewController: UIViewController ,CAPSPageMenuDelegate,walletSubtitl
         
         self.walletBalLabel.text = String(describing: wAmount!)
         
-//        self.walletBalLabel.text = stringValue
         
     }
     

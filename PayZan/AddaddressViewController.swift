@@ -170,15 +170,8 @@ class AddaddressViewController: UIViewController,UITableViewDelegate ,UITableVie
         
         let addList:GetAddressResultVo = addressResultListArr[indexPath.row]
         
-//        let name = addList.Name
-//        let add1 = addList.AddressLine1
-//        let add2 = addList.AddressLine2
-//        let land = addList.Landmark
-//        let mobileNo = addList.MobileNumber
-//        let province = addList.ProvinceName
-//        let dist = addList.DistrictName
-//        let mandal = addList.MandalName
-//        let village = addList.VillageName
+
+        
         let addId = addList.Id
         
         print("addId:\(String(describing: addId))")
@@ -202,42 +195,6 @@ class AddaddressViewController: UIViewController,UITableViewDelegate ,UITableVie
         
         
         
-//        if name != nil {
-//            
-//            addNewVC?.name = name!
-//        }
-//        if add1 != nil {
-//            
-//            addNewVC?.address1 = add1!
-//        }
-//        if add2 != nil {
-//            
-//            addNewVC?.address2 = add2!
-//        }
-//        if land != nil {
-//            
-//            addNewVC?.landmark = land!
-//        }
-//        if mobileNo != nil {
-//            
-//            addNewVC?.mobileNo = mobileNo!
-//        }
-//        if province != nil {
-//            
-//            addNewVC?.selectedProvinceStr = province!
-//        }
-//        if dist != nil {
-//            
-//            addNewVC?.selectedDistrictStr = dist!
-//        }
-//        if mandal != nil {
-//            
-//            addNewVC?.selectedMandalStr = mandal!
-//        }
-//        if village != nil {
-//            
-//            addNewVC?.selectedVillageStr = village!
-//        }
         
      
         self.navigationController?.pushViewController(addNewVC!, animated: true)

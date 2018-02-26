@@ -77,20 +77,6 @@ class DatacardViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         //MARK:- TextField Colors
 
         
-//        datacardNumField.layer.borderWidth = 0.5
-//        datacardNumField.layer.borderColor = UIColor.lightGray.cgColor
-//        datacardNumField.layer.cornerRadius = 3
-//        datacardNumField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
-//        
-//        operatorField.layer.borderWidth = 0.5
-//        operatorField.layer.borderColor = UIColor.lightGray.cgColor
-//        operatorField.layer.cornerRadius = 3
-//        operatorField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
-//        
-//        amountField.layer.borderWidth = 0.5
-//        amountField.layer.borderColor = UIColor.lightGray.cgColor
-//        amountField.layer.cornerRadius = 3
-//        amountField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
         operatorField.delegate = self
         
@@ -164,6 +150,12 @@ class DatacardViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
             
             backLabel.font = UIFont.systemFont(ofSize: 12)
             
+            datacardNumField.errorLabel.font = UIFont.systemFont(ofSize: 10)
+            operatorField.errorLabel.font = UIFont.systemFont(ofSize: 10)
+            amountField.errorLabel.font = UIFont.systemFont(ofSize: 10)
+            
+
+            
         }
 
         // Do any additional setup after loading the view.
@@ -198,13 +190,6 @@ class DatacardViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         
         amountField.maxLengthTextField = 7
         
-//        let button = UIButton(type: .custom)
-//        button.setImage(UIImage(named: "prepaid_contacts_icon"), for: .normal)
-//        button.imageEdgeInsets = UIEdgeInsetsMake(0, -16, 0, 0)
-//        button.frame = CGRect(x: CGFloat(stdNumField.frame.size.width - 25), y: CGFloat(5), width: CGFloat(20), height: CGFloat(25))
-//        button.addTarget(self, action: #selector(self.stdNumBtnAction), for: .touchUpInside)
-//        stdNumField.rightView = button
-//        stdNumField.rightViewMode = .always
         
         
         let amButton = UIButton(type: .roundedRect)
@@ -232,22 +217,13 @@ class DatacardViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         
         textField.textColor = .black
         textField.errorLabel.textColor = .red
-        //        textField.layer.cornerRadius = 10
-        //        textField.borderSize.formSquareRoot()
         textField.rightView?.isHidden = true
-        //        textField.activeBackgroundColor = lightGreyColor
-        //        textField.inActiveBackgroundColor = lightGreyColor
         textField.errorBackGroundColor = UIColor.lightGray.withAlphaComponent(0.1)
-        //        textField.borderStyle = .roundedRect
         textField.placeholderColor = UIColor.lightGray
         textField.lineColor = UIColor.white
         textField.selectedTitleColor = #colorLiteral(red: 0.5568627451, green: 0.1254901961, blue: 0.1647058824, alpha: 1)
         
-        // Set custom fonts for the title, placeholder and textfield labels
-        //        textField.titleLabel.font = UIFont.systemFont(ofSize: 12)
-        //        textField.placeholderFont = UIFont.systemFont(ofSize: 18)
-        //        textField.font = UIFont.systemFont(ofSize: 18)
-        //        textField.isImmediateValidation = true
+        
     }
     
     //MARK:- UIPickerView
@@ -260,18 +236,12 @@ class DatacardViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         self.myPickerView.delegate = self
         self.myPickerView.dataSource = self
         self.myPickerView.backgroundColor = UIColor.white
-//        if operatorList.isEmpty {
-//            
-//            self.myPickerView.isHidden = true
-//            
-//            operatorField.text = "No Operators"
-//            operatorField.textColor = UIColor.red
-//            operatorField.isUserInteractionEnabled = false
-//            
-//        }else {
-//            operatorField.isUserInteractionEnabled = true
+        
+        
+        
+        
+        
             textField.inputView = self.myPickerView
-//        }
         
         //MARK:- ToolBar
         let toolBar = UIToolbar()
@@ -305,7 +275,6 @@ class DatacardViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        //        let newString = NSString(string: textField.text!).replacingCharacters(in: range, with: string)
         
         if(textField==self.amountField&&range.location==0)
         {
@@ -356,7 +325,6 @@ class DatacardViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
             pickerList.removeAll()
             operatorField.tag = 3
             
-            //             myPickerView.reloadAllComponents()
         }
         
     }
@@ -552,11 +520,8 @@ class DatacardViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
             return false
         }
         
-//        if let errorMsg = errorMessage{
-//            
-//            self.showAlertViewWithTitle("app.Alert".localize(), message: errorMsg as String, buttonTitle: "app.Retry".localize())
-//            return false;
-//        }
+        
+        
         return true
     }
     
@@ -610,7 +575,6 @@ class DatacardViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
                         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                         
                         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginNav") as! UINavigationController
-                        //                    let navigationController = UINavigationController(rootViewController: viewController)
                         let appDelegate = UIApplication.shared.delegate as! AppDelegate
                         appDelegate.window?.rootViewController = viewController
                     }

@@ -77,20 +77,6 @@ class ElectricityViewController: BaseViewController,UIPickerViewDelegate, UIPick
         //MARK:- TextField Colors
 
         
-//        districtsFiled.layer.borderWidth = 0.5
-//        districtsFiled.layer.borderColor = UIColor.lightGray.cgColor
-//        districtsFiled.layer.cornerRadius = 3
-//        districtsFiled.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
-//        
-//        serviceNumField.layer.borderWidth = 0.5
-//        serviceNumField.layer.borderColor = UIColor.lightGray.cgColor
-//        serviceNumField.layer.cornerRadius = 3
-//        serviceNumField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
-//        
-//        amountField.layer.borderWidth = 0.5
-//        amountField.layer.borderColor = UIColor.lightGray.cgColor
-//        amountField.layer.cornerRadius = 3
-//        amountField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
         serviceNumField.keyboardType = .numberPad
         amountField.maxLengthTextField = 7
@@ -163,6 +149,13 @@ class ElectricityViewController: BaseViewController,UIPickerViewDelegate, UIPick
             
             backLabel.font = UIFont.systemFont(ofSize: 12)
             
+            districtsFiled.errorLabel.font = UIFont.systemFont(ofSize: 10)
+            serviceNumField.errorLabel.font = UIFont.systemFont(ofSize: 10)
+            amountField.errorLabel.font = UIFont.systemFont(ofSize: 10)
+            
+
+            
+            
         }
 
         // Do any additional setup after loading the view.
@@ -213,23 +206,13 @@ class ElectricityViewController: BaseViewController,UIPickerViewDelegate, UIPick
         
         textField.textColor = .black
         textField.errorLabel.textColor = .red
-        //        textField.layer.cornerRadius = 10
-        //        textField.borderSize.formSquareRoot()
         textField.rightView?.isHidden = true
-        //        textField.activeBackgroundColor = lightGreyColor
-        //        textField.inActiveBackgroundColor = lightGreyColor
         textField.errorBackGroundColor = UIColor.lightGray.withAlphaComponent(0.1)
-        //        textField.borderStyle = .roundedRect
         textField.placeholderColor = UIColor.lightGray
         textField.lineColor = UIColor.white
         textField.selectedTitleColor = #colorLiteral(red: 0.5568627451, green: 0.1254901961, blue: 0.1647058824, alpha: 1)
         
-        // Set custom fonts for the title, placeholder and textfield labels
-        //        textField.titleLabel.font = UIFont.systemFont(ofSize: 12)
-        //        textField.placeholderFont = UIFont.systemFont(ofSize: 18)
-        //        textField.font = UIFont.systemFont(ofSize: 18)
-        //        textField.isImmediateValidation = true
-    }
+            }
     
     //MARK:- UIPickerView
 
@@ -240,18 +223,8 @@ class ElectricityViewController: BaseViewController,UIPickerViewDelegate, UIPick
         self.myPickerView.delegate = self
         self.myPickerView.dataSource = self
         self.myPickerView.backgroundColor = UIColor.white
-//        if operatorList.isEmpty {
-//            
-//            self.myPickerView.isHidden = true
-//            
-//            districtsFiled.text = "No Boards"
-//            districtsFiled.textColor = UIColor.red
-//            districtsFiled.isUserInteractionEnabled = false
-//            
-//        }else {
         
             textField.inputView = self.myPickerView
-//        }
         
         //MARK:- ToolBar
         let toolBar = UIToolbar()
@@ -341,7 +314,6 @@ class ElectricityViewController: BaseViewController,UIPickerViewDelegate, UIPick
             pickerList.removeAll()
             districtsFiled.tag = 3
             
-            //             myPickerView.reloadAllComponents()
         }
         
         }
@@ -484,39 +456,6 @@ class ElectricityViewController: BaseViewController,UIPickerViewDelegate, UIPick
         return true
     }
     
-//    func validateAllFields() -> Bool
-//    {
-//        districtsFiled.text=districtsFiled.text!.trimmingCharacters(in: CharacterSet.whitespaces)
-//        serviceNumField.text=serviceNumField.text!.trimmingCharacters(in: CharacterSet.whitespaces)
-//        amountField.text = amountField.text!.trimmingCharacters(in: CharacterSet.whitespaces)
-//        
-//        
-//        let dictField:NSString = districtsFiled.text! as NSString
-//        let serField:NSString = serviceNumField.text! as NSString
-//        let amField:NSString = amountField.text! as NSString
-//        
-//        
-//        var errorMessage:NSString?
-//        
-//        if (dictField.length<=0) {
-//            errorMessage=GlobalSupportingClass.blankDistrictErrorMessage() as String as String as NSString?
-//        }
-//        else if (serField.length<=0) {
-//            errorMessage=GlobalSupportingClass.blankServiceNumberErrorMessage() as String as String as NSString?
-//        }
-//            
-//        else if (amField.length<=0) {
-//            errorMessage=GlobalSupportingClass.blankAmountErrorMessage() as String as String as NSString?
-//        }
-//        
-//        
-//        if let errorMsg = errorMessage{
-//            
-//            self.showAlertViewWithTitle("app.Alert".localize(), message: errorMsg as String, buttonTitle: "app.Retry".localize())
-//            return false;
-//        }
-//        return true
-//    }
     
     //MARK:- Button Actions
 
@@ -566,7 +505,6 @@ class ElectricityViewController: BaseViewController,UIPickerViewDelegate, UIPick
                         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                         
                         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginNav") as! UINavigationController
-                        //                    let navigationController = UINavigationController(rootViewController: viewController)
                         let appDelegate = UIApplication.shared.delegate as! AppDelegate
                         appDelegate.window?.rootViewController = viewController
                     }

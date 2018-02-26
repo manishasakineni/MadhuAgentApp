@@ -62,7 +62,6 @@ class changePasswordViewController: BaseViewController,UITextFieldDelegate,UITab
         
         placeHolderCode()
         
-//        let CPWDaddingView: UIView = UIView.init(frame: CGRect(x: 0, y: 0, width: 40, height: 30))
         
         cPwButton.setImage(UIImage(named: "eye2"), for: .normal)
  
@@ -70,12 +69,10 @@ class changePasswordViewController: BaseViewController,UITextFieldDelegate,UITab
         cPwButton.tintColor = #colorLiteral(red: 0.5568627451, green: 0.1254901961, blue: 0.1647058824, alpha: 1)
         cPwButton.contentMode = .scaleAspectFit
         cPwButton.addTarget(self, action: #selector(self.currentPwBtnAction), for: .touchUpInside)
-//        CPWDaddingView.addSubview(cPwButton)
         currentPswdTF.rightView = cPwButton
         currentPswdTF.rightViewMode = .always
         
         
-//        let NPWDaddingView: UIView = UIView.init(frame: CGRect(x: 0, y: 0, width: 40, height: 30))
         nPwButton.setImage(UIImage(named: "eye2"), for: .normal)
    
         nPwButton.frame = CGRect(x: 30, y: 0, width: nPwButton.frame.size.width - 50, height: 20)
@@ -83,17 +80,14 @@ class changePasswordViewController: BaseViewController,UITextFieldDelegate,UITab
         
         nPwButton.tintColor = #colorLiteral(red: 0.5568627451, green: 0.1254901961, blue: 0.1647058824, alpha: 1)
         nPwButton.contentMode = .scaleAspectFit
-//        NPWDaddingView.addSubview(nPwButton)
         newpswdOutLet.rightView = nPwButton
         newpswdOutLet.rightViewMode = .always
         
-//        let RPWDaddingView: UIView = UIView.init(frame: CGRect(x: 0, y: 0, width: 40, height: 30))
         rPwButton.setImage(UIImage(named: "eye2"), for: .normal)
         rPwButton.frame = CGRect(x: 30, y: 0, width: rPwButton.frame.size.width - 50, height: 20)
         rPwButton.addTarget(self, action: #selector(self.reNewPwBtnAction), for: .touchUpInside)
         rPwButton.tintColor = #colorLiteral(red: 0.5568627451, green: 0.1254901961, blue: 0.1647058824, alpha: 1)
         rPwButton.contentMode = .scaleAspectFit
-//        RPWDaddingView.addSubview(rPwButton)
         reTypeNewPswdOutLet.rightView = rPwButton
         reTypeNewPswdOutLet.rightViewMode = .always
         
@@ -151,6 +145,13 @@ class changePasswordViewController: BaseViewController,UITextFieldDelegate,UITab
             headerImgHeight.constant = 79
             
             backLabel.font = UIFont.systemFont(ofSize: 12)
+            
+            
+            currentPswdTF.errorLabel.font = UIFont.systemFont(ofSize: 10)
+            newpswdOutLet.errorLabel.font = UIFont.systemFont(ofSize: 10)
+            reTypeNewPswdOutLet.errorLabel.font = UIFont.systemFont(ofSize: 10)
+            
+
             
         }
 
@@ -272,22 +273,14 @@ class changePasswordViewController: BaseViewController,UITextFieldDelegate,UITab
         
         textField.textColor = .black
         textField.errorLabel.textColor = .red
-        //        textField.layer.cornerRadius = 10
-        //        textField.borderSize.formSquareRoot()
         textField.rightView?.isHidden = false
-        //        textField.activeBackgroundColor = lightGreyColor
-        //        textField.inActiveBackgroundColor = lightGreyColor
         textField.errorBackGroundColor = UIColor.lightGray.withAlphaComponent(0.1)
-        //        textField.borderStyle = .roundedRect
         textField.placeholderColor = UIColor.lightGray
         textField.lineColor = UIColor.white
         textField.selectedTitleColor = #colorLiteral(red: 0.5568627451, green: 0.1254901961, blue: 0.1647058824, alpha: 1)
         
-        // Set custom fonts for the title, placeholder and textfield labels
-        //        textField.titleLabel.font = UIFont.systemFont(ofSize: 12)
-        //        textField.placeholderFont = UIFont.systemFont(ofSize: 18)
-        //        textField.font = UIFont.systemFont(ofSize: 18)
-        //        textField.isImmediateValidation = true
+        
+        
     }
     
     
@@ -384,7 +377,6 @@ class changePasswordViewController: BaseViewController,UITextFieldDelegate,UITab
                         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                         
                         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginNav") as! UINavigationController
-                        //                    let navigationController = UINavigationController(rootViewController: viewController)
                         let appDelegate = UIApplication.shared.delegate as! AppDelegate
                         appDelegate.window?.rootViewController = viewController
                         
@@ -392,7 +384,6 @@ class changePasswordViewController: BaseViewController,UITextFieldDelegate,UITab
                     else if isSuccess == false
                     {
                          let invalidmsg = respVO.EndUserMessage
-//                        let inValidMsg = GlobalSupportingClass.invalidLoginMessage()
                         
                               self.showAlertViewWithTitle("app.Alert".localize(), message: invalidmsg!, buttonTitle: "app.Retry".localize())
                         
@@ -447,18 +438,9 @@ class changePasswordViewController: BaseViewController,UITextFieldDelegate,UITab
         if (currenuPswd.length<=0) {
             errorMessage=GlobalSupportingClass.changePasswordErrorMessage() as String as String as NSString?
         }
-//        else if(!GlobalSupportingClass.capitalOnly(password: currenuPswd as String)) {
-//            
-//            errorMessage=GlobalSupportingClass.capitalLetterMessage() as String as String as NSString?
-//        }
-//        else if(!GlobalSupportingClass.numberOnly(password: currenuPswd as String)) {
-//            
-//            errorMessage=GlobalSupportingClass.numberMessage() as String as String as NSString?
-//        }
-//        else if(!GlobalSupportingClass.specialCharOnly(password: currenuPswd as String)) {
-//            
-//            errorMessage=GlobalSupportingClass.specialCharacterMessage() as String as String as NSString?
-//        }
+            
+            
+
             
         else if (newPswd.length<=0) {
             errorMessage=GlobalSupportingClass.newPasswordErrorMessage() as String as String as NSString?
@@ -497,22 +479,8 @@ class changePasswordViewController: BaseViewController,UITextFieldDelegate,UITab
                 currentPswdTF.errorMessage = errorMsg as String
                 currentPswdTF.errorLabel.textColor = .red
             }
-//            else if(!GlobalSupportingClass.capitalOnly(password: currenuPswd as String)) {
-//                
-//              currentPswdTF.errorMessage = errorMsg as String
-//            
-//            }
-//            else if(!GlobalSupportingClass.numberOnly(password: currenuPswd as String)) {
-//                
-//              currentPswdTF.errorMessage = errorMsg as String
-//            
-//            }
-//            else if(!GlobalSupportingClass.specialCharOnly(password: currenuPswd as String)) {
-//                
-//              currentPswdTF.errorMessage = errorMsg as String
-//            
-//            }
-
+                
+                
                 
             else if (newPswd.length<=0) {
                 

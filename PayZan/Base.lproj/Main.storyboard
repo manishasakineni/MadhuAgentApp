@@ -388,8 +388,16 @@
                     <navigationItem key="navigationItem" id="E8P-F4-FP7"/>
                     <connections>
                         <outlet property="LaterBtn" destination="55K-va-sE6" id="ntr-ma-t0t"/>
+                        <outlet property="andOutLet" destination="CRJ-d4-sbV" id="vh7-6V-lxd"/>
+                        <outlet property="andWidth" destination="BOR-gV-1A4" id="eIA-JX-xPS"/>
                         <outlet property="backBtn" destination="ess-X3-hSv" id="wGw-Fg-XWk"/>
                         <outlet property="backLabel" destination="iKJ-bn-fTz" id="dEu-1g-qH8"/>
+                        <outlet property="byLogingOutLet" destination="OUT-ua-mys" id="oPM-vd-NNB"/>
+                        <outlet property="byLogingWidth" destination="Afq-8Q-ss8" id="5l4-Qm-pPT"/>
+                        <outlet property="cannotLoginOutLet" destination="yuz-Ae-mEx" id="QqR-Yn-yDE"/>
+                        <outlet property="cannotLoginWidth" destination="ftd-7j-K1V" id="wzt-AQ-dBO"/>
+                        <outlet property="dontHaveAccountOutLet" destination="Sjc-1n-GnS" id="Fwf-Jy-Cgb"/>
+                        <outlet property="donthaveAcntWidth" destination="Tqd-Qz-zRn" id="gNc-a9-rHJ"/>
                         <outlet property="eyeBtnOutlet" destination="kZV-8A-Kgm" id="cuQ-6q-upb"/>
                         <outlet property="facebookBtn" destination="c75-Ec-7G0" id="X7T-b4-7FX"/>
                         <outlet property="facebookBtnHeight" destination="ZH9-l0-uOh" id="nfm-KX-Ha4"/>
@@ -402,9 +410,15 @@
                         <outlet property="mobileField" destination="qwy-Ag-jFC" id="BJA-ak-N8T"/>
                         <outlet property="mobileFiledHeight" destination="91f-zc-W31" id="eyg-aQ-HYa"/>
                         <outlet property="orLabelHeight" destination="5El-Sg-0SF" id="bhK-G4-CbT"/>
+                        <outlet property="orOutLet" destination="WV8-5z-TVu" id="CIu-6f-PEc"/>
                         <outlet property="passwordField" destination="yAX-rc-cXR" id="CxY-Ao-pVp"/>
                         <outlet property="passwordFiledHeight" destination="PRc-VB-hN4" id="FfG-jx-Mun"/>
+                        <outlet property="privacypolicyOutLet" destination="bon-tx-trF" id="RB7-JJ-Hsy"/>
+                        <outlet property="privacypolicyWidth" destination="16G-NL-ZqG" id="x8l-9a-fM6"/>
+                        <outlet property="signUpOutLet" destination="QAV-w1-peO" id="udP-4h-Wvd"/>
                         <outlet property="signUpViewHeight" destination="JhX-Tk-OUK" id="fCV-ah-Nv4"/>
+                        <outlet property="termsAndConditionsOutLet" destination="lAB-qy-QLc" id="pY4-qH-fki"/>
+                        <outlet property="termsAndConditionsWidth" destination="4Mg-TM-7pH" id="MmY-uV-n3J"/>
                         <outlet property="termsViewHeight" destination="9av-NA-3mG" id="Tea-QD-YBR"/>
                     </connections>
                 </viewController>
@@ -798,6 +812,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JEG-CR-KzK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7378.2608695652179" y="-1891.304347826087"/>
+        </scene>
+        <!--Choose Language View Controller-->
+        <scene sceneID="aBc-xX-69q">
+            <objects>
+                <viewController storyboardIdentifier="ChooseLanguageViewController" id="ea8-aX-g4c" customClass="ChooseLanguageViewController" customModule="PayZan" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="deR-Xc-j3y"/>
+                        <viewControllerLayoutGuide type="bottom" id="MNc-Ak-qy9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1QL-UW-mLA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cb-TN-Bos">
+                                <rect key="frame" x="0.0" y="353" width="414" height="30"/>
+                                <color key="backgroundColor" red="0.50196078430000002" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8U8-Ay-EEN"/>
+                                </constraints>
+                                <state key="normal" title="Choose Language">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="languageBtnAction:" destination="ea8-aX-g4c" eventType="touchUpInside" id="VKj-Lo-ZcA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="br6-1C-kNu">
+                                <rect key="frame" x="184" y="458" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="0Nk-dK-L71"/>
+                                    <constraint firstAttribute="height" constant="30" id="UzY-uu-7P5"/>
+                                </constraints>
+                                <state key="normal" title="Skip">
+                                    <color key="titleColor" red="0.50196078430000002" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="skipBtnAction:" destination="ea8-aX-g4c" eventType="touchUpInside" id="CIh-Oi-4Cy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="4cb-TN-Bos" secondAttribute="trailing" id="SZy-FB-8MO"/>
+                            <constraint firstItem="br6-1C-kNu" firstAttribute="centerX" secondItem="4cb-TN-Bos" secondAttribute="centerX" id="T1T-Ak-YQD"/>
+                            <constraint firstItem="4cb-TN-Bos" firstAttribute="leading" secondItem="1QL-UW-mLA" secondAttribute="leading" id="Xmj-55-cVG"/>
+                            <constraint firstItem="4cb-TN-Bos" firstAttribute="centerY" secondItem="1QL-UW-mLA" secondAttribute="centerY" id="d5E-xk-qCh"/>
+                            <constraint firstItem="4cb-TN-Bos" firstAttribute="centerX" secondItem="1QL-UW-mLA" secondAttribute="centerX" id="gYI-RT-lLT"/>
+                            <constraint firstItem="br6-1C-kNu" firstAttribute="top" secondItem="4cb-TN-Bos" secondAttribute="bottom" constant="75" id="o73-9q-Iom"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="languageBtn" destination="4cb-TN-Bos" id="FaM-to-mRy"/>
+                        <outlet property="skipBtn" destination="br6-1C-kNu" id="zAP-1e-gTd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cdi-1S-o6w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1555.072463768116" y="-689.67391304347836"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="q3V-84-6o8">
@@ -1200,6 +1272,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="alrdyHaveAcntWidth" destination="CdG-4z-hrR" id="JKa-SJ-PxG"/>
+                        <outlet property="alreadyhaveAccountOutLet" destination="v5q-4J-kZd" id="yvU-nE-upA"/>
+                        <outlet property="andOutLet" destination="Dgl-br-GGf" id="gqz-81-dDh"/>
+                        <outlet property="andWidth" destination="hiC-wR-fRR" id="FkV-zb-P6B"/>
                         <outlet property="backBtn" destination="1cH-1w-NHX" id="5ve-fz-lDh"/>
                         <outlet property="backLabel" destination="AlS-9h-23f" id="QqW-Sp-trz"/>
                         <outlet property="cnfrmpswdeyeOutLet" destination="Sf2-Ze-vte" id="3QC-t5-4Y0"/>
@@ -1215,15 +1291,24 @@
                         <outlet property="headerImgHeight" destination="XsB-T5-gsy" id="a6S-JG-XG2"/>
                         <outlet property="headerView" destination="toA-2X-qbw" id="1aG-2f-w2y"/>
                         <outlet property="headerViewHeight" destination="a8C-8m-8xk" id="8TE-Ct-Re2"/>
+                        <outlet property="loginOutLet" destination="XFI-To-x8d" id="uvW-F5-K2J"/>
                         <outlet property="loginViewHeight" destination="C36-bY-tgw" id="JjK-Pt-kTo"/>
                         <outlet property="mobileFieldHeight" destination="Hs7-ns-e0X" id="xL0-gy-B5a"/>
                         <outlet property="mobileNumField" destination="fg5-I1-WH3" id="Dh3-uU-r1b"/>
+                        <outlet property="onSignUpOutLet" destination="DnQ-K0-ESa" id="YQs-kw-g7H"/>
+                        <outlet property="onSignUpWidth" destination="JFo-fC-PR4" id="IJR-TE-aYU"/>
                         <outlet property="orLabelHeight" destination="GwM-1s-LJ9" id="1jC-bP-TBc"/>
+                        <outlet property="orOutLet" destination="IvK-xP-GwP" id="1co-Jk-asj"/>
                         <outlet property="passwordFieldHeight" destination="Tf4-qw-Xtd" id="k8Q-lB-nfi"/>
                         <outlet property="paswdField" destination="lSf-cX-7eM" id="ekz-P0-dmK"/>
+                        <outlet property="privacypolicyWidth" destination="VWz-Nw-1UI" id="vhF-Yu-wrq"/>
+                        <outlet property="privacypoliyOutLet" destination="Y27-ng-8mR" id="kfb-Wo-Dya"/>
                         <outlet property="signUpBtnHeight" destination="WVw-p3-OTr" id="gZN-wT-Omw"/>
                         <outlet property="signupBtn" destination="SDZ-Dh-cHF" id="Lka-3n-3bb"/>
+                        <outlet property="termasAndConditionsOutLet" destination="Dac-VZ-o4K" id="xtR-Gz-Izp"/>
+                        <outlet property="termsAndConditionsWidth" destination="drj-xq-eAd" id="q4h-rU-qoa"/>
                         <outlet property="termsViewHeight" destination="37H-xn-BCz" id="HoQ-Jy-ceo"/>
+                        <outlet property="uiViewHeight" destination="37H-xn-BCz" id="7E1-R5-rA2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="07X-ao-J3h" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1786,7 +1871,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wSF-Zb-qo8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wSF-Zb-qo8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1806,7 +1891,7 @@
                     <tabBarItem key="tabBarItem" title="My Profile" image="myProfilePng" selectedImage="myProfilePng" id="zJf-Ao-MRt"/>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mt6-f4-R4S">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="mt6-f4-R4S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1830,7 +1915,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HiU-Ff-lBp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="HiU-Ff-lBp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1854,7 +1939,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yIj-u9-loA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="yIj-u9-loA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -6363,7 +6448,7 @@
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oWr-Ht-Jv6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="oWr-Ht-Jv6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

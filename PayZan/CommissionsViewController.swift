@@ -102,7 +102,6 @@ class CommissionsViewController: UIViewController ,UITableViewDelegate,UITableVi
             commisionOutLet.font = UIFont.systemFont(ofSize: 18)
             fromOutLet.font = UIFont.systemFont(ofSize: 18)
             toOutLet.font = UIFont.systemFont(ofSize: 18)
-         //   goOutLet.font = UIFont.systemFont(ofSize: 13)
             dateOperetorOutLet.font = UIFont.systemFont(ofSize: 18)
             transactionIdOutLet.font = UIFont.systemFont(ofSize: 18)
             mobileNoOutLet.font = UIFont.systemFont(ofSize: 18)
@@ -114,7 +113,6 @@ class CommissionsViewController: UIViewController ,UITableViewDelegate,UITableVi
             
         else{
             
-          //  uiViewHeight.constant = 35
             headImgHeight.constant = 79
             
         }        

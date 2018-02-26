@@ -59,7 +59,6 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
     
     var totalEnteredAmount:Int = 0
     
-//    let emailField = AMPFloatingTextField(frame: CGRect(x: 10, y: 100, width: 400, height: 60))
     
     let lightGreyColor: UIColor = UIColor(red: 197 / 255, green: 205 / 255, blue: 205 / 255, alpha: 1.0)
     let darkGreyColor: UIColor = UIColor(red: 52 / 255, green: 42 / 255, blue: 61 / 255, alpha: 1.0)
@@ -81,88 +80,10 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
         consumerNumberTextField.maxLengthTextField = 40
         
         
-//        amountTextField.editingBegin()
         
          placeHolderCode()
         
        
-        
-//        amountTextField.updateBorder()
-        
-        //        fnameField.layer.cornerRadius = 5
-        
-//        selectBoardTextField.rightView?.isHidden = true
-//        
-//        selectBoardTextField.rightViewMode = UITextFieldViewMode(rawValue: 10)!
-//        
-//        if #available(iOS 9.0, *) {
-//            selectBoardTextField.rightAnchor.accessibilityActivate()
-//        } else {
-//            // Fallback on earlier versions
-//        }
-//        
-//        selectBoardTextField.placeholder = NSLocalizedString(
-//            "Select Operator",
-//            tableName: "AMPFloatingTextField",
-//            comment: "placeholder for Email field"
-//        )
-//        selectBoardTextField.selectedTitle = NSLocalizedString(
-//            "Select Operator",
-//            tableName: "AMPFloatingTextField",
-//            comment: "selected Operator field"
-//        )
-//        selectBoardTextField.title = NSLocalizedString(
-//            "Select Operator",
-//            tableName: "AMPFloatingTextField",
-//            comment: "title Operator field"
-//        )
-////        waterView.addSubview(selectBoardTextField)
-//        applySkyscannerTheme(textField: selectBoardTextField)
-//        
-//        consumerNumberTextField.placeholder = NSLocalizedString(
-//            "Consumer Number",
-//            tableName: "AMPFloatingTextField",
-//            comment: "placeholder for Consumer Number field"
-//        )
-//        consumerNumberTextField.selectedTitle = NSLocalizedString(
-//            "Consumer Number",
-//            tableName: "AMPFloatingTextField",
-//            comment: "selected title for Consumer Number field"
-//        )
-//        consumerNumberTextField.title = NSLocalizedString(
-//            "Select Operator",
-//            tableName: "AMPFloatingTextField",
-//            comment: "title for Consumer Number field"
-//        )
-//        
-////        waterView.addSubview(consumerNumberTextField)
-//        applySkyscannerTheme(textField: consumerNumberTextField)
-        
-        //MARK:- TextField Colors
-
-        
-//        selectBoardTextField.layer.borderWidth = 0.5
-//        selectBoardTextField.layer.borderColor = UIColor.lightGray.cgColor
-//        selectBoardTextField.layer.cornerRadius = 3
-//        selectBoardTextField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
-//        
-//        consumerNumberTextField.layer.borderWidth = 0.5
-//        consumerNumberTextField.layer.borderColor = UIColor.lightGray.cgColor
-//        consumerNumberTextField.layer.cornerRadius = 3
-//        
-//        
-//        consumerNumberTextField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
-//        
-//        amountTextField.layer.borderWidth = 0.5
-//        amountTextField.layer.borderColor = UIColor.lightGray.cgColor
-//        amountTextField.layer.cornerRadius = 3
-//        amountTextField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
-//        
-//        selectBoardTextField.delegate = self
-//        
-//        amountTextField.keyboardType = .decimalPad
-//        consumerNumberTextField.keyboardType = .numberPad
-//        amountTextField.maxLengthTextField = 7
         
         
         let defaults = UserDefaults.standard
@@ -224,6 +145,12 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
             
             backLabel.font = UIFont.systemFont(ofSize: 12)
             
+            selectBoardTextField.errorLabel.font = UIFont.systemFont(ofSize: 10)
+            consumerNumberTextField.errorLabel.font = UIFont.systemFont(ofSize: 10)
+            amountTextField.errorLabel.font = UIFont.systemFont(ofSize: 10)
+            
+
+            
         }
 
 
@@ -239,41 +166,25 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-//         placeHolderCode()
         
         self.tabBarController?.tabBar.isHidden = true
     }
     
     func placeHolderCode(){
         
-//        selectBoardTextField.borderSize.formSquareRoot()
-//        selectBoardTextField.rightView?.isHidden = true
-        
-//        selectBoardTextField.rightViewMode = UITextFieldViewMode(rawValue: 10)!
-//        
-//        if #available(iOS 9.0, *) {
-//            selectBoardTextField.rightAnchor.accessibilityActivate()
-//        } else {
-//            // Fallback on earlier versions
-//        }
+
         
         selectBoardTextField.placeholder = "app.SelectOperator".localize()
         selectBoardTextField.selectedTitle = "app.SelectOperator".localize()
         selectBoardTextField.title = "app.SelectOperator".localize()
                 
-//        view.addSubview(selectBoardTextField)
        
         
         consumerNumberTextField.placeholder = "app.ConsumerNumber".localize()
-//        NSLocalizedString(
-//            "Consumer Number",
-//            tableName: "",
-//            comment: "placeholder for Consumer Number field"
-//        )
+        
         consumerNumberTextField.selectedTitle = "app.ConsumerNumber".localize()
         consumerNumberTextField.title = "app.ConsumerNumber".localize()
                 
-//               view.addSubview(consumerNumberTextField)
         
         
         
@@ -288,17 +199,9 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
         selectBoardTextField.setLeftPaddingPoints(4)
         
         
-//        amountTextField.borderLayer.frame = CGRect( x: UIScreen.main.bounds.origin.x, y: 15, width: UIScreen.main.bounds.size.width-10,
-//                                                    height: UIScreen.main.bounds.size.height - 15 * 2 - 0.2)
-//        
-//        amountTextField.updateBorder()
-        
-//        amountTextField.keyboardType = .decimalPad
         
         
-//        amountTextField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
-
-//        view.addSubview(amountTextField)
+        
          applySkyscannerTheme(textField: selectBoardTextField)
         applySkyscannerTheme(textField: consumerNumberTextField)
         applySkyscannerTheme(textField: amountTextField)
@@ -319,13 +222,11 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
             )
             consumerNumberTextField.rightView?.isHidden = true
         }
-            //        else if isOnlyNumbers(phone as NSString) {
-            //            selectBoardTextField.errorMessage = NSLocalizedString(
-            //                "please enter valid phone number",
-            //                tableName: "AMPFloatingTextField",
-            //                comment: " "
-            //            )
-            //        }
+            
+            
+            
+            
+            
         else {
             consumerNumberTextField.errorMessage = nil
             consumerNumberTextField.rightView?.isHidden = true
@@ -348,13 +249,11 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
             )
             selectBoardTextField.rightView?.isHidden = true
         }
-//        else if isOnlyNumbers(phone as NSString) {
-//            selectBoardTextField.errorMessage = NSLocalizedString(
-//                "please enter valid phone number",
-//                tableName: "AMPFloatingTextField",
-//                comment: " "
-//            )
-//        }
+            
+            
+  
+            
+            
         else {
             selectBoardTextField.errorMessage = nil
             selectBoardTextField.rightView?.isHidden = true
@@ -367,22 +266,11 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
         
         textField.textColor = .black
         textField.errorLabel.textColor = .red
-        //        textField.layer.cornerRadius = 10
-//        textField.borderSize.formSquareRoot()
         textField.rightView?.isHidden = true
-        //        textField.activeBackgroundColor = lightGreyColor
-        //        textField.inActiveBackgroundColor = lightGreyColor
         textField.errorBackGroundColor = UIColor.lightGray.withAlphaComponent(0.1)
-        //        textField.borderStyle = .roundedRect
         textField.placeholderColor = UIColor.lightGray
         textField.lineColor = UIColor.white
         textField.selectedTitleColor = #colorLiteral(red: 0.5568627451, green: 0.1254901961, blue: 0.1647058824, alpha: 1)
-        
-        // Set custom fonts for the title, placeholder and textfield labels
-//        textField.titleLabel.font = UIFont.systemFont(ofSize: 12)
-//        textField.placeholderFont = UIFont.systemFont(ofSize: 18)
-//        textField.font = UIFont.systemFont(ofSize: 18)
-//        textField.isImmediateValidation = true
     }
     
     //MARK:- UIPickerView
@@ -395,18 +283,10 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
         self.myPickerView.delegate = self
         self.myPickerView.dataSource = self
         self.myPickerView.backgroundColor = UIColor.white
-//        if operatorList.isEmpty {
-//            
-//            self.myPickerView.isHidden = true
-//            
-//            selectBoardTextField.text = "No Operators"
-//            selectBoardTextField.textColor = UIColor.red
-//            selectBoardTextField.isUserInteractionEnabled = false
-//            
-//        }else {
-//            selectBoardTextField.isUserInteractionEnabled = true
+        
+        
+        
             textField.inputView = self.myPickerView
-//        }
         
         //MARK:- ToolBar
         let toolBar = UIToolbar()
@@ -440,7 +320,6 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-//        let newString = NSString(string: textField.text!).replacingCharacters(in: range, with: string)
         
         if(textField==self.amountTextField&&range.location==0)
         {
@@ -485,7 +364,6 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
             pickerList.removeAll()
             selectBoardTextField.tag = 2
             
-//             myPickerView.reloadAllComponents()
         }
         
         else if textField == amountTextField {
@@ -493,15 +371,10 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
             pickerList.removeAll()
             selectBoardTextField.tag = 3
             
-            //             myPickerView.reloadAllComponents()
         }
 
         
-//        self.pickUp(selectBoardTextField)
-//        
-//        selectBoardTextField = textField as! AMPFloatingTextField
-//        
-//        self.myPickerView.reloadAllComponents()
+        
     }
     
     //MARK:- PickerView Delegate & DataSource
@@ -535,7 +408,6 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
             
             let strUrl = waterUrl
             
-//            let url : NSURL = NSURL(string: strUrl)!
             
             serviceController.requestGETURL(strURL:strUrl, success:{(result) in
                 DispatchQueue.main.async()
@@ -645,11 +517,8 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
 
             
             
-//             consumerNumberTextField.errorMessage = errorMsg as String
             
-//            validateOperatorTextFieldWithText(selectoperator: errorMsg as String)
             
-//            self.showAlertViewWithTitle("app.Alert".localize(), message: errorMsg as String, buttonTitle: "app.Retry".localize())
             return false;
         }
         return true
@@ -659,10 +528,6 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
     
     @IBAction func proceedToPayButtonAction(_ sender: Any) {
         
-        
-//        validateOperatorTextFieldWithText(selectoperator: selectBoardTextField.text)
-//        
-//        validateConsumerNumTextFieldWithText(consumer: consumerNumberTextField.text)
         
         if validateAllFields(){
             
@@ -676,53 +541,6 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
         
         
          placeHolderCode()
-        
-//        if(appDelegate.checkInternetConnectivity()){
-//            
-//            if validateAllFields(){
-//                
-//                if walletId != nil && userId != nil {
-//                    
-//                    print("success")
-//                    
-//                    //                sendMoneyToWalletService()
-//                    
-//                }
-//                else {
-//                    
-//                    let alertController = UIAlertController(title: "app.Alert".localize(), message: "app.LoginAlert".localize(), preferredStyle: UIAlertControllerStyle.alert)
-//                    
-//                    
-//                    let cancelAction = UIAlertAction(title: "app.Cancel".localize(), style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
-//                        print("Cancel")
-//                        
-//                        
-//                    }
-//                    let okAction = UIAlertAction(title: "app.Ok".localize(), style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
-//                        print("OK")
-//                        
-//                        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//                        
-//                        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginNav") as! UINavigationController
-//                        //                    let navigationController = UINavigationController(rootViewController: viewController)
-//                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//                        appDelegate.window?.rootViewController = viewController
-//                    }
-//                    alertController.addAction(cancelAction)
-//                    alertController.addAction(okAction)
-//                    self.present(alertController, animated: true, completion: nil)
-//                    
-//                }
-//                
-//            }
-//            
-//        }
-//        else {
-//            
-//            self.appDelegate.window?.makeToast(kNetworkStatusMessage, duration:kToastDuration, position:CSToastPositionCenter)
-//            return
-//            
-//        }
         
     
     

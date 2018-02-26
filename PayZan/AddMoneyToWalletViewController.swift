@@ -96,15 +96,6 @@ class AddMoneyToWalletViewController: BaseViewController,UITextFieldDelegate{
         addPromoTextFiled.text = ""
 
         
-//        addAmountTextField.layer.borderWidth = 0.5
-//        addAmountTextField.layer.borderColor = UIColor.lightGray.cgColor
-//        addAmountTextField.layer.cornerRadius = 3
-//        addAmountTextField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
-//        
-//        addPromoTextFiled.layer.borderWidth = 0.5
-//        addPromoTextFiled.layer.borderColor = UIColor.lightGray.cgColor
-//        addPromoTextFiled.layer.cornerRadius = 3
-//        addPromoTextFiled.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
         
         let defaults = UserDefaults.standard
@@ -157,6 +148,8 @@ class AddMoneyToWalletViewController: BaseViewController,UITextFieldDelegate{
             
         }
         else {
+            addAmountTextField.errorLabel.font = UIFont.systemFont(ofSize: 10)
+            addPromoTextFiled.errorLabel.font = UIFont.systemFont(ofSize: 10)
             
             
         }
@@ -216,16 +209,11 @@ class AddMoneyToWalletViewController: BaseViewController,UITextFieldDelegate{
          fCountInt = 0
          tCountInt = 0
         
-//        self.title = "app.AddMoneytowallet".localize()
-        
         let defaults = UserDefaults.standard
         
         if let walletAmount = defaults.string(forKey: "walletAmount") {
             
             
-//            walletBalLabel.text = walletAmount
-            
-//             addAmountTextField.text = ""
             
             print("defaults savedString: \(walletAmount)")
         }
@@ -254,7 +242,6 @@ class AddMoneyToWalletViewController: BaseViewController,UITextFieldDelegate{
         }
        
         
-       // IQKeyboardManager.sharedManager().enable = false
     }
     
     override func didReceiveMemoryWarning() {
@@ -278,7 +265,6 @@ class AddMoneyToWalletViewController: BaseViewController,UITextFieldDelegate{
             
             addAmountTextField.updateBorder()
             
-//            addAmountTextField.editingBegin()
             
             if UserDefaults.standard.object(forKey: "emptyField") != nil {
                 
@@ -320,30 +306,20 @@ class AddMoneyToWalletViewController: BaseViewController,UITextFieldDelegate{
         
         textField.textColor = .black
         textField.errorLabel.textColor = .red
-        //        textField.layer.cornerRadius = 10
-        //        textField.borderSize.formSquareRoot()
         textField.rightView?.isHidden = true
-        //        textField.activeBackgroundColor = lightGreyColor
-        //        textField.inActiveBackgroundColor = lightGreyColor
         textField.errorBackGroundColor = UIColor.lightGray.withAlphaComponent(0.1)
-        //        textField.borderStyle = .roundedRect
         textField.placeholderColor = UIColor.lightGray
         textField.lineColor = UIColor.white
         textField.selectedTitleColor = #colorLiteral(red: 0.5568627451, green: 0.1254901961, blue: 0.1647058824, alpha: 1)
         
-        // Set custom fonts for the title, placeholder and textfield labels
         textField.titleLabel.font = UIFont.systemFont(ofSize: 12)
         textField.placeholderFont = UIFont.systemFont(ofSize: 12)
-        //        textField.errorLabel.font = UIFont.systemFont(ofSize: 8)
-        //        textField.font = UIFont.systemFont(ofSize: 18)
-        //        textField.isImmediateValidation = true
     }
     
     func validateAllFields() -> Bool
     {
         addAmountTextField.text=addAmountTextField.text!.trimmingCharacters(in: CharacterSet.whitespaces)        
         
-//        let nwField:NSString = networkField.text! as NSString
         let amField:NSString = addAmountTextField.text! as NSString
         
         
@@ -405,7 +381,6 @@ class AddMoneyToWalletViewController: BaseViewController,UITextFieldDelegate{
     
             }else{
                 hCountInt = 0
-               // textField.text = String(0)
                 addedamount = 0
             }
             
@@ -420,15 +395,6 @@ class AddMoneyToWalletViewController: BaseViewController,UITextFieldDelegate{
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        /// 1. replacementString is NOT empty means we are entering text or pasting text: perform the logic
-        /// 2. replacementString is empty means we are deleting text: return true
-        
-//        let countdots = (addAmountTextField.text?.components(separatedBy: ".").count)! - 1
-//        
-//        if countdots > 0 && string == "."
-//        {
-//            return false
-//        }
         
         if textField == addPromoTextFiled {
             
@@ -496,7 +462,6 @@ class AddMoneyToWalletViewController: BaseViewController,UITextFieldDelegate{
         
         }
         
-//        textField.text = ""
 
         
         return true
@@ -539,7 +504,6 @@ class AddMoneyToWalletViewController: BaseViewController,UITextFieldDelegate{
 
             self.addAmountTextField.text = ""
             
-           //   tCountInt = addedamount
             hCountInt = hCountInt + addedamount
             hCountInt += 1000
             addAmountTextField.text = "\(hCountInt)"
@@ -578,10 +542,6 @@ class AddMoneyToWalletViewController: BaseViewController,UITextFieldDelegate{
             
         }
 
-//        hCountInt = 0
-//        
-//        fCountInt = 0
-//        tCountInt = 0
         self.addAmountTextField.text = ""
         
       //  fCountInt = addedamount
@@ -613,7 +573,6 @@ class AddMoneyToWalletViewController: BaseViewController,UITextFieldDelegate{
         
         addAmountTextField.errorMessage = ""
         
-//        addAmountTextField.updateBorder()
         
         
         if addAmountTextField.text != ""{
@@ -631,14 +590,7 @@ class AddMoneyToWalletViewController: BaseViewController,UITextFieldDelegate{
             
         }
 
-//       hCountInt = 0
-//        
-//        fCountInt = 0
-//        tCountInt = 0
-        
-     //  addedamount = Int(self.addAmountTextField.text!)!
-        
-      //  let CurrentVal : Int = Int(self.addAmountTextField.text!)!
+
         self.addAmountTextField.text = ""
         
          hCountInt = hCountInt + addedamount
@@ -671,7 +623,6 @@ class AddMoneyToWalletViewController: BaseViewController,UITextFieldDelegate{
                 
                 if !(walletId?.isEmpty)! && !(userId?.isEmpty)! {
                 
-//                        postWalletMoneyService()
                 let addMoney:String = "AddMoney"
                 
                   let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -693,7 +644,6 @@ class AddMoneyToWalletViewController: BaseViewController,UITextFieldDelegate{
                     
                     addMoneyViewController.addMoneyStr = addMoney
                     
-//                    addMoneyViewController.addMoneyAmount = addAmountTextField.text!
                     
                     self.navigationController?.pushViewController(addMoneyViewController, animated: true)
                  
@@ -714,7 +664,6 @@ class AddMoneyToWalletViewController: BaseViewController,UITextFieldDelegate{
                         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                         
                         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginNav") as! UINavigationController
-                        //                    let navigationController = UINavigationController(rootViewController: viewController)
                         let appDelegate = UIApplication.shared.delegate as! AppDelegate
                         appDelegate.window?.rootViewController = viewController
                     }
@@ -806,7 +755,6 @@ class AddMoneyToWalletViewController: BaseViewController,UITextFieldDelegate{
                                     
                                 }
                                 
-//                                self.walletBalLabel.text = walletAmount
                                 
                                 print("defaults savedString: \(walletAmount)")
                             }

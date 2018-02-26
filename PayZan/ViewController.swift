@@ -19,6 +19,39 @@ import AMPFloatingTextField
 
 class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate,GIDSignInDelegate,SWRevealViewControllerDelegate {
     
+    
+    
+    @IBOutlet weak var byLogingWidth: NSLayoutConstraint!
+    
+    @IBOutlet weak var byLogingOutLet: UILabel!
+    
+    @IBOutlet weak var termsAndConditionsWidth: NSLayoutConstraint!
+    
+    @IBOutlet weak var andWidth: NSLayoutConstraint!
+    @IBOutlet weak var termsAndConditionsOutLet: UIButton!
+    
+    @IBOutlet weak var andOutLet: UILabel!
+    
+    @IBOutlet weak var privacypolicyOutLet: UIButton!
+    
+    @IBOutlet weak var privacypolicyWidth: NSLayoutConstraint!
+    
+    @IBOutlet weak var orOutLet: UILabel!
+    
+    @IBOutlet weak var donthaveAcntWidth: NSLayoutConstraint!
+    
+    @IBOutlet weak var signUpOutLet: UIButton!
+    
+    @IBOutlet weak var dontHaveAccountOutLet: UILabel!
+
+    
+    @IBOutlet weak var cannotLoginOutLet: UIButton!
+    
+    
+    @IBOutlet weak var cannotLoginWidth: NSLayoutConstraint!
+    
+    
+    
     @IBOutlet weak var barBtn: UIBarButtonItem!
     
     @IBOutlet weak var mobileField: AMPFloatingTextField!
@@ -123,6 +156,15 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
             
             headerViewHeight.constant = 50
             
+            donthaveAcntWidth.constant = 200
+            
+            termsAndConditionsWidth.constant = 150
+            privacypolicyWidth.constant = 130
+            andWidth.constant = 35
+            byLogingWidth.constant = 210
+            cannotLoginWidth.constant = 150
+
+            
             mobileField.font = UIFont.systemFont(ofSize: 20)
             mobileField.placeholderFont = UIFont.systemFont(ofSize: 20)
             mobileField.titleFont = UIFont.systemFont(ofSize: 20)
@@ -133,12 +175,34 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
             passwordField.titleFont = UIFont.systemFont(ofSize: 20)
             passwordField.errorLabel.font = UIFont.systemFont(ofSize: 14)
             
+            
+            dontHaveAccountOutLet.font = UIFont.systemFont(ofSize: 15)
+            
+            signUpOutLet.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+            facebookBtn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+            googleBtn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+            cannotLoginOutLet.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+
+            termsAndConditionsOutLet.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+            privacypolicyOutLet.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+            andOutLet.font = UIFont.systemFont(ofSize: 15)
+            byLogingOutLet.font = UIFont.systemFont(ofSize: 15)
+            orOutLet.font = UIFont.systemFont(ofSize: 15)
+            
+
+            
+            
             backLabel.font = UIFont.systemFont(ofSize: 16)
         }
         else {
             
             headerImgHeight.constant = 79
             backLabel.font = UIFont.systemFont(ofSize: 12)
+            
+            mobileField.errorLabel.font = UIFont.systemFont(ofSize: 10)
+            passwordField.errorLabel.font = UIFont.systemFont(ofSize: 10)
+            
+
             
         }
         
@@ -150,9 +214,7 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
     
     override func viewDidAppear(_ animated: Bool) {
         
-//        headerView.isHidden = false
-        
-//        self.tabBarController?.tabBar.isHidden = true
+
         
         super.viewDidAppear(true)
     }
@@ -187,16 +249,11 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
         
         self.tabBarController?.tabBar.isHidden = true
         
-        // Hide the navigation bar on the this view controller
-       // self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-//        self.tabBarController?.tabBar.isHidden = false
-        // Show the navigation bar on other view controllers
-       // self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     @IBAction func currentPwBtnAction(_ sender: Any) {
@@ -246,22 +303,14 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
         
         textField.textColor = .black
         textField.errorLabel.textColor = .red
-        //        textField.layer.cornerRadius = 10
-        //        textField.borderSize.formSquareRoot()
         textField.rightView?.isHidden = true
-        //        textField.activeBackgroundColor = lightGreyColor
-        //        textField.inActiveBackgroundColor = lightGreyColor
         textField.errorBackGroundColor = UIColor.lightGray.withAlphaComponent(0.1)
-        //        textField.borderStyle = .roundedRect
         textField.placeholderColor = UIColor.lightGray
         textField.lineColor = UIColor.white
         textField.selectedTitleColor = #colorLiteral(red: 0.5568627451, green: 0.1254901961, blue: 0.1647058824, alpha: 1)
         
-        // Set custom fonts for the title, placeholder and textfield labels
-        //        textField.titleLabel.font = UIFont.systemFont(ofSize: 12)
-        //        textField.placeholderFont = UIFont.systemFont(ofSize: 18)
-        //        textField.font = UIFont.systemFont(ofSize: 18)
-        //        textField.isImmediateValidation = true
+       
+        
     }
     
     
@@ -279,13 +328,10 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        //        self.view.endEditing(true)
         return true
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        /// 1. replacementString is NOT empty means we are entering text or pasting text: perform the logic
-        /// 2. replacementString is empty means we are deleting text: return true
         
         if textField == passwordField {
             
@@ -320,10 +366,6 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
         else
         {
             
-//            let nsString:NSString? = textField.text as NSString?
-//            let updatedString = nsString?.replacingCharacters(in:range, with:string)
-//            
-//            textField.text = updatedString
             return true
         }
         
@@ -362,7 +404,6 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
         
         let dictHeaders = ["":"","":""] as NSDictionary
         
-//        let dictHeaders = [accessToken:UserDefaults.standard.value(forKey: accessToken)as! String,"":""] as NSDictionary
         
         serviceController.requestPOSTURL(strURL: strUrl as NSString, postParams: dictParams, postHeaders: dictHeaders, successHandler:{(result) in
             DispatchQueue.main.async()
@@ -560,11 +601,7 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
            
             return false
 
-//
-//        if let errorMsg = errorMessage{
-//            
-//            self.showAlertViewWithTitle("app.Alert".localize(), message: errorMsg as String, buttonTitle: "app.Retry".localize())
-//            return false;
+
         }
         return true
     }
