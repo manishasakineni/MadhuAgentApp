@@ -1375,20 +1375,13 @@
                                                     <outlet property="delegate" destination="6E9-oC-w10" id="p4a-iq-waU"/>
                                                 </connections>
                                             </textField>
-                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PAD-vG-Yuc">
-                                                <rect key="frame" x="266" y="75" width="108" height="20"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropMenu" translatesAutoresizingMaskIntoConstraints="NO" id="Scw-Pw-olW">
+                                                <rect key="frame" x="345" y="75" width="33" height="21"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="2Fg-d3-z44"/>
-                                                    <constraint firstAttribute="width" constant="108" id="E2x-lF-RGx"/>
+                                                    <constraint firstAttribute="width" constant="33" id="J4C-KG-lFn"/>
+                                                    <constraint firstAttribute="height" constant="21" id="kXC-Cy-KoH"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                <state key="normal" title="Update Operator">
-                                                    <color key="titleColor" red="0.55862781419999996" green="0.1237523261" blue="0.16566267079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.UpdateOperator"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
+                                            </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Select Network" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8vu-VI-3PM" customClass="AMPFloatingTextField" customModule="AMPFloatingTextField">
                                                 <rect key="frame" x="30" y="53" width="354" height="65"/>
                                                 <color key="tintColor" red="0.52156865600000002" green="0.1098039225" blue="0.050980392839999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1513,17 +1506,17 @@
                                             <constraint firstItem="CQ0-17-4ZC" firstAttribute="top" secondItem="8vu-VI-3PM" secondAttribute="bottom" constant="-2" id="LnQ-B0-D9C"/>
                                             <constraint firstItem="CQ0-17-4ZC" firstAttribute="leading" secondItem="aln-YM-PXi" secondAttribute="leading" constant="30" id="MMA-Mk-XA5"/>
                                             <constraint firstAttribute="trailing" secondItem="8vu-VI-3PM" secondAttribute="trailing" constant="30" id="Nql-To-O8C"/>
-                                            <constraint firstItem="PAD-vG-Yuc" firstAttribute="leading" secondItem="8vu-VI-3PM" secondAttribute="trailing" constant="-118" id="O78-fM-1zI"/>
                                             <constraint firstItem="mQX-qx-Odu" firstAttribute="leading" secondItem="aln-YM-PXi" secondAttribute="leading" constant="35" id="OWv-ie-2YI"/>
                                             <constraint firstAttribute="trailing" secondItem="pBd-mL-qTP" secondAttribute="trailing" constant="35" id="SVo-RT-CwA"/>
                                             <constraint firstItem="IFr-HT-Tti" firstAttribute="leading" secondItem="aln-YM-PXi" secondAttribute="leading" constant="30" id="T7u-GL-LKf"/>
+                                            <constraint firstItem="Scw-Pw-olW" firstAttribute="leading" secondItem="8vu-VI-3PM" secondAttribute="trailing" constant="-39" id="auz-Ok-P5H"/>
                                             <constraint firstAttribute="trailing" secondItem="mQX-qx-Odu" secondAttribute="trailing" constant="35" id="dcx-nr-s0v"/>
                                             <constraint firstAttribute="trailing" secondItem="IFr-HT-Tti" secondAttribute="trailing" constant="30" id="dpo-TT-sUt"/>
                                             <constraint firstItem="8vu-VI-3PM" firstAttribute="leading" secondItem="aln-YM-PXi" secondAttribute="leading" constant="30" id="eUa-Cw-mZO"/>
                                             <constraint firstItem="IFr-HT-Tti" firstAttribute="top" secondItem="aln-YM-PXi" secondAttribute="top" constant="-10" id="hlN-2F-Cg3"/>
                                             <constraint firstItem="5jb-aA-55M" firstAttribute="centerY" secondItem="IFr-HT-Tti" secondAttribute="centerY" constant="-0.33333333333348492" id="mYe-bD-WaA"/>
                                             <constraint firstItem="8vu-VI-3PM" firstAttribute="top" secondItem="IFr-HT-Tti" secondAttribute="bottom" constant="-2" id="mzs-S5-fD7"/>
-                                            <constraint firstItem="PAD-vG-Yuc" firstAttribute="centerY" secondItem="8vu-VI-3PM" secondAttribute="centerY" constant="-0.5" id="nSi-c4-wTq"/>
+                                            <constraint firstItem="8vu-VI-3PM" firstAttribute="centerY" secondItem="Scw-Pw-olW" secondAttribute="centerY" id="o9r-IY-oJP"/>
                                             <constraint firstItem="9SV-vg-vl6" firstAttribute="top" secondItem="mQX-qx-Odu" secondAttribute="bottom" constant="30" id="oct-pG-RyO"/>
                                             <constraint firstItem="mQX-qx-Odu" firstAttribute="top" secondItem="pBd-mL-qTP" secondAttribute="bottom" constant="30" id="sUi-mR-CFt"/>
                                             <constraint firstItem="pBd-mL-qTP" firstAttribute="top" secondItem="CQ0-17-4ZC" secondAttribute="bottom" constant="32" id="ua9-NC-izg"/>
@@ -1722,9 +1715,6 @@
                         <outlet property="searchAction" destination="kVE-AT-tf3" id="3Yd-LN-IPg"/>
                         <outlet property="segmentControl" destination="pBd-mL-qTP" id="RBh-of-SAe"/>
                         <outlet property="segmentHeight" destination="DFA-dl-bE8" id="fWL-Xp-PS0"/>
-                        <outlet property="updateOperatorHeight" destination="2Fg-d3-z44" id="Gqh-FD-lat"/>
-                        <outlet property="updateOperatorWidth" destination="E2x-lF-RGx" id="CFs-8n-DU4"/>
-                        <outlet property="updatesBtn" destination="PAD-vG-Yuc" id="Ehx-1Z-Yhb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EG9-5z-sZV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1871,7 +1861,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wSF-Zb-qo8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wSF-Zb-qo8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1891,7 +1881,7 @@
                     <tabBarItem key="tabBarItem" title="My Profile" image="myProfilePng" selectedImage="myProfilePng" id="zJf-Ao-MRt"/>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="mt6-f4-R4S">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mt6-f4-R4S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1915,7 +1905,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="HiU-Ff-lBp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HiU-Ff-lBp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1939,7 +1929,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="yIj-u9-loA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yIj-u9-loA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -6448,7 +6438,7 @@
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="oWr-Ht-Jv6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oWr-Ht-Jv6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

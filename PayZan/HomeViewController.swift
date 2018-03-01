@@ -678,8 +678,8 @@ paysendLabelHeight.constant = 25
             
             
                 if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
-                    
-                    height = 500
+                    //600
+                    height = 470
                 }
                 else {
                     
